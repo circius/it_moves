@@ -42,7 +42,6 @@ function countJokers(deckOrCard)
   -- not be, or contain, a Joker.
   item_class = getQuasiType(deckOrCard)
   if item_class == "Card" then
-    printToAll("Counting single card")
     return cardCountJokers(deckOrCard)
   elseif item_class == "Deck" then
     return deckCountJokers(deckOrCard)
@@ -55,26 +54,36 @@ function cardCountJokers(card)
   -- consumes a card and produces 1 if it's a joker, 0
   -- otherwise
   if card.getName() == "Joker" then
-    printToAll("got a joker!")
     return 1
   else
     return 0
   end
 end
 
+function is_a_joker(card)
+  -- consumes a card and produces 'true' if the card's a joker,
+  -- false otherwise
+  return card.getName() == "Joker"
+end
+
+function card_desc_is_a_joker(card_desc)
+  -- consumes a card-description (result of deck.getObjects)
+  -- and produces 'true' if the description is of a joker,
+  -- 'false' otherwise
+  return card_desc.name == "Joker"
+end
+
 function deckCountJokers(deck)
   -- consumes a deck and produces the number of jokers it contains
   cards = deck.getObjects()
   local count = 0
-  for _, card in pairs(cards) do
-    local desc = card.description
-    if (desc == "Joker") then
+  for _, card_desc in pairs(cards) do
+    if card_desc_is_a_joker(card_desc) then
         count = count + 1
     end
   end
   return count
 end
-
 
 
 function cardCountSuccesses(card)

@@ -11,7 +11,6 @@
   local obj_GUID = collision_info.collision_object.getGUID()
   local obj = getObjectFromGUID(obj_GUID)
   local count_table = objCountCards(obj)
-  printToAll(tostring(count_table))
   self.setDescription(formatCountTable(count_table))
 end
 
@@ -30,7 +29,9 @@ function formatCountTable(table)
     return string.format(fstring, table.count, table.jokers)
   end
 end
-
+-- deck_GUID = "772468"
+-- deck = getObjectFromGUID(deck_GUID)
+-- objCountCards(deck)
 function objCountCards(obj)
   -- consumes whatever object and produces a table describing
   -- 1) the number of successes it contains and
@@ -40,13 +41,11 @@ function objCountCards(obj)
   local item_class = Global.call("getQuasiType", obj)
   if item_class == "Card" or
      item_class == "Deck" then
-       printToAll("counting cards")
-       local c = Global.call("countSuccesses", obj)
-       local j = Global.call("countJokers", obj)
-       printToAll("count: " .. c .. "; jokers: " .. j)
+       c = Global.call("countSuccesses", obj)
+       j = Global.call("countJokers", obj)
   else
-    printToAll("Can't understand")
-       local c, j = -1, -1
+       c, j = -1, -1
   end
-  return {count = c, jokers = j}
+  local result = {count = c, jokers = j}
+  return result
 end
