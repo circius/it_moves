@@ -1,0 +1,46 @@
+function onLoad()
+  self.setName("Current hands")
+end
+
+function onUpdate()
+  hands_string = formatPlayers()
+  self.setDescription(hands_string)
+end
+
+function formatPlayers()
+  local players = Player.getPlayers()
+  local str = "players:\n"
+  for _, player in ipairs(players) do
+    if player.color ~= "Black" then
+      str = str .. formatPlayer(player)
+    end
+  end
+  return str
+end
+
+function formatPlayer(player)
+  -- consumes a player and produces a string describing its state
+    local fstring = "Player: %s; handsize: %i; hand: %s \n"
+    colour = player.color
+    handcount = player.getHandCount()
+    if handcount > 0 then
+      hand_contents =  player.getHandObjects(1)
+      hand_contents_str = format_hand(hand_contents)
+    else
+      hand_contents_str = "None"
+    end
+   return string.format(fstring, colour, #hand_contents, hand_contents_str)
+end
+
+function format_hand(hand_objects)
+  -- consumes a table of objects and produces a string of
+  -- the names of the objects
+  local str = ""
+  local fstring = "%s/"
+  for key, val in ipairs(hand_objects) do
+    local object = hand_objects[key]
+    local object_name = object.getName()
+    str = str .. string.format(fstring, object_name)
+  end
+  return str
+end

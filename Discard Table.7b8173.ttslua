@@ -1,0 +1,53 @@
+function onCollisionEnter(collision_info)
+-- stolen from the button-visualizer.
+-- consumes a collision-event and produces the guid of the colliding object.
+-- collision_info table:
+--   collision_object    Object
+--   contact_points      Table     {Vector, ...}
+--   relative_velocity   Vector
+if Global.call("shouldIgnoreCollisionP", collision_info)
+then return
+end
+local obj_GUID = collision_info.collision_object.getGUID()
+local obj = getObjectFromGUID(obj_GUID)
+return do_discards(obj)
+end
+
+function do_discards(obj)
+  -- consumes a card or a deck and destroys all the jokers it touches
+  local item_class = Global.call("getQuasiType", obj)
+  if item_class == "Card" then
+    return card_do_discards(obj)
+  elseif item_class == "Deck" then
+    return deck_do_discards(obj)
+  else return false
+  end
+end
+
+function card_do_discards(card)
+  -- examines a card and destroys it if it's a joker.
+  if is_a_joker(card) then
+    destroyObject(card)
+  end
+  return true
+end
+
+function is_a_joker(card)
+  -- consumes a card and produces 'true' if the card's a joker,
+  -- false otherwise
+  return card.getName() == "Joker"
+end
+
+  function deck_do_discards(deck)
+    -- examines a deck and destroys all its jokers.
+    for _, card_desc in pairs(deck.getObjects()) do
+      if card_desc.description == "Joker" then
+        take_params = {
+          guid = card_desc.guid,
+          callback_function = card_do_discards
+        }
+      local joker_card = deck.takeObject(take_params)
+      end
+    end
+    return true
+  end

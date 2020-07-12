@@ -1,0 +1,129 @@
+--http://steamcommunity.com/sharedfiles/filedetails/?id=924691456
+
+--[[ Lua code. See documentation: http://berserk-games.com/knowledgebase/scripting/ --]]
+
+--[[ functions to assist working with "types"]]
+function getQuasiType(obj)
+  -- consumes an object and gets a TTS quasi-type
+  return parseToString(tostring(obj))[1]
+end
+
+function parseToString(str)
+  -- consumes an object and produces a table representing the parsed
+  -- components of its tostring output
+
+  elements = string.gmatch(str, "[%a_]+")
+  result_table = {}
+  i = 1
+  for element in elements do
+    result_table[i] = element
+    i = i + 1
+  end
+  return result_table
+end
+--[[ card-counting functions ]]
+function countSuccesses(deckOrCard)
+  -- consumes an object and produces and produces
+  -- the number of cards in the suits of hearts and
+  -- diamonds it contains.
+  item_class = getQuasiType(deckOrCard)
+  if item_class == "Card" then
+    return cardCountSuccesses(deckOrCard)
+  elseif item_class == "Deck" then
+    return deckCountSuccesses(deckOrCard)
+  else
+    return -1
+  end
+end
+
+function countJokers(deckOrCard)
+  -- consumes an object and produces the number of
+  -- jokers it contains. Returns -1 if the items could
+  -- not be, or contain, a Joker.
+  item_class = getQuasiType(deckOrCard)
+  if item_class == "Card" then
+    printToAll("Counting single card")
+    return cardCountJokers(deckOrCard)
+  elseif item_class == "Deck" then
+    return deckCountJokers(deckOrCard)
+  else
+    return -1
+  end
+end
+
+function cardCountJokers(card)
+  -- consumes a card and produces 1 if it's a joker, 0
+  -- otherwise
+  if card.getName() == "Joker" then
+    printToAll("got a joker!")
+    return 1
+  else
+    return 0
+  end
+end
+
+function deckCountJokers(deck)
+  -- consumes a deck and produces the number of jokers it contains
+  cards = deck.getObjects()
+  local count = 0
+  for _, card in pairs(cards) do
+    local desc = card.description
+    if (desc == "Joker") then
+        count = count + 1
+    end
+  end
+  return count
+end
+
+
+
+function cardCountSuccesses(card)
+  -- consumes a card and produces 1 if that card is a success,
+  -- 0 otherwise
+  desc = card.getDescription()
+  if (desc == "Diamonds") or
+     (desc == "Hearts") then
+       return 1
+  else
+    return 0
+  end
+end
+
+function deckCountSuccesses(deck)
+  -- consumes a deck and produces the number of successes in it.
+  cards = deck.getObjects()
+  local count = 0
+  for _, card in pairs(cards) do
+    local desc = card.description
+    if (desc == "Diamonds") or
+       (desc == "Hearts") then
+        count = count + 1
+    end
+  end
+  return count
+end
+--[[ functions helping to manage collision-based objects ]]
+
+function shouldIgnoreCollisionP(collision_info)
+  if
+      collision_info.collision_object == nil
+      or collision_info.collision_object == self
+      or collision_info.collision_object.getGUID() == nil
+      or collision_info.collision_object.tag == "Surface"
+      or collision_info.collision_object.tag == "Board"
+      or objectLoaded
+    then return true
+    else return false
+    end
+  end
+--[[ The OnLoad function. This is called after everything in the game save finishes loading.
+Most of your script code goes here. --]]
+function onload()
+  BLINDNESS = true
+    --[[ print('Onload!') --]]
+end
+
+--[[ The Update function. This is called once per frame. --]]
+function update ()
+    --[[ print('Update loop!') --]]
+end

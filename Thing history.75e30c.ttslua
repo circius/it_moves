@@ -1,0 +1,73 @@
+indicatorGUID = "15a702"
+
+function onLoad()
+  indicatorBlock = getObjectFromGUID(indicatorGUID)
+  THING_HISTORY = {'Black'}
+  self.setName("Thing history")
+  end
+
+
+function formatThingHistory(table)
+  -- consumes the thing-history table and produces
+  -- a formatted string representing it.
+  str = ""
+  for _, el in ipairs(table) do
+    str = str .. el .. "\n"
+  end
+  return str
+end
+
+
+function playerHasJoker(player)
+  -- consumes a player and produces true if that
+  -- player has the Joker, false otherwise.
+  -- assumes that each player has only 1 Hand-zone
+   if player.getHandCount() < 1 then
+     return false
+   else
+     objects = player.getHandObjects(1)
+     return tableContainsJoker(objects)
+   end
+end
+
+function tableContainsJoker(table)
+  -- consumes a table and produces true if that table
+  -- contains the joker as a member, false otherwise.
+  for _, object in ipairs(table) do
+    if object.getName() == "Joker" then
+      return true
+    end
+  end
+  return false
+  end
+
+
+  function getPlayerWithJoker(players)
+    for _, player in ipairs(players) do
+      if playerHasJoker(player) then
+        return player.color
+      end
+    end
+    return "Black"
+  end
+
+  function get_last_element_of_indexed_table(table)
+    return table[#table]
+  end
+
+  function get_last_recorded_thing(thingtable)
+    return get_last_element_of_indexed_table(table)
+  end
+  --
+  function onUpdate()
+  players = Player.getPlayers()
+  player_with_joker = getPlayerWithJoker(players)
+  last_recorded_thing = get_last_element_of_indexed_table(THING_HISTORY)
+  if player_with_joker ~= 'Black' and
+     player_with_joker ~= last_recorded_thing then
+       printToAll(string.format("%s ~= %s!", player_with_joker, last_recorded_thing))
+       table.insert(THING_HISTORY, player_with_joker)
+     end
+  indicatorBlock.setColorTint(get_last_element_of_indexed_table(THING_HISTORY))
+  self.setDescription(formatThingHistory(THING_HISTORY))
+  end

@@ -1,0 +1,20 @@
+function onCollisionEnter(collision_info)
+  -- stolen from the button-visualizer.
+  -- consumes a collision-event and produces the guid of the colliding object.
+  -- collision_info table:
+  --   collision_object    Object
+  --   contact_points      Table     {Vector, ...}
+  --   relative_velocity   Vector
+  if Global.call("shouldIgnoreCollisionP", collision_info)
+  then return
+  end
+  local obj_GUID = collision_info.collision_object.getGUID()
+  local obj = getObjectFromGUID(obj_GUID)
+  local type_data = Global.call("parseToString", tostring(obj))
+  local item_class = type_data[1]
+  local fstring = "type of %s:    %s\n\nfull tostring: %s\n\ntype: %s"
+  self.setDescription(
+    string.format(fstring, obj.getGUID(), item_class, tostring(obj), type(obj))
+    )
+  return true
+end

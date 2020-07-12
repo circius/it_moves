@@ -1,0 +1,11 @@
+function onLoad()
+  self.setName("blindness status")
+end
+
+function reflectBlindness()
+  -- sets color to match BLINDNESS
+  players_blinded = color(0,255,0,100)
+  players_seeing = color(255,0,0,100)
+  self.setColorTint(Table)
+  return true
+end
