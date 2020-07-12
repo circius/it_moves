@@ -53,20 +53,20 @@ end
 function cardCountJokers(card)
   -- consumes a card and produces 1 if it's a joker, 0
   -- otherwise
-  if card.getName() == "Joker" then
+  if isAJoker(card) then
     return 1
   else
     return 0
   end
 end
 
-function is_a_joker(card)
+function isAJoker(card)
   -- consumes a card and produces 'true' if the card's a joker,
   -- false otherwise
   return card.getName() == "Joker"
 end
 
-function card_desc_is_a_joker(card_desc)
+function cardDescIsAJoker(card_desc)
   -- consumes a card-description (result of deck.getObjects)
   -- and produces 'true' if the description is of a joker,
   -- 'false' otherwise
@@ -78,7 +78,7 @@ function deckCountJokers(deck)
   cards = deck.getObjects()
   local count = 0
   for _, card_desc in pairs(cards) do
-    if card_desc_is_a_joker(card_desc) then
+    if cardDescIsAJoker(card_desc) then
         count = count + 1
     end
   end
@@ -98,14 +98,19 @@ function cardCountSuccesses(card)
   end
 end
 
+function cardDescIsSuccess(card_desc)
+  -- consumes a card_description and produces
+  -- true if it represents a success card, false otherwise.
+  return card_desc.description == "Diamonds" or
+         card_desc.description == "Hearts"
+  end
+
 function deckCountSuccesses(deck)
   -- consumes a deck and produces the number of successes in it.
   cards = deck.getObjects()
   local count = 0
-  for _, card in pairs(cards) do
-    local desc = card.description
-    if (desc == "Diamonds") or
-       (desc == "Hearts") then
+  for _, card_desc in pairs(cards) do
+    if cardDescIsSuccess(card_desc) then
         count = count + 1
     end
   end

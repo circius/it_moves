@@ -26,22 +26,16 @@ end
 
 function card_do_discards(card)
   -- examines a card and destroys it if it's a joker.
-  if is_a_joker(card) then
+  if Global.call("isAJoker", card) then
     destroyObject(card)
   end
   return true
 end
 
-function is_a_joker(card)
-  -- consumes a card and produces 'true' if the card's a joker,
-  -- false otherwise
-  return card.getName() == "Joker"
-end
-
   function deck_do_discards(deck)
     -- examines a deck and destroys all its jokers.
     for _, card_desc in pairs(deck.getObjects()) do
-      if card_desc.description == "Joker" then
+      if Global.call("cardDescIsAJoker", card_desc) then
         take_params = {
           guid = card_desc.guid,
           callback_function = card_do_discards
