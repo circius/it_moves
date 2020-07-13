@@ -4,8 +4,6 @@ function onLoad()
   state_fstring = [[
   The laboratory has been thoroughly destroyed.
   You need to put it back in order.
-
-  Progress: %i / %i
   ]]
   self.setDescription(string.format(state_fstring, progress, difficulty))
 end

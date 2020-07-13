@@ -93,7 +93,7 @@ function onload()
     end
 
     function isAJoker(obj)
-      -- consumes an obj and produces 'true' if the card's a joker,
+      -- consumes an object and produces 'true' if the card's a joker,
       -- false otherwise
       return obj.getGMNotes() == GM_NOTES_NAME_FOR_THING_CARD
     end
@@ -165,13 +165,8 @@ function onload()
         else return false
         end
       end
-
-    --[[ utilities ]]
-
-
     --[[ The OnLoad function. This is called after everything in the game save finishes loading.
     Most of your script code goes here. --]]
-
 
 end
 

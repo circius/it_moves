@@ -59,28 +59,25 @@ function tableContainsJoker(table)
     return get_last_element_of_indexed_table(table)
   end
 
-  function valIsInTableP(val, table)
-    -- consumes a values and produces true if that value's to be found
-    -- in the table, false otherwise
-    for _,value in pairs(table) do
-      if val == value then return true end
+  function playerHasBeenThingBefore(color)
+    -- consumes a Player and produces true if the player's been a Thing before,
+    -- false otherwise.
+    for _, playerColor in ipairs(THING_HISTORY) do
+      if playerColor == color then return true end
     end
     return false
+
   end
 
-  function playerHasHadJoker(color)
-    result = valIsInTableP(color, THING_HISTORY)
-  end
   --
   function onUpdate()
   players = Player.getPlayers()
   player_with_joker = getPlayerWithJoker(players)
   last_recorded_thing = get_last_element_of_indexed_table(THING_HISTORY)
-  if player_with_joker ~= 'Black' and
-     not playerHasHadJoker(player_with_joker) then
+  if not playerHasBeenThingBefore(player_with_joker) then
        printToAll(string.format("%s ~= %s!", player_with_joker, last_recorded_thing))
        table.insert(THING_HISTORY, player_with_joker)
-     end
+  end
   indicatorBlock.setColorTint(get_last_element_of_indexed_table(THING_HISTORY))
   self.setDescription(formatThingHistory(THING_HISTORY))
   end
