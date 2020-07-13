@@ -1,0 +1,21 @@
+--
+function onload(save_state)
+  state = Global.call("getGameState")
+  makeButton(state)
+end
+
+function makeButton(label)
+  self.createButton({
+    click_function = 'pressed',
+    label = label,
+    function_owner = self,
+    position = {0, 1, 5}, rotation = {0, 180, 0},
+    width = 4400, height = 1200, font_size = 1000  })
+  end
+
+  editSelfLabel =  function(str)
+      self.editButton({index=0, label=str})
+    end
+function pressed()
+  printToAll("Stop pressing me, I don't do anything")
+end
