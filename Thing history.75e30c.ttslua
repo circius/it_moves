@@ -34,7 +34,7 @@ function tableContainsJoker(table)
   -- consumes a table and produces true if that table
   -- contains the joker as a member, false otherwise.
   for _, object in ipairs(table) do
-    if object.getName() == "Joker" then
+    if Global.call("isAJoker", object) then
       return true
     end
   end
@@ -58,13 +58,26 @@ function tableContainsJoker(table)
   function get_last_recorded_thing(thingtable)
     return get_last_element_of_indexed_table(table)
   end
+
+  function valIsInTableP(val, table)
+    -- consumes a values and produces true if that value's to be found
+    -- in the table, false otherwise
+    for _,value in pairs(table) do
+      if val == value then return true end
+    end
+    return false
+  end
+
+  function playerHasHadJoker(color)
+    result = valIsInTableP(color, THING_HISTORY)
+  end
   --
   function onUpdate()
   players = Player.getPlayers()
   player_with_joker = getPlayerWithJoker(players)
   last_recorded_thing = get_last_element_of_indexed_table(THING_HISTORY)
   if player_with_joker ~= 'Black' and
-     player_with_joker ~= last_recorded_thing then
+     not playerHasHadJoker(player_with_joker) then
        printToAll(string.format("%s ~= %s!", player_with_joker, last_recorded_thing))
        table.insert(THING_HISTORY, player_with_joker)
      end
