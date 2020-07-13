@@ -1,0 +1,74 @@
+function onLoad()
+  STATUS_PYRAMID_GUID = "92bc43"
+  status_pyramid = getObjectFromGUID(STATUS_PYRAMID_GUID)
+  printTOAll(tostring(status_pyramid))
+  ISOLATED_PLAYER = NO_ONE
+
+  NO_ONE = color(0,0,0,0)
+  PRISON_SCRIPTING_ZONE_GUID = "16b6c9"
+  updatePrisonStatusPyramid()
+end
+
+function onObjectEnterScriptingZone(zone, enter_object)
+  if not objectIsPlayerToken(enter_object)
+  or ISOLATED_PLAYER ~= "None"
+  or zone.getGUID() ~= PRISON_SCRIPTING_ZONE_GUID then
+   return
+  else
+    printToAll("Saw object with GUID " .. enter_object.getGUID())
+    printToAll("Has Color " .. tostring(enter_object.getColorTint()))
+    prisoner_color = enter_object.getName()
+    setIsolatedPlayer(color)
+    updatePrisonStatusPyramid()
+  end
+end
+
+
+function setIsolatedPlayer(str)
+  -- consumes a string representing a player-color and updates
+  -- the global variable ISOLATED_PLAYER
+  ISOLATED_PLAYER = tostring(color)
+  return ISOLATED_PLAYER
+end
+
+function updatePrisonStatusPyramid()
+  -- consumes nothing and updates the prison status pyramid to match
+  -- the current ISOLATED_PLAYER
+  printToAll("trying to update status pyramid")
+  printToAll("Should have color:" .. tostring(NO_ONE))
+  status_pyramid.setColorTint(ISOLATED_PLAYER)
+  return true
+end
+
+function onObjectLeaveScriptingZone(zone, leave_object)
+  if objectIsPlayerToken(leave_object) and
+  playerIsCurrentlyImprisonedP(leave_object.getName()) and
+  zone.getGUID() == PRISON_SCRIPTING_ZONE_GUID
+   then
+    ISOLATE_PLAYER = NO_ONE
+    status_pyramid.setColorTine(STATUS_PYRAMID_INITIAL_COLOUR)
+  end
+end
+
+function playerIsCurrentlyImprisonedP(player_color)
+  -- consumes a player-color and produces 'true' if that player is currently
+  -- imprisoned, false otherwise.
+  return player_color == ISOLATE_PLAYER
+end
+--
+-- function onCollisionExit(collision_info)
+--   -- collision_info table:
+--   --   collision_object    Object
+--   --   contact_points      Table     {Vector, ...}
+--   --   relative_velocity   Vector
+--     ISOLATE_PLAYER = "None"
+--     status_pyramid.setColorTint(STATUS_PYRAMID_INITIAL_COLOUR)
+-- end
+
+function objectIsPlayerToken(obj)
+  -- consumes whatever object and produces 'true' if the object is
+  -- a player token, false otherwise
+  printToAll("checking ".. tostring(obj))
+  printToAll("has desc " .. obj.getDescription())
+  return obj.getDescription() == "Player token"
+end
