@@ -1,0 +1,12 @@
+function onload(save_state)
+	self.createButton({
+      click_function = 'pressed',
+      label = 'mission factory',
+			function_owner = self,
+		  position = {0, 1, 1}, rotation = {0, 180, 0},
+		  width = 3300, height = 600, font_size = 500  })
+end
+
+function pressed(clicked_object, player)
+  printToColor("One day I'll be a mission-card factory", "Black")
+end
