@@ -3,7 +3,7 @@ function onload(save_state)
 	my_status_block = getObjectFromGUID(guid_status_block)
 	self.createButton({
       click_function = 'pressed',
-      label = '->',
+      label = '<-',
 			function_owner = self,
 		  position = {0, 1, 1}, rotation = {0, 180, 0},
 		  width = 800, height = 600, font_size = 500  })
@@ -11,7 +11,7 @@ end
 
 function pressed ()
   -- consumes nothing and adjusts the global game state
-  new_state = Global.call("advanceGameState")
+  new_state = Global.call("reverseGameState")
   -- printToAll(new_state)
   for _, phase_indicator_GUID in ipairs(PHASE_INDICATOR_GUIDS) do
     -- printToAll(type(phase_indicatora))
