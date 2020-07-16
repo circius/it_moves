@@ -1,0 +1,25 @@
+-- require("it_moves/gm_phase_descriptions")
+-- -- provides gm_phase_descriptions, a table.
+--
+-- function onLoad()
+--   phase_descriptions = gm_phase_descriptions
+--   game_states = Global.getVar("GAME_STATES")
+--   updateInfo(phase_descriptions,"Setup")
+-- end
+--
+-- function onUpdate()
+--   current_phase_name=Global.call("getGameState")
+--   updateInfo(phase_descriptions, current_phase_name)
+-- end
+--
+-- function updateInfo(phase_descriptions, phase_name)
+--   -- consumes the name of the current phase and  a table
+--   -- of phase-descriptions, indexed by phase name, and produces
+--   -- a reference to myself. As a side-effect, updates
+--   -- the info on my face to match the phase.
+--   phase_description = phase_descriptions[phase_name]
+--   title, description = phase_description["title"], phase_description["summary"]
+--   self.setName(title)
+--   self.setDescription(description)
+--   return self
+-- end

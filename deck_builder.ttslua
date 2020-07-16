@@ -1,0 +1,44 @@
+function onload(save_state)
+    spawn_offset_from_button = vector(0, 8, 5)
+    self.createButton(
+        {
+            click_function = "pressed",
+            label = "deck builder",
+            function_owner = self,
+            position = {0, 1, 1},
+            rotation = {0, 180, 0},
+            width = 3300,
+            height = 600,
+            font_size = 500
+        }
+    )
+end
+
+function pressed(clicked_object, player)
+  local my_position = self.getPosition()
+  local spawning_zone = my_position + spawn_offset_from_button
+  number_of_players = 8
+  deck = spawnDeck(8, spawning_zone)
+end
+
+function spawnDeck(num_of_players, pos_vector)
+  -- consumes a number of players and a Vector specifying a spawning-
+  -- place relative to self, and produces a reference to the playing-deck
+  -- that it spawns there.
+
+  deck = build_deck(num_of_players)
+  local callback = function(obj)
+      return
+  end
+  spawnObject(
+      {
+          type = "Notecard",
+          position = pos_vector,
+          sound = true,
+          callback_function = callback
+      }
+  )
+  return
+  --
+    missionSpawnMissionCard(mission_to_spawn, pos_vector)
+  return unused_missions

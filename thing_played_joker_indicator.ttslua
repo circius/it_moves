@@ -1,0 +1,35 @@
+thing_history_card_GUID="75e30c"
+thing_has_joker_color = color(255,0,0,100)
+thing_has_played_joker_color = color(0,255,0,100)
+there_is_no_thing_color = color(33,33,33,100)
+
+function onLoad()
+  thing_history_card = getObjectFromGUID(thing_history_card_GUID)
+end
+
+function onUpdate()
+   showWhetherThingHasJoker()
+end
+
+function showWhetherThingHasJoker()
+  -- consumes nothing and produces a reference to self. as a side effect,
+  -- I change my colour to express whether or not the Thing is currently
+  -- holding a joker.
+  -- if current_thing_colour == "Black" then return end
+  -- current_thing_player = Player[current_thing]
+  current =  thing_history_card.call("getLastRecordedThing")
+  if current == "Black" then
+    self.setColorTint(there_is_no_thing_color)
+    self.setDescription("No, there's no thing to play a joker.")
+    return
+  end
+  current_holds_joker = thing_history_card.call('playerHasJoker', Player[current])
+  if current_holds_joker then
+    self.setColorTint(thing_has_joker_color)
+    self.setDescription("YES")
+  else
+    self.setColorTint(thing_has_played_joker_color)
+    self.setDescription("no")
+  end
+  return self
+end

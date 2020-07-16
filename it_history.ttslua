@@ -6,68 +6,6 @@ function onLoad()
     self.setName("Thing history")
 end
 
-function formatThingHistory(table)
-    -- consumes the thing-history table and produces
-    -- a formatted string representing it.
-    str = ""
-    for _, el in ipairs(table) do
-        str = str .. el .. "\n"
-    end
-    return str
-end
-
-function playerHasJoker(player)
-    -- consumes a player and produces true if that
-    -- player has the Joker, false otherwise.
-    -- assumes that each player has only 1 Hand-zone
-    if player.getHandCount() < 1 then
-        return false
-    else
-        objects = player.getHandObjects(1)
-        return tableContainsJoker(objects)
-    end
-end
-
-function tableContainsJoker(table)
-    -- consumes a table and produces true if that table
-    -- contains the joker as a member, false otherwise.
-    for _, object in ipairs(table) do
-        if Global.call("isAJoker", object) then
-            return true
-        end
-    end
-    return false
-end
-
-function getPlayerWithJoker(players)
-    for _, player in ipairs(players) do
-        if playerHasJoker(player) then
-            return player.color
-        end
-    end
-    return "Black"
-end
-
-function get_last_element_of_indexed_table(table)
-    return table[#table]
-end
-
-function get_last_recorded_thing(thingtable)
-    return get_last_element_of_indexed_table(table)
-end
-
-function playerHasBeenThingBefore(color)
-    -- consumes a Player and produces true if the player's been a Thing before,
-    -- false otherwise.
-    for _, playerColor in ipairs(THING_HISTORY) do
-        if playerColor == color then
-            return true
-        end
-    end
-    return false
-end
-
---
 function onUpdate()
     players = Player.getPlayers()
     player_with_joker = getPlayerWithJoker(players)
@@ -79,3 +17,84 @@ function onUpdate()
     indicatorBlock.setColorTint(get_last_element_of_indexed_table(THING_HISTORY))
     self.setDescription(formatThingHistory(THING_HISTORY))
 end
+
+-- auxiliary functions
+
+function formatThingHistory(table)
+    -- consumes the thing-history table and produces
+    -- a formatted string representing it.
+    str = ""
+    for _, el in ipairs(table) do
+        str = str .. el .. "\n"
+    end
+    return str
+end
+-- printToAll(playerHasJoker(Player["Blue"]))
+-- rable=Player["Blue"].getHandObjects(1)
+-- -- -- -- printToAll(tostring(rable))
+-- tableContainsJoker(Player["Blue"].getHandObjects(1))
+
+function playerHasJoker(player)
+    -- consumes a player and produces true if that
+    -- player has the Joker, false otherwise.
+    -- assumes that each player has only 1 Hand-zone
+    if player.getHandCount() < 1 then
+        return false
+    elseif
+      player.getHandCount() > 1 then
+        printToAll("hands are misconfigured: ".. tostring(Player) .. " has 2")
+        return false
+    else
+        objects = player.getHandObjects(1)
+        return tableContainsJoker(objects)
+    end
+end
+
+function tableContainsJoker(table)
+    -- consumes a table and produces true if that table
+    -- contains the joker as a member, false otherwise.
+    if #table < 1 then
+      return false
+    end
+    for _, object in ipairs(table) do
+        if Global.call("isAJoker", object) then
+            return true
+        end
+    end
+    return false
+end
+
+function getPlayerWithJoker(players)
+  -- consumes a table of players and produces the first player that
+  -- holds a joker.
+    for _, player in ipairs(players) do
+        if playerHasJoker(player) then
+            return player.color
+        end
+    end
+    return "Black"
+end
+
+function get_last_element_of_indexed_table(table)
+  -- consumes a table and produces the table's last element
+    return table[#table]
+end
+
+function getLastRecordedThing()
+  -- consumes nothing and produces a string representing the color of the
+  -- last recorded thing.
+    return get_last_element_of_indexed_table(THING_HISTORY)
+end
+
+
+function playerHasBeenThingBefore(color)
+    -- consumes a Player and produces true if the player's been a Thing before,
+    -- false otherwise.
+    for _, playerColor in ipairs(THING_HISTORY) do
+        if playerColor == color then
+            return true
+        end
+    end
+    return false
+end
+--
