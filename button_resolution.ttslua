@@ -1,50 +1,56 @@
 guid_status_block = "e071dc"
-SEEING=color(255,0,0,100)
-BLINDED=color(0,255,0,100)
+SEEING = color(255, 0, 0, 100)
+BLINDED = color(0, 255, 0, 100)
 
 function onload(save_state)
-	self.setName("Button - Resolution")
-	my_status_block = getObjectFromGUID(guid_status_block)
-	self.createButton({
-      click_function = 'pressed',
-      label = 'resolution',
-			function_owner = self,
-		  position = {0, 1, 1}, rotation = {0, 180, 0},
-		  width = 2200, height = 600, font_size = 500  })
+    self.setName("Button - Resolution")
+    my_status_block = getObjectFromGUID(guid_status_block)
+    self.createButton(
+        {
+            click_function = "pressed",
+            label = "resolution",
+            function_owner = self,
+            position = {0, 1, 1},
+            rotation = {0, 180, 0},
+            width = 2200,
+            height = 600,
+            font_size = 500
+        }
+    )
 end
 
 function allPlayersToggleBlindness(players)
-  if BLINDNESS == false then
-    BLINDNESS = true
-    playersSetBlindness(players, BLINDNESS)
-  else
-    BLINDNESS = false
-    playersSetBlindness(players, BLINDNESS)
-  end
+    if BLINDNESS == false then
+        BLINDNESS = true
+        playersSetBlindness(players, BLINDNESS)
+    else
+        BLINDNESS = false
+        playersSetBlindness(players, BLINDNESS)
+    end
 end
 
 function playersSetBlindness(players, value)
-  -- consumes a list of players and blinds them, IF they are
-  -- not the GM ('black')
-  for _, player in ipairs(players) do
-      if player.color ~= 'Black' then
-        player.blindfolded = value
-      end
-  end
+    -- consumes a list of players and blinds them, IF they are
+    -- not the GM ('black')
+    for _, player in ipairs(players) do
+        if player.color ~= "Black" then
+            player.blindfolded = value
+        end
+    end
 end
 
 function makeStatusBlockReflectBlindness()
-	-- consumes nothing; sets color of block to reflect the state
-	-- of the global variable BLINDNESS
-	if BLINDNESS == true then
-		my_status_block.setColorTint(BLINDED)
-	else
-		my_status_block.setColorTint(SEEING)
-	end
+    -- consumes nothing; sets color of block to reflect the state
+    -- of the global variable BLINDNESS
+    if BLINDNESS == true then
+        my_status_block.setColorTint(BLINDED)
+    else
+        my_status_block.setColorTint(SEEING)
+    end
 end
 
 function pressed(clicked_object, player)
-  players = Player.getPlayers()
-  allPlayersToggleBlindness(players)
-	makeStatusBlockReflectBlindness()
+    players = Player.getPlayers()
+    allPlayersToggleBlindness(players)
+    makeStatusBlockReflectBlindness()
 end

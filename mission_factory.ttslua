@@ -1,57 +1,72 @@
-require('it_moves/random_missions') -- provides "missions"
+require("it_moves/random_missions") -- provides "missions"
 
 function onload(save_state)
-	unused_missions = missions
-	mission_end_of_deck = {name="Deck exhausted",
-												 difficulty=99,
-											   state_0 = [[If you still need missions,
-												 you'll have to write them up yourself.]] }
-	spawn_offset_from_button = vector(0,8,5)
-	self.createButton({
-      click_function = 'pressed',
-      label = 'mission factory',
-			function_owner = self,
-		  position = {0, 1, 1}, rotation = {0, 180, 0},
-		  width = 3300, height = 600, font_size = 500  })
+    unused_missions = missions
+    mission_end_of_deck = {
+        name = "Deck exhausted",
+        difficulty = 99,
+        state_0 = [[If you still need missions,
+												 you'll have to write them up yourself.]]
+    }
+    spawn_offset_from_button = vector(0, 8, 5)
+    self.createButton(
+        {
+            click_function = "pressed",
+            label = "mission factory",
+            function_owner = self,
+            position = {0, 1, 1},
+            rotation = {0, 180, 0},
+            width = 3300,
+            height = 600,
+            font_size = 500
+        }
+    )
 end
 
 function pressed(clicked_object, player)
-	my_position = self.getPosition()
-	spawning_zone = my_position + spawn_offset_from_button
-	unused_missions = missionsSpawnMissionCard(unused_missions, spawning_zone)
+    my_position = self.getPosition()
+    spawning_zone = my_position + spawn_offset_from_button
+    unused_missions = missionsSpawnMissionCard(unused_missions, spawning_zone)
 end
 
 function missionsSpawnMissionCard(unused_missions, pos_vector)
-	-- consumes a table of mission-specifications and pops
-	-- a missions from it. produces the table without the
-	-- mission, and as a side-effect spawns a notecard
-	-- representing the mission in the gameworld.
-	if #unused_missions == 0 then
-		mission_to_spawn = mission_end_of_deck
-	else
-		mission_to_spawn = table.remove(unused_missions, #unused_missions)
-	end
-	printToAll("spawning mission " .. mission_to_spawn["name"])
-	missionSpawnMissionCard(mission_to_spawn, pos_vector)
-	return unused_missions
+    -- consumes a table of mission-specifications and pops
+    -- a missions from it. produces the table without the
+    -- mission, and as a side-effect spawns a notecard
+    -- representing the mission in the gameworld.
+    if #unused_missions == 0 then
+        mission_to_spawn = mission_end_of_deck
+    else
+        mission_to_spawn = table.remove(unused_missions, #unused_missions)
+    end
+    printToAll("spawning mission " .. mission_to_spawn["name"])
+    missionSpawnMissionCard(mission_to_spawn, pos_vector)
+    return unused_missions
 end
 
 function missionSpawnMissionCard(mission, pos_vector)
-	-- consumes a mission-specification and a world-location, and spawns
-	-- a Notecard representing the mission at the world-location. returns
-	-- nothing.
-	spawnObject({type="Notecard",
-							 position=pos_vector,
-	             sound=true,
-							 callback_function=function (obj) missionCardWriteInfo(obj, mission) end})
-	return
+    -- consumes a mission-specification and a world-location, and spawns
+    -- a Notecard representing the mission at the world-location. returns
+    -- nothing.
+    local callback = function(obj)
+        missionCardWriteInfo(obj, mission)
+    end
+    spawnObject(
+        {
+            type = "Notecard",
+            position = pos_vector,
+            sound = true,
+            callback_function = callback
+        }
+    )
+    return
 end
 
 function missionCardWriteInfo(notecard, mission)
-	-- consumes a notecard object-reference and a mission-spec and writes
-	-- the mission-spec onto the notecard. return nothing.
-	notecard.setName(mission["name"])
-	notecard.setGMNotes(tostring(mission["difficulty"]))
-	notecard.setDescription(tostring(mission["state_0"]))
-	return
+    -- consumes a notecard object-reference and a mission-spec and writes
+    -- the mission-spec onto the notecard. return nothing.
+    notecard.setName(mission["name"])
+    notecard.setGMNotes(tostring(mission["difficulty"]))
+    notecard.setDescription(tostring(mission["state_0"]))
+    return
 end

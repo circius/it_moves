@@ -1,65 +1,67 @@
 function onLoad()
-  PRISON_SCRIPTING_ZONE_GUID = "16b6c9"
-  STATUS_PYRAMID_GUID = "92bc43"
-  NO_ONE = color(0,0,0,0)
-  ISOLATED_PLAYER = NO_ONE
-  status_pyramid = getObjectFromGUID(STATUS_PYRAMID_GUID)
-  status_pyramid.setColorTint(NO_ONE)
-  updatePrisonStatusPyramid()
+    PRISON_SCRIPTING_ZONE_GUID = "9f1776"
+    STATUS_PYRAMID_GUID = "92bc43"
+    NO_ONE = color(0, 0, 0, 0)
+    ISOLATED_PLAYER = NO_ONE
+    status_pyramid = getObjectFromGUID(STATUS_PYRAMID_GUID)
+    status_pyramid.setColorTint(NO_ONE)
+    updatePrisonStatusPyramid()
 end
 
 function onObjectEnterScriptingZone(zone, enter_object)
-  if not objectIsPlayerToken(enter_object)
-    then printToAll("Objects like that can't be prisoners.")
-      return false
-  elseif ISOLATED_PLAYER ~= NO_ONE
-    then printToAll(ISOLATED_PLAYER .. [[ is already a prisoner!]])
-      return false
-  elseif zone.getGUID() ~= PRISON_SCRIPTING_ZONE_GUID then
-    return
-  else
-    prisoner_color = enter_object.getName()
-    setIsolatedPlayer(prisoner_color)
-    updatePrisonStatusPyramid()
-    return true
-  end
+    if not objectIsPlayerToken(enter_object) then
+        printToAll("Objects like that can't be prisoners.")
+        return false
+    elseif ISOLATED_PLAYER ~= NO_ONE then
+        printToAll(ISOLATED_PLAYER .. [[ is already a prisoner!]])
+        return false
+    elseif zone.getGUID() ~= PRISON_SCRIPTING_ZONE_GUID then
+        return
+    else
+        prisoner_color = enter_object.getName()
+        setIsolatedPlayer(prisoner_color)
+        updatePrisonStatusPyramid()
+        return true
+    end
 end
 
-
 function setIsolatedPlayer(str)
-  -- consumes a string representing a player-color and updates
-  -- the global variable ISOLATED_PLAYER
-  ISOLATED_PLAYER = str
-  return ISOLATED_PLAYER
+    -- consumes a string representing a player-color and updates
+    -- the global variable ISOLATED_PLAYER
+    ISOLATED_PLAYER = str
+    return ISOLATED_PLAYER
 end
 
 function updatePrisonStatusPyramid()
-  -- consumes nothing and updates the prison status pyramid to match
-  -- the current ISOLATED_PLAYER
-  status_pyramid.setColorTint(ISOLATED_PLAYER)
-  return true
+    -- consumes nothing and updates the prison status pyramid to match
+    -- the current ISOLATED_PLAYER
+    status_pyramid.setColorTint(ISOLATED_PLAYER)
+    return true
 end
 
 function onObjectLeaveScriptingZone(zone, leave_object)
-  if zone.getGUID() ~= PRISON_SCRIPTING_ZONE_GUID then
-    return false end
-  if not objectIsPlayerToken(leave_object) then
-    return false end
-  if not playerIsCurrentlyImprisonedP(leave_object.getName()) then
-  return false end
+    if zone.getGUID() ~= PRISON_SCRIPTING_ZONE_GUID then
+        return false
+    end
+    if not objectIsPlayerToken(leave_object) then
+        return false
+    end
+    if not playerIsCurrentlyImprisonedP(leave_object.getName()) then
+        return false
+    end
     ISOLATED_PLAYER = NO_ONE
     updatePrisonStatusPyramid()
     return true
 end
 
 function playerIsCurrentlyImprisonedP(player_color)
-  -- consumes a player-color and produces 'true' if that player is currently
-  -- imprisoned, false otherwise.
-  return player_color == ISOLATED_PLAYER
+    -- consumes a player-color and produces 'true' if that player is currently
+    -- imprisoned, false otherwise.
+    return player_color == ISOLATED_PLAYER
 end
 
 function objectIsPlayerToken(obj)
-  -- consumes whatever object and produces 'true' if the object is
-  -- a player token, false otherwise
-  return obj.getDescription() == "Player token"
+    -- consumes whatever object and produces 'true' if the object is
+    -- a player token, false otherwise
+    return obj.getDescription() == "Player token"
 end

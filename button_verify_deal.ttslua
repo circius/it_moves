@@ -1,41 +1,49 @@
 status_block_GUID = "167ce3"
-VALID = color(0,255,0,100)
-INVALID = color(255,0,0,100)
+VALID = color(0, 255, 0, 100)
+INVALID = color(255, 0, 0, 100)
 
 function onload(save_state)
-	status_block = getObjectFromGUID(status_block_GUID)
-	self.setName("Button - Verify Deal")
-	self.createButton({
-      click_function = 'pressed',
-      label = 'verify deal',
-			function_owner = self,
-		  position = {0, 1, 1}, rotation = {0, 180, 0},
-		  width = 2300, height = 600, font_size = 500  })
+    status_block = getObjectFromGUID(status_block_GUID)
+    self.setName("Button - Verify Deal")
+    self.createButton(
+        {
+            click_function = "pressed",
+            label = "verify deal",
+            function_owner = self,
+            position = {0, 1, 1},
+            rotation = {0, 180, 0},
+            width = 2300,
+            height = 600,
+            font_size = 500
+        }
+    )
 end
 
 function pressed(clicked_object, player)
-	players = Player.getPlayers()
-	valid_hands = verify_player_hands(players)
-	if valid_hands then
-		status_block.setColorTint(VALID)
-	else
-		status_block.setColorTint(INVALID)
-	end
+    players = Player.getPlayers()
+    valid_hands = verify_player_hands(players)
+    if valid_hands then
+        status_block.setColorTint(VALID)
+    else
+        status_block.setColorTint(INVALID)
+    end
 end
 
 function verify_player_hands(players)
-	result = true
-	for _, player in pairs(players) do
-		if player.color ~= "Black" then
-			result = result and verify_player_hand(player)
-		end
-	end
-	return result
+    result = true
+    for _, player in pairs(players) do
+        if player.color ~= "Black" then
+            result = result and verify_player_hand(player)
+        end
+    end
+    return result
 end
 
 function verify_player_hand(player)
-	handcount = player.getHandCount()
-	if handcount == 0 then return false end
-	hand_contents =  player.getHandObjects(1)
-	return #hand_contents == 4
+    handcount = player.getHandCount()
+    if handcount == 0 then
+        return false
+    end
+    hand_contents = player.getHandObjects(1)
+    return #hand_contents == 4
 end
