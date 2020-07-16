@@ -8,6 +8,7 @@ function onload()
   GAME_STATES = {"Briefing", "Assignments", "Work", "Debrief", "Isolation", "Assimilation"}
   CURRENT_GAME_STATE = 0
   BLINDNESS = false
+  WINNING_NUMBER_OF_POINTS = 30
     --[[ print('Onload!') --]]
 
     --[[ getters ]]

@@ -1,51 +1,52 @@
-  function onCollisionEnter(collision_info)
-  -- stolen from the button-visualizer.
-  -- consumes a collision-event and produces the guid of the colliding object.
-  -- collision_info table:
-  --   collision_object    Object
-  --   contact_points      Table     {Vector, ...}
-  --   relative_velocity   Vector
-  if Global.call("shouldIgnoreCollisionP", collision_info)
-  then return
-  end
-  local obj_GUID = collision_info.collision_object.getGUID()
-  local obj = getObjectFromGUID(obj_GUID)
-  local count_table = objCountCards(obj)
-  self.setDescription(formatCountTable(count_table))
-end
+function onLoad()
+    function onCollisionEnter(collision_info)
+        -- stolen from the button-visualizer.
+        -- consumes a collision-event and produces the guid of the colliding object.
+        -- collision_info table:
+        --   collision_object    Object
+        --   contact_points      Table     {Vector, ...}
+        --   relative_velocity   Vector
+        if Global.call("shouldIgnoreCollisionP", collision_info) then
+            return
+        end
+        local obj_GUID = collision_info.collision_object.getGUID()
+        local obj = getObjectFromGUID(obj_GUID)
+        local count_table = objCountCards(obj)
+        self.setDescription(formatCountTable(count_table))
+    end
 
-function formatCountTable(table)
-  -- consumes a table with the following keys:
-  -- table.count : number of successes and
-  -- table.jokers : number of jokers
-  -- and produces a pretty string describing the situation.
-  if table.count == -1 then
-    return "That object can't be counted for successes"
-  else
-    fstring = [[
+    function formatCountTable(table)
+        -- consumes a table with the following keys:
+        -- table.count : number of successes and
+        -- table.jokers : number of jokers
+        -- and produces a pretty string describing the situation.
+        if table.count == -1 then
+            return "That object can't be counted for successes"
+        else
+            fstring = [[
     Number of successes: %i
     Number of jokers: %i
     ]]
-    return string.format(fstring, table.count, table.jokers)
-  end
-end
--- deck_GUID = "772468"
--- deck = getObjectFromGUID(deck_GUID)
--- objCountCards(deck)
-function objCountCards(obj)
-  -- consumes whatever object and produces a table describing
-  -- 1) the number of successes it contains and
-  -- 2) whether it contains any jokers
-  -- if the object can't be counted, the number of successes is
-  -- set to -1
-  local item_class = Global.call("getQuasiType", obj)
-  if item_class == "Card" or
-     item_class == "Deck" then
-       c = Global.call("countSuccesses", obj)
-       j = Global.call("countJokers", obj)
-  else
-       c, j = -1, -1
-  end
-  local result = {count = c, jokers = j}
-  return result
+            return string.format(fstring, table.count, table.jokers)
+        end
+    end
+    -- deck_GUID = "772468"
+    -- deck = getObjectFromGUID(deck_GUID)
+    -- objCountCards(deck)
+    function objCountCards(obj)
+        -- consumes whatever object and produces a table describing
+        -- 1) the number of successes it contains and
+        -- 2) whether it contains any jokers
+        -- if the object can't be counted, the number of successes is
+        -- set to -1
+        local item_class = Global.call("getQuasiType", obj)
+        if item_class == "Card" or item_class == "Deck" then
+            c = Global.call("countSuccesses", obj)
+            j = Global.call("countJokers", obj)
+        else
+            c, j = -1, -1
+        end
+        local result = {count = c, jokers = j}
+        return result
+    end
 end
