@@ -1,0 +1,90 @@
+--[[ INCOMPLETE / BUGGY, HOW DOES SPAWNING WORK. !!! ]]--
+
+function onLoad()
+    deck_infinite_bag_GUID = "a1566f"
+    joker_infinite_bag_GUID = "dae3f3"
+    deck_infinite_bag = getObjectFromGUID(deck_infinite_bag_GUID)
+    joker_infinite_bag = getObjectFromGUID(joker_infinite_bag_GUID)
+
+    min_players, max_players = Global.getVar("MIN_PLAYERS"), Global.getVar("MAX_PLAYERS")
+
+    self.createInput({
+        input_function = "handleInput",
+        function_owner = self,
+        label = "# of players",
+        position = Vector(0,1,3),
+        rotation = {0,180,0},
+        font_size = 400,
+        width = 2100,
+        height = 500,
+        alignment=3,
+        tooltip = "I can handle inputs between 6 and 9.",
+        validation = 2,
+    })
+    self.createButton(
+        {
+            click_function = "pressed",
+            label = "do setup",
+            function_owner = self,
+            position = {0, 1, 1},
+            rotation = {0, 180, 0},
+            width = 2000,
+            height = 600,
+            font_size = 500
+        }
+    )
+end
+
+handleInput = function (obj, color, input, stillEditing)
+    return true
+end
+
+function pressed()
+    local my_position = self.getPosition()
+    local spawning_zone = my_position + spawn_offset_from_button
+    local input_field = self.getInputs()
+    local input_value = input_field[1].value
+    if input_value == nil then return end
+    local input_value_num = tonumber(input_value)
+    if validateInput(input_value_num) then
+        doSetup(7, spawning_zone)
+    else
+        local fstring = "Players should be between %i and %i, inclusive."
+        printToColor(string.format(fstring, min_players, max_players), "Black")
+    end
+end
+
+function doSetup(n, pos_vector)
+    -- consumes a number between 6 and 9 and a positions to spawn relative to,
+    -- and sets up the board for n players. As a side-effect, destroys self.
+    local deck = spawnInitialDeckForNPlayers(n, pos_vector)
+ --[[    local extra_jokers = spawnDeckOfJokers(pos_vector + Vector(2,0,0))
+    setupMissionTrack(n)
+    self.destruct() ]]
+    return true
+end
+
+function spawnInitialDeckForNPlayers(n, pos_vector)
+    -- consumes a number of players N and a position_vector, and produces
+    -- an object-reference to the deck which, as a side-effect, it will spawn
+    -- at POS_VECTOR.
+    return deck_infinite_bag.takeObject(
+        {   position = pos_vector,
+            callback_function = function () joker_infinite_bag.takeObject({
+                position = pos_vector,
+        })
+    end
+})
+end
+
+
+function spawnJoker(pos_vector)
+    -- consumes nothing and spawns a Joker. returns the object-reference
+    -- for the joker.
+    return joker_infinite_bag.takeObject({})
+end
+
+function validateInput(n)
+    -- consumes an int and checks that it's a valid number of players.
+    return min_players <= n and n <= max_players
+end
