@@ -39,6 +39,4 @@ function spawnDeck(num_of_players, pos_vector)
       }
   )
   return
-  --
-    missionSpawnMissionCard(mission_to_spawn, pos_vector)
-  return unused_missions
+end
