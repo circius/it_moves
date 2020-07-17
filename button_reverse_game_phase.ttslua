@@ -17,11 +17,11 @@ end
 
 function pressed()
     -- consumes nothing and adjusts the global game state
-    new_state = Global.call("reverseGameState")
+    new_state = Global.call("reverse_game_state")
     -- printToAll(new_state)
     for _, phase_indicator_GUID in ipairs(PHASE_INDICATOR_GUIDS) do
         -- printToAll(type(phase_indicatora))
         phase_indicator = getObjectFromGUID(phase_indicator_GUID)
-        phase_indicator.call("editSelfLabel", new_state)
+        phase_indicator.call("edit_self_label", new_state)
     end
 end

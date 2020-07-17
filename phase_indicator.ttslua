@@ -19,7 +19,7 @@ function makeButton(label)
     )
 end
 
-editSelfLabel = function(str)
+edit_self_label = function(str)
     self.editButton({index = 0, label = str})
 end
 

@@ -26,10 +26,10 @@ end
 function pressed(clicked_object, player)
     my_position = self.getPosition()
     spawning_zone = my_position + spawn_offset_from_button
-    unused_missions = missionsSpawnMissionCard(unused_missions, spawning_zone)
+    unused_missions = missions_spawn_missioncard(unused_missions, spawning_zone)
 end
 
-function missionsSpawnMissionCard(missions_table, pos_vector)
+function missions_spawn_missioncard(missions_table, pos_vector)
     -- consumes a table of mission-specifications and pops
     -- a missions from it. produces the table without the
     -- mission, and as a side-effect spawns a notecard
@@ -40,16 +40,16 @@ function missionsSpawnMissionCard(missions_table, pos_vector)
         mission_to_spawn = table.remove(unused_missions, #unused_missions)
     end
     printToAll("spawning mission " .. mission_to_spawn["name"])
-    missionSpawnMissionCard(mission_to_spawn, pos_vector)
+    mission_spawn_mission_card(mission_to_spawn, pos_vector)
     return unused_missions
 end
 
-function missionSpawnMissionCard(mission, pos_vector)
+function mission_spawn_mission_card(mission, pos_vector)
     -- consumes a mission-specification and a world-location, and spawns
     -- a Notecard representing the mission at the world-location. returns
     -- nothing.
     local callback = function(obj)
-        missionCardWriteInfo(obj, mission)
+        mission_card_write_info(obj, mission)
     end
     spawnObject(
         {
@@ -63,7 +63,7 @@ function missionSpawnMissionCard(mission, pos_vector)
     return
 end
 
-function missionCardWriteInfo(notecard, mission)
+function mission_card_write_info(notecard, mission)
     -- consumes a notecard object-reference and a mission-spec and writes
     -- the mission-spec onto the notecard. return nothing.
     notecard.setName(mission["name"])

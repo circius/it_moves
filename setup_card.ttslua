@@ -3,10 +3,10 @@ require("it_moves/gm_phase_descriptions")
 
 function onLoad()
   phase_descriptions = gm_phase_descriptions
-  updateInfo(phase_descriptions,"Setup")
+  update_info(phase_descriptions,"Setup")
 end
 
-function updateInfo(phase_descriptions, phase_name)
+function update_info(phase_descriptions, phase_name)
   -- consumes the name of the current phase and  a table
   -- of phase-descriptions, indexed by phase name, and produces
   -- a reference to myself. As a side-effect, updates

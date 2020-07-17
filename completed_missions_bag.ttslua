@@ -14,13 +14,5 @@ end
 function filterObjectEnter(obj)
     -- consumes an object trying to get into the bag and returns
     -- true if the object's a missioncard, false otherwise.
-    return isMissionCardP(obj)
-end
-
-function isMissionCardP(any)
-    -- consumes whatever object description and returns 'true' if it's a missioncard,
-    -- false otherwise.
-    should_be_number_str = any.getGMNotes()
-    should_be_number = tonumber(should_be_number_str)
-    return type(should_be_number) == "number"
+    return Global.call("is_missioncard_p", obj)
 end

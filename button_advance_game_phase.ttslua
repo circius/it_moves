@@ -1,5 +1,5 @@
 PHASE_INDICATOR_GUIDS = {"6d28d9", "23d8d6"}
-function onload(save_state)
+function onLoad(save_state)
     my_status_block = getObjectFromGUID(guid_status_block)
     self.createButton(
         {
@@ -17,11 +17,11 @@ end
 
 function pressed()
     -- consumes nothing and adjusts the global game state
-    new_state = Global.call("advanceGameState")
+    new_state = Global.call("advance_game_state")
     -- printToAll(new_state)
     for _, phase_indicator_GUID in ipairs(PHASE_INDICATOR_GUIDS) do
         -- printToAll(type(phase_indicatora))
         phase_indicator = getObjectFromGUID(phase_indicator_GUID)
-        phase_indicator.call("editSelfLabel", new_state)
+        phase_indicator.call("edit_self_label", new_state)
     end
 end

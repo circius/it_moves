@@ -2,7 +2,7 @@ guid_status_block = "e071dc"
 SEEING = color(255, 0, 0, 100)
 BLINDED = color(0, 255, 0, 100)
 
-function onload(save_state)
+function onLoad(save_state)
     self.setName("Button - Resolution")
     my_status_block = getObjectFromGUID(guid_status_block)
     self.createButton(
@@ -19,17 +19,17 @@ function onload(save_state)
     )
 end
 
-function allPlayersToggleBlindness(players)
+function all_players_toggle_blindness(players)
     if BLINDNESS == false then
         BLINDNESS = true
-        playersSetBlindness(players, BLINDNESS)
+        players_set_blindness(players, BLINDNESS)
     else
         BLINDNESS = false
-        playersSetBlindness(players, BLINDNESS)
+        players_set_blindness(players, BLINDNESS)
     end
 end
 
-function playersSetBlindness(players, value)
+function players_set_blindness(players, value)
     -- consumes a list of players and blinds them, IF they are
     -- not the GM ('black')
     for _, player in ipairs(players) do
@@ -39,7 +39,7 @@ function playersSetBlindness(players, value)
     end
 end
 
-function makeStatusBlockReflectBlindness()
+function make_status_block_reflect_blindness()
     -- consumes nothing; sets color of block to reflect the state
     -- of the global variable BLINDNESS
     if BLINDNESS == true then
@@ -51,6 +51,6 @@ end
 
 function pressed(clicked_object, player)
     players = Player.getPlayers()
-    allPlayersToggleBlindness(players)
-    makeStatusBlockReflectBlindness()
+    all_players_toggle_blindness(players)
+    make_status_block_reflect_blindness()
 end

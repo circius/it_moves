@@ -1,26 +1,26 @@
 indicatorGUID = "15a702"
 
 function onLoad()
-    indicatorBlock = getObjectFromGUID(indicatorGUID)
+    indicator_block = getObjectFromGUID(indicatorGUID)
     THING_HISTORY = {"Black"}
     self.setName("Thing history")
 end
 
 function onUpdate()
     players = Player.getPlayers()
-    player_with_joker = getPlayerWithJoker(players)
+    player_with_joker = get_player_with_joker(players)
     last_recorded_thing = get_last_element_of_indexed_table(THING_HISTORY)
-    if not playerHasBeenThingBefore(player_with_joker) then
+    if not player_has_been_thing_before(player_with_joker) then
         printToAll(string.format("%s ~= %s!", player_with_joker, last_recorded_thing))
         table.insert(THING_HISTORY, player_with_joker)
     end
-    indicatorBlock.setColorTint(get_last_element_of_indexed_table(THING_HISTORY))
-    self.setDescription(formatThingHistory(THING_HISTORY))
+    indicator_block.setColorTint(get_last_element_of_indexed_table(THING_HISTORY))
+    self.setDescription(format_thing_history(THING_HISTORY))
 end
 
 -- auxiliary functions
 
-function formatThingHistory(table)
+function format_thing_history(table)
     -- consumes the thing-history table and produces
     -- a formatted string representing it.
     str = ""
@@ -29,12 +29,8 @@ function formatThingHistory(table)
     end
     return str
 end
--- printToAll(playerHasJoker(Player["Blue"]))
--- rable=Player["Blue"].getHandObjects(1)
--- -- -- -- printToAll(tostring(rable))
--- tableContainsJoker(Player["Blue"].getHandObjects(1))
 
-function playerHasJoker(player)
+function player_has_joker(player)
     -- consumes a player and produces true if that
     -- player has the Joker, false otherwise.
     -- assumes that each player has only 1 Hand-zone
@@ -45,29 +41,29 @@ function playerHasJoker(player)
         return false
     else
         objects = player.getHandObjects(1)
-        return tableContainsJoker(objects)
+        return table_contains_joker(objects)
     end
 end
 
-function tableContainsJoker(table)
+function table_contains_joker(table)
     -- consumes a table and produces true if that table
     -- contains the joker as a member, false otherwise.
     if #table < 1 then
       return false
     end
     for _, object in ipairs(table) do
-        if Global.call("isAJoker", object) then
+        if Global.call("is_a_joker", object) then
             return true
         end
     end
     return false
 end
 
-function getPlayerWithJoker(players)
+function get_player_with_joker(players)
   -- consumes a table of players and produces the first player that
   -- holds a joker.
     for _, player in ipairs(players) do
-        if playerHasJoker(player) then
+        if player_has_joker(player) then
             return player.color
         end
     end
@@ -79,14 +75,14 @@ function get_last_element_of_indexed_table(table)
     return table[#table]
 end
 
-function getLastRecordedThing()
+function get_last_recorded_thing()
   -- consumes nothing and produces a string representing the color of the
   -- last recorded thing.
     return get_last_element_of_indexed_table(THING_HISTORY)
 end
 
 
-function playerHasBeenThingBefore(color)
+function player_has_been_thing_before(color)
     -- consumes a Player and produces true if the player's been a Thing before,
     -- false otherwise.
     for _, playerColor in ipairs(THING_HISTORY) do

@@ -8,22 +8,22 @@ function onLoad()
 end
 
 function onUpdate()
-   showWhetherThingHasJoker()
+   show_whether_thing_has_joker()
 end
 
-function showWhetherThingHasJoker()
+function show_whether_thing_has_joker()
   -- consumes nothing and produces a reference to self. as a side effect,
   -- I change my colour to express whether or not the Thing is currently
   -- holding a joker.
   -- if current_thing_colour == "Black" then return end
   -- current_thing_player = Player[current_thing]
-  current =  thing_history_card.call("getLastRecordedThing")
+  current =  thing_history_card.call("get_last_recorded_thing")
   if current == "Black" then
     self.setColorTint(there_is_no_thing_color)
     self.setDescription("No, there's no thing to play a joker.")
     return
   end
-  current_holds_joker = thing_history_card.call('playerHasJoker', Player[current])
+  current_holds_joker = thing_history_card.call('player_has_joker', Player[current])
   if current_holds_joker then
     self.setColorTint(thing_has_joker_color)
     self.setDescription("YES")

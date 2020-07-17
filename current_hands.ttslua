@@ -1,20 +1,21 @@
 function onUpdate()
-    hands_string = formatPlayers()
+    local players = Player.getPlayers()
+    hands_string = format_players(players)
     self.setDescription(hands_string)
 end
 
-function formatPlayers()
-    local players = Player.getPlayers()
+function format_players(players)
+    -- consumes a list of players, and produces a string describing them.
     local str = "players:\n"
     for _, player in ipairs(players) do
         if player.color ~= "Black" then
-            str = str .. formatPlayer(player)
+            str = str .. format_player(player)
         end
     end
     return str
 end
 
-function formatPlayer(player)
+function format_player(player)
     -- consumes a player and produces a string describing its state
     local fstring = "Player: %s; handsize: %i; hand: %s \n"
     colour = player.color

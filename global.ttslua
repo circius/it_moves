@@ -16,18 +16,18 @@ function onload()
 end
 
 --[[ getters ]]
-getGameState = function()
+get_game_state = function()
     -- consumes nothing and produces the name of the current game state.
     return GAME_STATES[CURRENT_GAME_STATE + 1]
 end
 --[[ setters ]]
-advanceGameState = function()
+advance_game_state = function()
     --- consumes nothing and advances the current game state
     CURRENT_GAME_STATE = (CURRENT_GAME_STATE + 1) % #GAME_STATES
-    return getGameState()
+    return get_game_state()
 end
 
-reverseGameState = function()
+reverse_game_state = function()
     --- consumes nothing and reverses the current game state
     candidate = CURRENT_GAME_STATE - 1
     if candidate < 0 then
@@ -35,15 +35,15 @@ reverseGameState = function()
     else
         CURRENT_GAME_STATE = candidate
     end
-    return getGameState()
+    return get_game_state()
 end
 --[[ functions to assist working with "types"]]
-function getQuasiType(obj)
+function get_quasi_type(obj)
     -- consumes an object and gets a TTS quasi-type
-    return parseToString(tostring(obj))[1]
+    return obj_parse_to_string(tostring(obj))[1]
 end
 
-function parseToString(str)
+function obj_parse_to_string(obj)
     -- consumes an object and produces a table representing the parsed
     -- components of its tostring output
 
@@ -57,99 +57,99 @@ function parseToString(str)
     return result_table
 end
 --[[ card-counting functions ]]
-function countSuccesses(deckOrCard)
+function count_successes(deckOrCard)
     -- consumes an object and produces and produces
     -- the number of cards in the suits of hearts and
     -- diamonds it contains.
-    item_class = getQuasiType(deckOrCard)
+    item_class = get_quasi_type(deckOrCard)
     if item_class == "Card" then
-        return cardCountSuccesses(deckOrCard)
+        return card_count_successes(deckOrCard)
     elseif item_class == "Deck" then
-        return deckCountSuccesses(deckOrCard)
+        return deck_count_successes(deckOrCard)
     else
         return -1
     end
 end
 
-function countJokers(deckOrCard)
+function count_jokers(deckOrCard)
     -- consumes an object and produces the number of
     -- jokers it contains. Returns -1 if the items could
     -- not be, or contain, a Joker.
-    item_class = getQuasiType(deckOrCard)
+    item_class = get_quasi_type(deckOrCard)
     if item_class == "Card" then
-        return cardCountJokers(deckOrCard)
+        return card_count_jokers(deckOrCard)
     elseif item_class == "Deck" then
-        return deckCountJokers(deckOrCard)
+        return deck_count_jokers(deckOrCard)
     else
         return -1
     end
 end
 
-function cardCountJokers(card)
+function card_count_jokers(card)
     -- consumes a card and produces 1 if it's a joker, 0
     -- otherwise
-    if isAJoker(card) then
+    if is_a_joker(card) then
         return 1
     else
         return 0
     end
 end
-function isAJoker(obj)
+function is_a_joker(obj)
     -- consumes an object and produces 'true' if the card's a joker,
     -- false otherwise
     return obj.getGMNotes() == GM_NOTES_NAME_FOR_THING_CARD
 end
 
-function cardDescIsAJoker(card_desc)
+function card_desc_is_a_joker(card_desc)
     -- consumes a card-description (result of deck.getObjects)
     -- and produces 'true' if the description is of a joker,
     -- 'false' otherwise
     return card_desc.gm_notes == GM_NOTES_NAME_FOR_THING_CARD
 end
 
-function deckCountJokers(deck)
+function deck_count_jokers(deck)
     -- consumes a deck and produces the number of jokers it contains
     cards = deck.getObjects()
     local count = 0
     for _, card_desc in pairs(cards) do
-        if cardDescIsAJoker(card_desc) then count = count + 1 end
+        if card_desc_is_a_joker(card_desc) then count = count + 1 end
     end
     return count
 end
 
-function cardIsSuccess(card)
+function card_is_success(card)
     -- consumes a card and produces 'true' if it's
     -- a success, 'false' otherwise
     return card.getGMNotes() == GM_NOTES_NAME_FOR_SUCCESS
 end
 
-function cardCountSuccesses(card)
+function card_count_successes(card)
     -- consumes a card and produces 1 if that card is a success,
     -- 0 otherwise
-    if cardIsSuccess(card) then
+    if card_is_success(card) then
         return 1
     else
         return 0
     end
 end
 
-function cardDescIsSuccess(card_desc)
+function card_desc_is_success(card_desc)
     -- consumes a card_description and produces
     -- true if it represents a success card, false otherwise.
     return card_desc.gm_notes == GM_NOTES_NAME_FOR_SUCCESS
 end
 
-function deckCountSuccesses(deck)
+function deck_count_successes(deck)
     -- consumes a deck and produces the number of successes in it.
     cards = deck.getObjects()
     local count = 0
     for _, card_desc in pairs(cards) do
-        if cardDescIsSuccess(card_desc) then count = count + 1 end
+        if card_desc_is_success(card_desc) then count = count + 1 end
     end
     return count
 end
 --[[ functions helping to manage collision-based objects ]]
-function shouldIgnoreCollisionP(collision_info)
+function should_ignore_collision_p(collision_info)
     if collision_info.collision_object == nil or collision_info.collision_object ==
         self or collision_info.collision_object.getGUID() == nil or
         collision_info.collision_object.tag == "Surface" or

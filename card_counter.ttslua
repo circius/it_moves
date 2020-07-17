@@ -6,16 +6,16 @@ function onLoad()
         --   collision_object    Object
         --   contact_points      Table     {Vector, ...}
         --   relative_velocity   Vector
-        if Global.call("shouldIgnoreCollisionP", collision_info) then
+        if Global.call("should_ignore_collision_p", collision_info) then
             return
         end
         local obj_GUID = collision_info.collision_object.getGUID()
         local obj = getObjectFromGUID(obj_GUID)
-        local count_table = objCountCards(obj)
-        self.setDescription(formatCountTable(count_table))
+        local count_table = object_count_cards(obj)
+        self.setDescription(format_count_table(count_table))
     end
 
-    function formatCountTable(table)
+    function format_count_table(table)
         -- consumes a table with the following keys:
         -- table.count : number of successes and
         -- table.jokers : number of jokers
@@ -30,19 +30,17 @@ function onLoad()
             return string.format(fstring, table.count, table.jokers)
         end
     end
-    -- deck_GUID = "772468"
-    -- deck = getObjectFromGUID(deck_GUID)
-    -- objCountCards(deck)
-    function objCountCards(obj)
+
+    function object_count_cards(obj)
         -- consumes whatever object and produces a table describing
         -- 1) the number of successes it contains and
         -- 2) whether it contains any jokers
         -- if the object can't be counted, the number of successes is
         -- set to -1
-        local item_class = Global.call("getQuasiType", obj)
+        local item_class = Global.call("get_quasi_type", obj)
         if item_class == "Card" or item_class == "Deck" then
-            c = Global.call("countSuccesses", obj)
-            j = Global.call("countJokers", obj)
+            c = Global.call("count_successes", obj)
+            j = Global.call("count_jokers", obj)
         else
             c, j = -1, -1
         end

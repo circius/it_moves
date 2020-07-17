@@ -35,7 +35,7 @@ function onLoad()
     )
 end
 
-handleInput = function (obj, color, input, stillEditing)
+handle_input = function (obj, color, input, stillEditing)
     return true
 end
 
@@ -46,25 +46,25 @@ function pressed()
     local input_value = input_field[1].value
     if input_value == nil then return end
     local input_value_num = tonumber(input_value)
-    if validateInput(input_value_num) then
-        doSetup(7, spawning_zone)
+    if validate_input(input_value_num) then
+        do_setup(7, spawning_zone)
     else
         local fstring = "Players should be between %i and %i, inclusive."
         printToColor(string.format(fstring, min_players, max_players), "Black")
     end
 end
 
-function doSetup(n, pos_vector)
+function do_setup(n, pos_vector)
     -- consumes a number between 6 and 9 and a positions to spawn relative to,
     -- and sets up the board for n players. As a side-effect, destroys self.
-    local deck = spawnInitialDeckForNPlayers(n, pos_vector)
+    local deck = spawn_initial_deck_for_n_players(n, pos_vector)
  --[[    local extra_jokers = spawnDeckOfJokers(pos_vector + Vector(2,0,0))
     setupMissionTrack(n)
     self.destruct() ]]
     return true
 end
 
-function spawnInitialDeckForNPlayers(n, pos_vector)
+function spawn_initial_deck_for_n_players(n, pos_vector)
     -- consumes a number of players N and a position_vector, and produces
     -- an object-reference to the deck which, as a side-effect, it will spawn
     -- at POS_VECTOR.
@@ -78,13 +78,13 @@ function spawnInitialDeckForNPlayers(n, pos_vector)
 end
 
 
-function spawnJoker(pos_vector)
+function spawn_joker(pos_vector)
     -- consumes nothing and spawns a Joker. returns the object-reference
     -- for the joker.
     return joker_infinite_bag.takeObject({})
 end
 
-function validateInput(n)
+function validate_input(n)
     -- consumes an int and checks that it's a valid number of players.
     return min_players <= n and n <= max_players
 end

@@ -8,11 +8,11 @@ end
 
 
 function onUpdate()
-  difficulty_on_board = getDifficultyInZone(board_scripting_zone)
+  difficulty_on_board = get_difficulty_in_zone(board_scripting_zone)
   difficulty_counter.setValue(difficulty_on_board)
 end
 
-function getDifficultyInZone(zone)
+function get_difficulty_in_zone(zone)
   -- consumes a scripting zone reference and produces the total difficulty of all
   -- currently active missions in the zone.
   active_missioncards = scripting_zone_get_all_missioncards(zone)
@@ -23,7 +23,7 @@ function missioncards_get_total_difficulty(missioncards)
   -- consumes a table of missioncards and produces their total difficulty
   total = 0
   for _, card in ipairs(missioncards) do
-    total = total + missionCardGetValue(card)
+    total = total + mission_card_get_value(card)
   end
   return total
 end
@@ -42,23 +42,15 @@ function objects_get_missioncards(t)
     -- printToAll(tostring(table == nil))
     -- printToAll(tostring(pairs(table)))
             for _, object in pairs(t) do
-              if isMissionCardP(object) then
+              if Global.call("is_missioncard_p",object) then
                 table.insert(out, object)
               end
             end
     return out
 end
 
-function missionCardGetValue(card)
+function mission_card_get_value(card)
     -- consumes a mission-card and produces its value on completion
     return tonumber(card.getGMNotes())
 end
 
-function isMissionCardP(any)
-    -- consumes whatever object description and returns 'true' if it's a missioncard,
-    -- false otherwise.
-    -- return true
-    -- match = string.find(any.getName(), "::difficulty")
-    local name_or_nil = any.getName()
-    return string.find(name_or_nil, "diff") ~= nil
-end

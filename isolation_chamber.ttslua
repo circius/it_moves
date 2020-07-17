@@ -26,7 +26,7 @@ function onObjectEnterScriptingZone(zone, enter_object)
     end
 end
 
-function setIsolatedPlayer(str)
+function set_isolated_player(str)
     -- consumes a string representing a player-color and updates
     -- the global variable ISOLATED_PLAYER
     ISOLATED_PLAYER = str

@@ -18,10 +18,10 @@ function pressed(clicked_object, player)
   local my_position = self.getPosition()
   local spawning_zone = my_position + spawn_offset_from_button
   number_of_players = 8
-  deck = spawnDeck(8, spawning_zone)
+  deck = spawn_deck(8, spawning_zone)
 end
 
-function spawnDeck(num_of_players, pos_vector)
+function spawn_deck(num_of_players, pos_vector)
   -- consumes a number of players and a Vector specifying a spawning-
   -- place relative to self, and produces a reference to the playing-deck
   -- that it spawns there.

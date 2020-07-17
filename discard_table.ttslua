@@ -8,7 +8,7 @@ function onCollisionEnter(collision_info)
     if collision_info.collision_object.tag == "Surface" then
       return
     end
-    if Global.call("shouldIgnoreCollisionP", collision_info) then
+    if Global.call("should_ignore_collision_p", collision_info) then
         return
     end
     return handle_collision_enter(collision_info)
