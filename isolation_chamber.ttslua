@@ -9,6 +9,7 @@ function onLoad()
 end
 
 function onObjectEnterScriptingZone(zone, enter_object)
+    if zone.getGUID() ~= PRISON_SCRIPTING_ZONE_GUID then return end
     if not objectIsPlayerToken(enter_object) then
         printToAll("Objects like that can't be prisoners.")
         return false
