@@ -29,12 +29,12 @@ function pressed(clicked_object, player)
     unused_missions = missionsSpawnMissionCard(unused_missions, spawning_zone)
 end
 
-function missionsSpawnMissionCard(unused_missions, pos_vector)
+function missionsSpawnMissionCard(missions_table, pos_vector)
     -- consumes a table of mission-specifications and pops
     -- a missions from it. produces the table without the
     -- mission, and as a side-effect spawns a notecard
     -- representing the mission in the gameworld.
-    if #unused_missions == 0 then
+    if #missions_table == 0 then
         mission_to_spawn = mission_end_of_deck
     else
         mission_to_spawn = table.remove(unused_missions, #unused_missions)
@@ -56,6 +56,7 @@ function missionSpawnMissionCard(mission, pos_vector)
             type = "Notecard",
             position = pos_vector,
             sound = true,
+						scale = Vector(1.5,1.5,1.5),
             callback_function = callback
         }
     )
