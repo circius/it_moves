@@ -70,7 +70,7 @@ function spawnInitialDeckForNPlayers(n, pos_vector)
     -- at POS_VECTOR.
     return deck_infinite_bag.takeObject(
         {   position = pos_vector,
-            callback_function = function () joker_infinite_bag.takeObject({
+            callback_function = function (obj) joker_infinite_bag.takeObject({
                 position = pos_vector,
         })
     end
