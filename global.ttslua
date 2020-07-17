@@ -37,6 +37,15 @@ reverse_game_state = function()
     end
     return get_game_state()
 end
+--[[ predicates ]]
+function is_missioncard_p(any)
+    -- consumes whatever object description and returns 'true' if it's a missioncard,
+    -- false otherwise.
+    -- return true
+    -- match = string.find(any.getName(), "::difficulty")
+    local name_or_nil = any.getName()
+    return string.find(name_or_nil, "diff") ~= nil
+end
 --[[ functions to assist working with "types"]]
 function get_quasi_type(obj)
     -- consumes an object and gets a TTS quasi-type

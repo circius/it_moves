@@ -1,10 +1,10 @@
 --
 function onload(save_state)
-    state = Global.call("getGameState")
-    makeButton(state)
+    state = Global.call("get_game_state")
+    make_button(state)
 end
 
-function makeButton(label)
+function make_button(label)
     self.createButton(
         {
             click_function = "pressed",
