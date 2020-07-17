@@ -1,47 +1,20 @@
 win_cube_GUID = "506978"
-points_to_win_counter_GUID = "28fdfb"
+completed_mission_counter_GUID = "21e8f6"
 
 function onLoad()
     completed_mission_value = 0
-    total_points_to_win = Global.getVar("WINNING_NUMBER_OF_POINTS")
-    points_to_win_counter = getObjectFromGUID(points_to_win_counter_GUID)
+    completed_mission_counter = getObjectFromGUID(completed_mission_counter_GUID)
     win_cube = getObjectFromGUID(win_cube_GUID)
 end
 
 function onUpdate()
-    points_left = total_points_to_win - completed_mission_value
-    points_to_win_counter.setValue(points_left)
-    if points_left <= 0 then
-        win_cube.setState(1)
-    end
+    completed_mission_counter.setValue(#self.getObjects())
 end
 
 function filterObjectEnter(obj)
     -- consumes an object trying to get into the bag and returns
     -- true if the object's a missioncard, false otherwise.
     return isMissionCardP(obj)
-end
-
-function onObjectEnterContainer(container, enter_obj)
-    if container == self then
-        printToAll("processing " .. tostring(enter_obj))
-        increment = missionCardGetValue(enter_obj)
-        completed_mission_value = completed_mission_value + increment
-        printToAll("new completed_mission_value: " .. completed_mission_value)
-    end
-end
-
-function onObjectLeaveContainer(container, leave_object)
-    if container == self then
-        printToAll("bye bye " .. tostring(leave_object))
-        decrement = leave_object.getGMNotes()
-        completed_mission_value = completed_mission_value - decrement
-    end
-end
-
-function missionCardGetValue(missionCard)
-    -- consumes a mission-card and produces its value on completion
-    return tonumber(missionCard.getGMNotes())
 end
 
 function isMissionCardP(any)
