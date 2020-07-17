@@ -1,14 +1,20 @@
---http://steamcommunity.com/sharedfiles/filedetails/?id=924691456
+-- http://steamcommunity.com/sharedfiles/filedetails/?id=924691456
 function onload()
     GM_NOTES_NAME_FOR_THING_CARD = "THE THING"
     GM_NOTES_NAME_FOR_SUCCESS = "S"
     GM_NOTES_NAME_FOR_FAILURE = "F"
-    GAME_STATES = {"Briefing", "Assignments", "Work", "Debrief", "Isolation", "Assimilation"}
+    GAME_STATES = {
+        "Briefing", "Assignments", "Work", "Debrief", "Isolation",
+        "Assimilation"
+    }
     CURRENT_GAME_STATE = 0
     BLINDNESS = false
-    WINNING_NUMBER_OF_POINTS = 30
+    MIN_PLAYERS = 6
+    MAX_PLAYERS = 9
+    ACTUAL_PLAYERS = nil
     --[[ print('Onload!') --]]
 end
+
 --[[ getters ]]
 getGameState = function()
     -- consumes nothing and produces the name of the current game state.
@@ -88,7 +94,6 @@ function cardCountJokers(card)
         return 0
     end
 end
-
 function isAJoker(obj)
     -- consumes an object and produces 'true' if the card's a joker,
     -- false otherwise
@@ -107,9 +112,7 @@ function deckCountJokers(deck)
     cards = deck.getObjects()
     local count = 0
     for _, card_desc in pairs(cards) do
-        if cardDescIsAJoker(card_desc) then
-            count = count + 1
-        end
+        if cardDescIsAJoker(card_desc) then count = count + 1 end
     end
     return count
 end
@@ -141,21 +144,16 @@ function deckCountSuccesses(deck)
     cards = deck.getObjects()
     local count = 0
     for _, card_desc in pairs(cards) do
-        if cardDescIsSuccess(card_desc) then
-            count = count + 1
-        end
+        if cardDescIsSuccess(card_desc) then count = count + 1 end
     end
     return count
 end
 --[[ functions helping to manage collision-based objects ]]
 function shouldIgnoreCollisionP(collision_info)
-    if
-        collision_info.collision_object == nil or collision_info.collision_object == self or
-            collision_info.collision_object.getGUID() == nil or
-            collision_info.collision_object.tag == "Surface" or
-            collision_info.collision_object.tag == "Board" or
-            objectLoaded
-        then
+    if collision_info.collision_object == nil or collision_info.collision_object ==
+        self or collision_info.collision_object.getGUID() == nil or
+        collision_info.collision_object.tag == "Surface" or
+        collision_info.collision_object.tag == "Board" or objectLoaded then
         return true
     else
         return false
@@ -165,6 +163,4 @@ end
     Most of your script code goes here. --]]
 --[[ Lua code. See documentation: http://berserk-games.com/knowledgebase/scripting/ --]]
 --[[ The Update function. This is called once per frame. --]]
-function update()
-    --[[ print('Update loop!') --]]
-end
+function update() --[[ print('Update loop!') --]]end

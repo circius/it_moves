@@ -40,8 +40,7 @@ function playerHasJoker(player)
     -- assumes that each player has only 1 Hand-zone
     if player.getHandCount() < 1 then
         return false
-    elseif
-      player.getHandCount() > 1 then
+    elseif player.getHandCount() > 1 then
         printToAll("hands are misconfigured: ".. tostring(Player) .. " has 2")
         return false
     else
