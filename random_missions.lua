@@ -1,4 +1,4 @@
-local missions={
+missions={
 {
 name = [[Repair equipment]],
 difficulty = 5,
