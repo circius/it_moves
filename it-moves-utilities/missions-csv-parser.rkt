@@ -4,7 +4,7 @@
 (module+ test
   (require rackunit))
 
-(provide csv-path-produce-lua-tables)
+;; (provide csv-path-produce-lua-tables)
 
 ;; a missions-csv is a csv-file with the following columns:
 
@@ -33,12 +33,62 @@
 ;;  initialState: [str]
 ;; }
 
+;; constants
 (define MISSIONS-READER-SPEC '())
-(define REQUIRED-FIELDS '("name" "difficulty" "state_0"))
 
 (define make-missions-csv-reader (make-csv-reader-maker MISSIONS-READER-SPEC))
 
+;; subtable-expr-formatting-functions
+
+; lop-format-name: [List-of Pair] -> Str
+; consumes a list of pairs representing a mission and produces a string
+; representing the desired value of the symbol "name" in a subtable representing
+; that mission.
+(define (lop-format-name lop)
+  (str-represent-as-LUAstring
+   (string-append (cdr (assoc "name" lop)) " :: " (cdr (assoc "difficulty" lop)))))
+
+; lop-format-difficulty: [List-of Pair] -> Str
+; consumes a list of pairs representing a mission and produces a string
+; representing the desired value of the symbol "difficulty" in a subtable representing
+; that mission.
+(define (lop-format-difficulty lop)
+  (lop-format-identity-function lop "difficulty"))
+
+; lop-format-state_0: [List-of Pair] -> Str
+; consumes a list of pairs representing a mission and produces a string
+; representing the desired value of the symbol "state_0" in a subtable representing
+; that mission.v
+(define (lop-format-state_0 lop)
+  (lop-format-identity-as-string lop "state_0"))
+
+; lop-format-identity-function: [List-of Pair], Str -> Str
+; consumes a list of pairs representing a mission and a string which is the car of
+; one of the pairs. Produces the cdr of the corresponding pair.
+(define (lop-format-identity-function lop str)
+  (cdr (assoc str lop)))
+
+; lop-format-identity-as-string: [List-of Pair], Str -> Str
+; consumes a list of pairs representing a mission and a string which is the car of
+; one of the pairs. Produces the cdr of the corresponding pair.
+(define (lop-format-identity-as-string lop str)
+  (str-represent-as-LUAstring (lop-format-identity-function lop str)))
+
+; str-represent-as-LUAstring: str -> str
+; consumes a string and produces its representation as a LUA string. WARNING: very
+; naive, just wraps everything is "[[ ]]"...
+(define (str-represent-as-LUAstring str)
+  (format "[[~a]]" str))
+
+
+; the fields we want to show in the lua mission-specifications, along with their formatting-functions.
+(define REQUIRED-FIELDS-ASSOC `(("name" . ,lop-format-name)
+                                ("difficulty" . ,lop-format-difficulty)
+                                ("state_0" . ,lop-format-state_0)))
+
 ;; auxiliary functions
+
+
 
 ; csv-path-get-lol: missions-csv-path -> [List-of [List-of Any]]
 ; consumes the path of a missions-csv and produces a representation of its data
@@ -65,7 +115,7 @@
   (check-equal? (missions-lol-format-missions-table missions-lol1)
                 "missions={
 {
-name = [[Repair Radio]],
+name = [[Repair Radio :: 4]],
 difficulty = 4,
 state_0 = [[The radio is mysteriously broken.]]
 }
@@ -102,7 +152,7 @@ state_0 = [[The radio is mysteriously broken.]]
 (module+ test
   (define mission-tables-1 "missions={
 {
-name = [[Repair Radio]],
+name = [[Repair Radio :: 4]],
 difficulty = 4,
 state_0 = [[The radio is mysteriously broken.]]
 }
@@ -120,22 +170,20 @@ state_0 = [[The radio is mysteriously broken.]]
 (module+ test
   (check-equal? (mission-lop-format-mission (first missions-lop1))
                 "{
-name = [[Repair Radio]],
+name = [[Repair Radio :: 4]],
 difficulty = 4,
 state_0 = [[The radio is mysteriously broken.]]
 }"))
 (define (mission-lop-format-mission lop)
-  (string-join (for/list
-                   ([pair (in-list lop)]
-                    #:when (field-is-required? (car pair))
-                    )
-                 (format-pair-as-LUA-expr pair))
-               ",\n"
-               #:before-first "{\n"
-               #:after-last "\n}"))
+  (string-join (for/list ([pair (in-list REQUIRED-FIELDS-ASSOC)])
+                 (string-append (car pair) " = " ((cdr pair) lop))
+                 )
+     ",\n"
+     #:before-first "{\n"
+     #:after-last "\n}"))
 
 ;; field-is-required? str -> bool
-;; consumes a string and produces true if the string's one of the REQUIRED-FIELDS,
+;; consumes a string and produces true if the string's one of the cars of the REQUIRED-FIELDS-ASSOC,
 ;; false otherwise.
 (module+ test
   (check-true (field-is-required? "name"))
@@ -146,7 +194,7 @@ state_0 = [[The radio is mysteriously broken.]]
   (check-false (field-is-required? #t))
   (check-false (field-is-required? 'symbol)))
 (define (field-is-required? str)
-  (if (false? (member str REQUIRED-FIELDS)) #f #t))
+  (for/or ([pair (in-list REQUIRED-FIELDS-ASSOC)]) (equal? str (car pair))))
 
 ; format-pair-as-LUA-expr: Pair -> str
 ; consumes a pair and produces a LUA expression expressing the equality of the
@@ -176,6 +224,7 @@ state_0 = [[The radio is mysteriously broken.]]
     [(or (number? expr) (number? (string->number expr))) expr]
     [(string? expr) (format "[[~a]]" expr)]
     [else "nil"]))
+
 
 ; zip: List, List -> List
 ; consumes two lists of equals lengths and zips them together, discarding
