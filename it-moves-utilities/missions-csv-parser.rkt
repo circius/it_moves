@@ -4,7 +4,7 @@
 (module+ test
   (require rackunit))
 
-;; (provide csv-path-produce-lua-tables)
+(provide csv-path-produce-lua-tables)
 
 ;; a missions-csv is a csv-file with the following columns:
 

@@ -1,0 +1,19 @@
+﻿name,difficulty,state_0,depends_on,Location,attachments
+Repair Radio,4,The radio is mysteriously broken.,,Radio Room,
+Refuel Generator,4,"The generator is well over due for refuelling, and will not last long.",,"Generator Shed
+",
+Move Supplies,3,"There is a storm coming, and supplies must be moved inside to the canteen if you are to last through it.",,"Storage Sheds
+",
+Take Shifts,5,The radio is up and running but getting a message out and listening for a reply may take hours in this weather. ,Repair Radio,"Radio Room
+",
+Repair vehicle,4,The snowmobiles have been disabled - that should be looked into and they must be repaired in case help can't be reached.,,Workshop,
+Refuel Generator,6,The generator is down again! It needs fixing and refueling. And why is there blood in here!?,Refuel Generator,Generator Shed,
+Cook food,4,Food should be prepared carefully. We don't know how long we'll have to make it last...,,Canteen,
+Disturbed Dogs,4,The dogs are restless - best calm them down or no-one will get any sleep.,,Kennels,
+Prepare Sled,6,The storm is easing slightly. It might be possible to get out on the sled if we are quick with packing the supplies and feeding the dogs.,Disturbed Dogs,Kennels,
+Follow Trail,7,,Prepare Sled,Kennels,
+Charge Walkie-Talkies,,,,,
+Send Distress Signal,,,,,
+Prepare Helicopter,,,,,
+Clear Helipad,,,,,
+Retrieve Gas Bottles,,,,,
