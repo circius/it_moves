@@ -1,7 +1,12 @@
 --
 function onload(save_state)
-    state = Global.call("get_game_state")
-    make_button(state)
+    current_phase_name = Global.call("format_game_state")
+    make_button(current_phase_name)
+end
+
+function onUpdate()
+    current_phase_name = Global.call("format_game_state")
+    edit_self_label(current_phase_name)
 end
 
 function make_button(label)
@@ -12,7 +17,7 @@ function make_button(label)
             function_owner = self,
             position = {0, 1, 5},
             rotation = {0, 180, 0},
-            width = 4400,
+            width = 5000,
             height = 1200,
             font_size = 1000
         }
