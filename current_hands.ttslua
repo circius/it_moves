@@ -1,18 +1,29 @@
 function onUpdate()
-    local players = Player.getPlayers()
-    hands_string = format_players(players)
-    self.setDescription(hands_string)
+    updateDescription()
 end
 
-function format_players(players)
-    -- consumes a list of players, and produces a string describing them.
+function updateDescription()
+    -- consumes nothing, and updates my description to reflect the
+    -- hands of seated players.
+    local seated_player_colors = getSeatedPlayers()
+    local hands_string = format_player_colors(seated_player_colors)
+    return self.setDescription(hands_string)
+end
+
+function format_player_colors(player_colors)
+    -- consumes a list of player-colors (strings), and produces a string describing them.
     local str = "players:\n"
-    for _, player in ipairs(players) do
-        if player.color ~= "Black" then
-            str = str .. format_player(player)
+    if #player_colors == 0 then
+        return str .. "none"
+    else 
+        for _, player_color in ipairs(player_colors) do
+            if player_color ~= "Black" then
+                player = Player[player_color]
+                str = str .. format_player(player)
+            end
         end
-    end
     return str
+    end
 end
 
 function format_player(player)
@@ -31,12 +42,11 @@ end
 
 function format_hand(hand_objects)
     -- consumes a table of objects and produces a string of
-    -- the names of the objects
+    -- the GMNote-stored names of the objects
     local str = ""
     local fstring = "%s/"
-    for key, val in ipairs(hand_objects) do
-        local object = hand_objects[key]
-        local object_name = object.getName()
+    for _, object in ipairs(hand_objects) do
+        local object_name = object.getGMNotes()
         str = str .. string.format(fstring, object_name)
     end
     return str
