@@ -1,0 +1,1 @@
+("7.7" racket ("30ea9eff2c6a4822d29c1bb7f5bf87aa6148e1af" . "8b1959d00bd926137788c2cb3a641b2f0f818a96") (collects #"csv-reading" #"main.rkt") (collects #"errortrace" #"errortrace-key.rkt") (collects #"racket" #"main.rkt") (collects #"racket" #"runtime-config.rkt") (collects #"rackunit" #"main.rkt"))
