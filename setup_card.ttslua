@@ -3,17 +3,80 @@ require("it_moves/gm_phase_descriptions")
 
 function onLoad()
   phase_descriptions = gm_phase_descriptions
-  update_info(phase_descriptions,"Setup")
+  min_players = Global.getVar('MIN_PLAYERS')
 end
 
-function update_info(phase_descriptions, phase_name)
+function onUpdate()
+  updateSelf()
+end
+
+function updateSelf()
+  number_of_players = #getSeatedPlayers()
+
+  if number_of_players < min_players then
+    return update_info(phase_descriptions, "Pre_Setup", number_of_players, min_players)
+  end
+
+  decksize_for_initial_deal = get_initial_deal(number_of_players)
+  total_difficulty_for_table = get_total_difficulty_for_table(number_of_players)
+
+  return update_info(phase_descriptions,"Setup", decksize_for_initial_deal, total_difficulty_for_table)
+end
+
+function get_initial_deal(n)
+  -- consumes a number of players and produces the proper size of the 
+  -- deck for the initial deal.
+  return 4 * n
+end
+
+function get_total_difficulty_for_table(n)
+  -- consumes a number of palyers and produces the minimum difficulty 
+  -- that should be on the table at any one time
+  return n * 2
+end
+
+function update_info(phase_descriptions, phase_name, ...)
   -- consumes the name of the current phase and  a table
-  -- of phase-descriptions, indexed by phase name, and produces
-  -- a reference to myself. As a side-effect, updates
+  -- of phase-descriptions, indexed by phase name, and  
+  -- an arbitrary number of values corresponding to the 
+  -- number of variables in the phase-description, if any,
+  -- and produces a reference to myself. As a side-effect, updates
   -- the info on my face to match the phase.
   phase_description = phase_descriptions[phase_name]
-  title, description = phase_description["title"], phase_description["summary"]
+  title, fstring = phase_description["title"], phase_description["summary"]
+  local args = {...}
+  summary = string.format(fstring, unpack(args))
   self.setName(title)
-  self.setDescription(description)
+  self.setDescription(summary)
   return self
 end
+
+
+-- (4 x # of players), with 1 joker.
+--     iii. from that deck, deal 4 cards to each player.
+--     iv. generate and place mission cards until their total difficulty > (2 * #players)
+
+-- Isolation={
+--     title="Isolation",
+--     summary=[[
+--     instruct the players that:
+--     i. if any player wants to isolate another player, they can call for a vote.
+--     ii. if a second layer supports the first, then players will vote on the matter.
+--      - if there is a vote, each player places 0-1 cards near the completion tracker.
+--      - if the number of successes played is >= (#players/2) then the isolation takes place.
+--     iii. if someone was isolated, remind the players of the isolation rules.
+--     ]],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
