@@ -1,4 +1,4 @@
-require("it_moves/random_missions") -- provides "missions"
+require("it_moves/missions_dependencies") -- provides "missions"
 
 function onload(save_state)
     unused_missions = missions

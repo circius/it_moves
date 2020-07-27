@@ -5,12 +5,12 @@ function onLoad()
     ISOLATED_PLAYER = NO_ONE
     status_pyramid = getObjectFromGUID(STATUS_PYRAMID_GUID)
     status_pyramid.setColorTint(NO_ONE)
-    updatePrisonStatusPyramid()
+    update_prison_status_pyramid()
 end
 
 function onObjectEnterScriptingZone(zone, enter_object)
     if zone.getGUID() ~= PRISON_SCRIPTING_ZONE_GUID then return end
-    if not objectIsPlayerToken(enter_object) then
+    if not object_is_player_token(enter_object) then
         printToAll("Objects like that can't be prisoners.")
         return false
     elseif ISOLATED_PLAYER ~= NO_ONE then
@@ -20,8 +20,8 @@ function onObjectEnterScriptingZone(zone, enter_object)
         return
     else
         prisoner_color = enter_object.getName()
-        setIsolatedPlayer(prisoner_color)
-        updatePrisonStatusPyramid()
+        set_isolated_player(prisoner_color)
+        update_prison_status_pyramid()
         return true
     end
 end
@@ -33,7 +33,7 @@ function set_isolated_player(str)
     return ISOLATED_PLAYER
 end
 
-function updatePrisonStatusPyramid()
+function update_prison_status_pyramid()
     -- consumes nothing and updates the prison status pyramid to match
     -- the current ISOLATED_PLAYER
     status_pyramid.setColorTint(ISOLATED_PLAYER)
@@ -44,14 +44,14 @@ function onObjectLeaveScriptingZone(zone, leave_object)
     if zone.getGUID() ~= PRISON_SCRIPTING_ZONE_GUID then
         return false
     end
-    if not objectIsPlayerToken(leave_object) then
+    if not object_is_player_token(leave_object) then
         return false
     end
     if not playerIsCurrentlyImprisonedP(leave_object.getName()) then
         return false
     end
     ISOLATED_PLAYER = NO_ONE
-    updatePrisonStatusPyramid()
+    update_prison_status_pyramid()
     return true
 end
 
@@ -61,7 +61,7 @@ function playerIsCurrentlyImprisonedP(player_color)
     return player_color == ISOLATED_PLAYER
 end
 
-function objectIsPlayerToken(obj)
+function object_is_player_token(obj)
     -- consumes whatever object and produces 'true' if the object is
     -- a player token, false otherwise
     return obj.getDescription() == "Player token"
