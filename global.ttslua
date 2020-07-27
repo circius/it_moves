@@ -20,11 +20,23 @@ get_game_state = function()
     -- consumes nothing and produces the name of the current game state.
     return GAME_STATES[CURRENT_GAME_STATE + 1]
 end
+
+format_game_state = function()
+    -- utility function which produces a string describing the current game
+    -- state in the format "PHASE NUMBER - PHASE NAME"
+    -- example: "1 - Briefing"
+    fstring = "%i: %s"
+    current_state = get_game_state()
+    current_state_number = CURRENT_GAME_STATE + 1
+    return string.format(fstring, current_state_number, current_state)
+end
+
 --[[ setters ]]
 advance_game_state = function()
-    --- consumes nothing and advances the current game state
+    --- consumes nothing and advances the current game state.
+    --- returns a formatted description of the new game state.
     CURRENT_GAME_STATE = (CURRENT_GAME_STATE + 1) % #GAME_STATES
-    return get_game_state()
+    return format_game_state()
 end
 
 reverse_game_state = function()
