@@ -1,4 +1,4 @@
-require("it_moves/missions_dependencies") -- provides "missions"
+require("it_moves/random_missions") -- provides "missions"
 
 function onload(save_state)
     unused_missions = missions
@@ -8,7 +8,7 @@ function onload(save_state)
         state_0 = [[If you still need missions,
 												 you'll have to write them up yourself.]]
     }
-    spawn_offset_from_button = vector(0, 8, 5)
+    spawn_offset_from_button = vector(-6.5, 8, 4)
     self.createButton(
         {
             click_function = "pressed",
@@ -37,7 +37,7 @@ function missions_spawn_missioncard(missions_table, pos_vector)
     if #missions_table == 0 then
         mission_to_spawn = mission_end_of_deck
     else
-        mission_to_spawn = table.remove(unused_missions, #unused_missions)
+        mission_to_spawn = table.remove(unused_missions, math.random( #unused_missions ))
     end
     printToAll("spawning mission " .. mission_to_spawn["name"])
     mission_spawn_mission_card(mission_to_spawn, pos_vector)
