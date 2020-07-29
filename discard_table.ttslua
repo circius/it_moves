@@ -27,7 +27,6 @@ end
 function do_discards(obj)
     -- consumes a card or a deck and destroys all the jokers it touches
     local item_class = Global.call("get_quasi_type", obj)
-    printToAll(item_class)
     if item_class == "CardCustom" then
         return card_do_discards(obj)
     elseif item_class == "Deck" then

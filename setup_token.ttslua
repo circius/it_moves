@@ -13,10 +13,6 @@ function onLoad()
     success_infinite_bag = getObjectFromGUID(success_infinite_bag_GUID)
     failure_infinite_bag = getObjectFromGUID(failure_infinite_bag_GUID)
 
-    printToAll( "assimilation bag" .. tostring(assimilation_infinite_bag) .. "infinite bag" .. tostring(success_infinite_bag) .. "failure bag" .. tostring(failure_infinite_bag))
-
-    printToAll(tostring(deck_area_scripting_zone))
-
     min_players, max_players = Global.getVar("MIN_PLAYERS"), Global.getVar("MAX_PLAYERS")
 
     self.createInput({
@@ -90,7 +86,6 @@ end
 function spawn_n_cards_from_bag(n, bag)
     -- consumes an integer n and a bag of cards and spawns that n cards
     -- from the bag into the deck area, giving it, first,  produces nothing.
-    printToAll("spawning from " .. bag.getName())
     for i = 1, n do
         bag.takeObject({
             position = deck_area_position + Vector(0,2,0)
