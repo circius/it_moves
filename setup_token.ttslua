@@ -1,15 +1,26 @@
 --[[ INCOMPLETE / BUGGY, HOW DOES SPAWNING WORK. !!! ]]--
-
 function onLoad()
-    deck_infinite_bag_GUID = "a1566f"
-    joker_infinite_bag_GUID = "dae3f3"
-    deck_infinite_bag = getObjectFromGUID(deck_infinite_bag_GUID)
-    joker_infinite_bag = getObjectFromGUID(joker_infinite_bag_GUID)
+    assimilation_infinite_bag_GUID = "013d1b"
+    success_infinite_bag_GUID = "058e12"
+    failure_infinite_bag_GUID = "291b33"
+
+    deck_area_scripting_zone_GUID = "d6a3af"
+    deck_area_scripting_zone = getObjectFromGUID(deck_area_scripting_zone_GUID)
+    printToAll(tostring(deck_area_scripting_zone))
+    deck_area_position = deck_area_scripting_zone.getPosition()
+
+    assimilation_infinite_bag = getObjectFromGUID(assimilation_infinite_bag_GUID)
+    success_infinite_bag = getObjectFromGUID(success_infinite_bag_GUID)
+    failure_infinite_bag = getObjectFromGUID(failure_infinite_bag_GUID)
+
+    printToAll( "assimilation bag" .. tostring(assimilation_infinite_bag) .. "infinite bag" .. tostring(success_infinite_bag) .. "failure bag" .. tostring(failure_infinite_bag))
+
+    printToAll(tostring(deck_area_scripting_zone))
 
     min_players, max_players = Global.getVar("MIN_PLAYERS"), Global.getVar("MAX_PLAYERS")
 
     self.createInput({
-        input_function = "handleInput",
+        input_function = "handle_input",
         function_owner = self,
         label = "# of players",
         position = Vector(0,1,3),
@@ -35,53 +46,57 @@ function onLoad()
     )
 end
 
-handle_input = function (obj, color, input, stillEditing)
+function handle_input(obj, color, input, stillEditing)
     return true
 end
 
 function pressed()
-    local my_position = self.getPosition()
-    local spawning_zone = my_position + spawn_offset_from_button
     local input_field = self.getInputs()
     local input_value = input_field[1].value
     if input_value == nil then return end
     local input_value_num = tonumber(input_value)
     if validate_input(input_value_num) then
-        do_setup(7, spawning_zone)
+        do_setup(7)
     else
         local fstring = "Players should be between %i and %i, inclusive."
         printToColor(string.format(fstring, min_players, max_players), "Black")
     end
 end
 
-function do_setup(n, pos_vector)
-    -- consumes a number between 6 and 9 and a positions to spawn relative to,
-    -- and sets up the board for n players. As a side-effect, destroys self.
-    local deck = spawn_initial_deck_for_n_players(n, pos_vector)
- --[[    local extra_jokers = spawnDeckOfJokers(pos_vector + Vector(2,0,0))
-    setupMissionTrack(n)
-    self.destruct() ]]
+function do_setup(n)
+    -- consumes a number between 6 and 9, and sets up the board for n players.
+    -- As a side-effect, destroys self.
+    spawn_initial_deck_for_n_players(n)
+    destroyObject(success_infinite_bag)
+    destroyObject(failure_infinite_bag)
+    destroyObject(self)
     return true
 end
 
-function spawn_initial_deck_for_n_players(n, pos_vector)
-    -- consumes a number of players N and a position_vector, and produces
-    -- an object-reference to the deck which, as a side-effect, it will spawn
-    -- at POS_VECTOR.
-    return deck_infinite_bag.takeObject(
-        {   position = pos_vector,
-            callback_function = function (obj) joker_infinite_bag.takeObject({
-                position = pos_vector,
-        })
-    end
-})
+function spawn_initial_deck_for_n_players(n)
+    -- consumes a number of players N and produces an object-reference to the deck
+    -- which, as a side-effect, it will spawn at the position of the deck_area.
+
+    local total_cards = 52 -- this could be made to depend on n
+    local ratio_of_successes = 1/2
+    local number_of_successes = math.floor(total_cards * ratio_of_successes)
+    local number_of_failures = total_cards - number_of_successes
+    local successes = spawn_n_cards_from_bag(number_of_successes, success_infinite_bag)
+    local failures = spawn_n_cards_from_bag(number_of_failures, failure_infinite_bag)
+    return 
 end
 
 
-function spawn_joker(pos_vector)
-    -- consumes nothing and spawns a Joker. returns the object-reference
-    -- for the joker.
-    return joker_infinite_bag.takeObject({})
+function spawn_n_cards_from_bag(n, bag)
+    -- consumes an integer n and a bag of cards and spawns that n cards
+    -- from the bag into the deck area, giving it, first,  produces nothing.
+    printToAll("spawning from " .. bag.getName())
+    for i = 1, n do
+        bag.takeObject({
+            position = deck_area_position + Vector(0,2,0)
+        })
+    end
+    return
 end
 
 function validate_input(n)
