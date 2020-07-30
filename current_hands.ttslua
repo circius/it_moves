@@ -12,7 +12,7 @@ end
 
 function format_player_colors(player_colors)
     -- consumes a list of player-colors (strings), and produces a string describing them.
-    local str = "players:\n"
+    local str = ""
     if #player_colors == 0 then
         return str .. "none"
     else 
@@ -28,7 +28,7 @@ end
 
 function format_player(player)
     -- consumes a player and produces a string describing its state
-    local fstring = "Player: %s; handsize: %i; hand: %s \n"
+    local fstring = "%s :: handsize = %i :: hand = %s \n"
     colour = player.color
     handcount = player.getHandCount()
     if handcount > 0 then
