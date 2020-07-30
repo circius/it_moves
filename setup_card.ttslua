@@ -25,8 +25,8 @@ end
 
 function get_initial_deal(n)
   -- consumes a number of players and produces the proper size of the 
-  -- deck for the initial deal.
-  return 4 * n
+  -- deck for the initial deal, excluding the assimilation card.
+  return (4 * n) - 1
 end
 
 function get_total_difficulty_for_table(n)
