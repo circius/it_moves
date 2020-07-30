@@ -1,11 +1,17 @@
 function onLoad()
+    missions_remaining_indicator_GUID = "a8880c"
+    missions_remaining_indicator = getObjectFromGUID(missions_remaining_indicator_GUID)
+
+    fifteen_missions_until_rescue_zone_GUID = "2bd444"
+    fifteen_missions_until_rescue_zone = getObjectFromGUID(fifteen_missions_until_rescue_zone_GUID)
+    fifteen_missions_until_rescue_zone_position = fifteen_missions_until_rescue_zone.getPosition()
+
     assimilation_infinite_bag_GUID = "013d1b"
     success_infinite_bag_GUID = "058e12"
     failure_infinite_bag_GUID = "291b33"
 
     deck_area_scripting_zone_GUID = "d6a3af"
     deck_area_scripting_zone = getObjectFromGUID(deck_area_scripting_zone_GUID)
-
     deck_area_position = deck_area_scripting_zone.getPosition()
 
     assimilation_infinite_bag = getObjectFromGUID(assimilation_infinite_bag_GUID)
@@ -27,6 +33,7 @@ function onLoad()
         tooltip = "I can handle inputs between 6 and 9.",
         validation = 2,
     })
+
     self.createButton(
         {
             click_function = "pressed",
@@ -64,8 +71,20 @@ function do_setup(n)
     spawn_initial_deck_for_n_players(n)
     destroyObject(success_infinite_bag)
     destroyObject(failure_infinite_bag)
+
+    setup_mission_indicator_for_n_players(n)
+
     destroyObject(self)
     return true
+end
+
+
+function setup_mission_indicator_for_n_players(n)
+    -- consumes a number of players n and sets up the mission indicator 
+    -- in the appropriate place 
+    -- note that for now we always give the players 15 missions to complete.
+    missions_remaining_indicator.setPositionSmooth(fifteen_missions_until_rescue_zone_position)
+    return
 end
 
 function spawn_initial_deck_for_n_players(n)
