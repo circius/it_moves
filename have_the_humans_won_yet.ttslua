@@ -1,0 +1,32 @@
+function onLoad()
+    missions_remaining_indicator_GUID = "a8880c"
+
+    winning_zone_GUID = "3216b0"
+    winning_zone = getObjectFromGUID(winning_zone_GUID)
+
+    humans_won_indicator_GUID = "506978"
+    humans_won_indicator = getObjectFromGUID(humans_won_indicator_GUID)
+
+    HUMANS_WON_TINT = Color(0,255,0,100)
+    HUMANS_HAVE_NOT_WON_TINT = Color(255,0,0,100)
+
+    self.setColorTint(HUMANS_HAVE_NOT_WON_TINT)
+end
+
+
+function onObjectEnterScriptingZone(zone, enter_object)
+    if zone.getGUID() ~= winning_zone_GUID then return end
+    if enter_object.getGUID() == missions_remaining_indicator_GUID then
+        humans_won_indicator.setColorTint(HUMANS_WON_TINT)
+    end
+return
+end 
+
+        
+function onObjectLeaveScriptingZone(zone, leave_object)
+    if zone.getGUID() ~= winning_zone_GUID then return end 
+    if leave_object.getGUID() == missions_remaining_indicator_GUID then
+        humans_won_indicator.setColorTint(HUMANS_HAVE_NOT_WON_TINT)
+    end
+return
+end
