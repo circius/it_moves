@@ -12,7 +12,7 @@ function onload()
     MIN_PLAYERS = 6
     MAX_PLAYERS = 9
     ACTUAL_PLAYERS = nil
-    TOTAL_CARDS_IN_DECK = 52
+    TOTAL_CARDS_IN_DECK = 52 -- unreliable above ~60. depends on decks 291b33, 058e12 ingame
     RATIO_OF_SUCCESS_TO_FAILURE = 2/3
     --[[ print('Onload!') --]]
 end
