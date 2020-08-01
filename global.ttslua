@@ -4,8 +4,8 @@ function onload()
     GM_NOTES_NAME_FOR_SUCCESS = "S"
     GM_NOTES_NAME_FOR_FAILURE = "F"
     GAME_STATES = {
-        "Briefing", "Assignments", "Work", "Debrief", "Isolation",
-        "Assimilation", 
+        "Briefing", "Assignments", "Work", "Debrief", "Assimilation",
+        "Isolation"
     }
     CURRENT_GAME_STATE = 1
     BLINDNESS = false

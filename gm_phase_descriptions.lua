@@ -59,18 +59,8 @@ Debrief={
     ]],
     number_of_dynamic_terms = 0,
   },
-  Isolation={
-    title="5: Isolation. Instruct the players that:",
-    summary=[[
-1: A vote takes place if any player calls for it, and another seconds it.
-2: if there is a vote, each player places 0-1 cards near the completion tracker.
-3:  if the number of successes played is >= {#players / 2} then the isolation takes place.
-3: hif someone was isolated, place their token in the isolation tent, and remind of rules.
-]],
-    number_of_dynamic_terms = 0,
-  },
   Assimilation={
-    title="6: Assimilation",
+    title="5: Assimilation",
     summary=[[
 1: blindfold all the players (resolution button)
 2: then say, "If you assimilated someone in the current round, take your blindfold off and indicate them with your mouse." ALWAYS DO THIS.
@@ -78,5 +68,16 @@ Debrief={
 4: next turn, that person will receive an assimilation card.
 5: then say, "If you are not currently wearing a blindfold, blindfold yourself."
 ]]
+  },
+  Isolation={
+    title="6: Isolation. Instruct the players that:",
+    summary=[[
+1: they should remove their blindfolds.
+2: Anyone that wants to isolate someone needs a seconder.
+3: If a vote is force, each player may place an action card near the completion tracker.
+4: If the number of successes played is >= {#players / 2} then the isolation takes place.
+5: If someone was isolated, place their token in the isolation tent, and remind of rules.
+]],
+    number_of_dynamic_terms = 0,
   }
 }
