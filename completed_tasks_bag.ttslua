@@ -25,7 +25,6 @@ function count_mission_cards(self)
    -- consumes self (a bag) and counts the number of mission cards I hold
    -- expensive, ish.
    object_descs = self.getObjects()
-   printToAll(#object_descs)
    count = 0
    for _, desc in ipairs(object_descs) do
       if Global.call("is_taskcard_desc_p", desc) then

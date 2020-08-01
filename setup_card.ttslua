@@ -12,7 +12,6 @@ end
 
 function updateSelf()
   number_of_players = #getSeatedPlayers()
-  printToAll(number_of_players)
   if number_of_players < min_players then
     return update_info(phase_descriptions, "Pre_Setup", number_of_players, min_players)
   end

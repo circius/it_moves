@@ -14,7 +14,7 @@ function onload()
     ACTUAL_PLAYERS = nil
     TOTAL_CARDS_IN_DECK = 52 -- unreliable above ~60. depends on decks 8938e8, 3d5c94 ingame
     RATIO_OF_SUCCESS_TO_FAILURE = 6/10
-    MAPPING_PLAYERS_TO_MISSIONS = {
+    MISSIONS_PER_PLAYERS = {
         [6] = 12,
         [7] = 13,
         [8] = 14,
@@ -42,16 +42,18 @@ end
 --[[ setters ]]
 missions_to_complete = function(nOrNil)
     -- consumes a NumberOrNil and produces nil, if the NumberOrNil is
-    -- nil, or a number of missions the players must complete, based on 
+    -- nil, or a number of missions the players must complete, based on
     -- their number, n.
     if nOrNil == nil then
         return nil
-    elseif (nOrNil < MIN_PLAYERS) | (nOrNil > MAX_PLAYERS) then
+    elseif (nOrNil < MIN_PLAYERS) or (nOrNil > MAX_PLAYERS) then
         printToAll("invalid call to missions_to_complete: n out of bounds")
         return nil
-    else 
-        return MAPPING_PLAYERS_TO_MISSIONS[n]
+    else
+        local number_of_missions = MISSIONS_PER_PLAYERS[nOrNil]
+        return number_of_missions
     end
+    return "nothing"
 end
 
 
@@ -199,7 +201,7 @@ function deck_count_successes(deck)
 end
 --[[ functions helping to manage collision-based objects ]]
 function should_ignore_collision_p(collision_info)
-    if collision_info.collision_object == nil or 
+    if collision_info.collision_object == nil or
         collision_info.collision_object == self or
         collision_info.collision_object.getGUID() == nil or
         collision_info.collision_object.tag == "Surface" or

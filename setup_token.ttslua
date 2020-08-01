@@ -72,8 +72,8 @@ function do_setup(n)
     destroyObject(success_infinite_bag)
     destroyObject(failure_infinite_bag)
 
-
-
+    local mission_target = Global.call("missions_to_complete", n)
+    Global.setVar("MISSIONS_TO_COMPLETE", mission_target)
     setup_task_indicator_for_n_players(n)
 
     destroyObject(self)
