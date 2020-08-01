@@ -22,7 +22,7 @@ function format_count_table(table)
     else
         fstring = [[
     Number of successes: %i
-    Number of jokers: %i
+    Number of assimilation cards: %i
     ]]
         return string.format(fstring, table.count, table.jokers)
     end
