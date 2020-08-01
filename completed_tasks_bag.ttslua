@@ -8,8 +8,11 @@ function onLoad()
 end
 
 function onUpdate()
-   num_mission_cards = count_mission_cards(self) -- expensive!
-   completed_task_counter.setValue(num_mission_cards)
+   local num_mission_cards = count_mission_cards(self) -- expensive!
+   local missions_to_complete = Global.getVar('MISSIONS_TO_COMPLETE')
+   if missions_to_complete ~= nil then
+      completed_task_counter.setValue(missions_to_complete - num_mission_cards)
+   end
 end
 
 function filterObjectEnter(obj)

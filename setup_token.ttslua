@@ -72,6 +72,8 @@ function do_setup(n)
     destroyObject(success_infinite_bag)
     destroyObject(failure_infinite_bag)
 
+
+
     setup_task_indicator_for_n_players(n)
 
     destroyObject(self)

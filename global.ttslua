@@ -14,7 +14,13 @@ function onload()
     ACTUAL_PLAYERS = nil
     TOTAL_CARDS_IN_DECK = 52 -- unreliable above ~60. depends on decks 8938e8, 3d5c94 ingame
     RATIO_OF_SUCCESS_TO_FAILURE = 6/10
-    --[[ print('Onload!') --]]
+    MAPPING_PLAYERS_TO_MISSIONS = {
+        [6] = 12,
+        [7] = 13,
+        [8] = 14,
+        [9] = 16
+    }
+    MISSIONS_TO_COMPLETE = nil
 end
 
 --[[ getters ]]
@@ -34,6 +40,21 @@ format_game_state = function()
 end
 
 --[[ setters ]]
+missions_to_complete = function(nOrNil)
+    -- consumes a NumberOrNil and produces nil, if the NumberOrNil is
+    -- nil, or a number of missions the players must complete, based on 
+    -- their number, n.
+    if nOrNil == nil then
+        return nil
+    elseif (nOrNil < MIN_PLAYERS) | (nOrNil > MAX_PLAYERS) then
+        printToAll("invalid call to missions_to_complete: n out of bounds")
+        return nil
+    else 
+        return MAPPING_PLAYERS_TO_MISSIONS[n]
+    end
+end
+
+
 advance_game_state = function()
     --- consumes nothing and advances the current game state.
     --- returns a formatted description of the new game state.

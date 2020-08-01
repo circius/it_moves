@@ -12,7 +12,7 @@ end
 
 function updateSelf()
   number_of_players = #getSeatedPlayers()
-
+  printToAll(number_of_players)
   if number_of_players < min_players then
     return update_info(phase_descriptions, "Pre_Setup", number_of_players, min_players)
   end
@@ -24,21 +24,21 @@ function updateSelf()
 end
 
 function get_initial_deal(n)
-  -- consumes a number of players and produces the proper size of the 
+  -- consumes a number of players and produces the proper size of the
   -- deck for the initial deal, excluding the assimilation card.
   return (4 * n) - 1
 end
 
 function get_total_difficulty_for_table(n)
-  -- consumes a number of palyers and produces the minimum difficulty 
+  -- consumes a number of palyers and produces the minimum difficulty
   -- that should be on the table at any one time
   return n * 2
 end
 
 function update_info(phase_descriptions, phase_name, ...)
   -- consumes the name of the current phase and  a table
-  -- of phase-descriptions, indexed by phase name, and  
-  -- an arbitrary number of values corresponding to the 
+  -- of phase-descriptions, indexed by phase name, and
+  -- an arbitrary number of values corresponding to the
   -- number of variables in the phase-description, if any,
   -- and produces a reference to myself. As a side-effect, updates
   -- the info on my face to match the phase.
