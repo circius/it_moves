@@ -14,43 +14,43 @@ end
 
 function get_difficulty_in_zone(zone)
   -- consumes a scripting zone reference and produces the total difficulty of all
-  -- currently active missions in the zone.
-  active_missioncards = scripting_zone_get_all_missioncards(zone)
-  return missioncards_get_total_difficulty(active_missioncards)
+  -- currently active tasks in the zone.
+  active_taskcards = scripting_zone_get_all_taskcards(zone)
+  return taskcards_get_total_difficulty(active_taskcards)
 end
 
-function missioncards_get_total_difficulty(missioncards)
-  -- consumes a table of missioncards and produces their total difficulty
+function taskcards_get_total_difficulty(taskcards)
+  -- consumes a table of taskcards and produces their total difficulty
   total = 0
-  for _, card in ipairs(missioncards) do
-    total = total + mission_card_get_value(card)
+  for _, card in ipairs(taskcards) do
+    total = total + task_card_get_value(card)
   end
   return total
 end
 
-function scripting_zone_get_all_missioncards(zone)
-  -- consumes a scripting zone and gets all the mission cards within it.
+function scripting_zone_get_all_taskcards(zone)
+  -- consumes a scripting zone and gets all the task cards within it.
   all_objects = zone.getObjects()
-  mission_cards = objects_get_missioncards(all_objects)
-  return mission_cards
+  task_cards = objects_get_taskcards(all_objects)
+  return task_cards
 end
 
-function objects_get_missioncards(t)
+function objects_get_taskcards(t)
   -- consumes a table of objects and produces a table of its members That
-  -- are mission cards.
+  -- are task cards.
     local out = {}
     -- printToAll(tostring(table == nil))
     -- printToAll(tostring(pairs(table)))
             for _, object in pairs(t) do
-              if Global.call("is_missioncard_p",object) then
+              if Global.call("is_taskcard_p",object) then
                 table.insert(out, object)
               end
             end
     return out
 end
 
-function mission_card_get_value(card)
-    -- consumes a mission-card and produces its value on completion
+function task_card_get_value(card)
+    -- consumes a task-card and produces its value on completion
     return tonumber(card.getGMNotes())
 end
 

@@ -50,19 +50,3 @@ function update_info(phase_descriptions, phase_name, ...)
   self.setDescription(summary)
   return self
 end
-
-
--- (4 x # of players), with 1 joker.
---     iii. from that deck, deal 4 cards to each player.
---     iv. generate and place mission cards until their total difficulty > (2 * #players)
-
--- Isolation={
---     title="Isolation",
---     summary=[[
---     instruct the players that:
---     i. if any player wants to isolate another player, they can call for a vote.
---     ii. if a second layer supports the first, then players will vote on the matter.
---      - if there is a vote, each player places 0-1 cards near the completion tracker.
---      - if the number of successes played is >= (#players/2) then the isolation takes place.
---     iii. if someone was isolated, remind the players of the isolation rules.
---     ]],

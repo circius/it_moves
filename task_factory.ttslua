@@ -1,18 +1,18 @@
-require("it_moves/random_missions") -- provides "missions"
+require("it_moves/random_tasks") -- provides "tasks"
 
 function onload(save_state)
-    unused_missions = missions
-    mission_end_of_deck = {
+    unused_tasks = tasks
+    task_end_of_deck = {
         name = "Deck exhausted",
         difficulty = 99,
-        state_0 = [[If you still need missions,
-												 you'll have to write them up yourself.]]
+        state_0 = [[If you still need tasks,
+you'll have to write them up yourself.]]
     }
     spawn_offset_from_button = vector(-6.5, 8, 4)
     self.createButton(
         {
             click_function = "pressed",
-            label = "mission factory",
+            label = "task factory",
             function_owner = self,
             position = {0, 1, 1},
             rotation = {0, 180, 0},
@@ -26,30 +26,30 @@ end
 function pressed(clicked_object, player)
     my_position = self.getPosition()
     spawning_zone = my_position + spawn_offset_from_button
-    unused_missions = missions_spawn_missioncard(unused_missions, spawning_zone)
+    unused_tasks = tasks_spawn_taskcard(unused_tasks, spawning_zone)
 end
 
-function missions_spawn_missioncard(missions_table, pos_vector)
-    -- consumes a table of mission-specifications and pops
-    -- a missions from it. produces the table without the
-    -- mission, and as a side-effect spawns a notecard
-    -- representing the mission in the gameworld.
-    if #missions_table == 0 then
-        mission_to_spawn = mission_end_of_deck
+function tasks_spawn_taskcard(tasks_table, pos_vector)
+    -- consumes a table of task-specifications and pops
+    -- a task from it. produces the table without the
+    -- task, and as a side-effect spawns a notecard
+    -- representing the task in the gameworld.
+    if #tasks_table == 0 then
+        task_to_spawn = task_end_of_deck
     else
-        mission_to_spawn = table.remove(unused_missions, math.random( #unused_missions ))
+        task_to_spawn = table.remove(unused_tasks, math.random( #unused_tasks ))
     end
-    printToAll("spawning mission " .. mission_to_spawn["name"])
-    mission_spawn_mission_card(mission_to_spawn, pos_vector)
-    return unused_missions
+    printToAll("spawning task " .. task_to_spawn["name"])
+    task_spawn_task_card(task_to_spawn, pos_vector)
+    return unused_tasks
 end
 
-function mission_spawn_mission_card(mission, pos_vector)
-    -- consumes a mission-specification and a world-location, and spawns
-    -- a Notecard representing the mission at the world-location. returns
+function task_spawn_task_card(task, pos_vector)
+    -- consumes a task-specification and a world-location, and spawns
+    -- a Notecard representing the task at the world-location. returns
     -- nothing.
     local callback = function(obj)
-        mission_card_write_info(obj, mission)
+        task_card_write_info(obj, task)
     end
     spawnObject(
         {
@@ -63,11 +63,11 @@ function mission_spawn_mission_card(mission, pos_vector)
     return
 end
 
-function mission_card_write_info(notecard, mission)
-    -- consumes a notecard object-reference and a mission-spec and writes
-    -- the mission-spec onto the notecard. return nothing.
-    notecard.setName(mission["name"])
-    notecard.setGMNotes(tostring(mission["difficulty"]))
-    notecard.setDescription(tostring(mission["state_0"]))
+function task_card_write_info(notecard, task)
+    -- consumes a notecard object-reference and a task-spec and writes
+    -- the task-spec onto the notecard. return nothing.
+    notecard.setName(task["name"])
+    notecard.setGMNotes(tostring(task["difficulty"]))
+    notecard.setDescription(tostring(task["state_0"]))
     return
 end

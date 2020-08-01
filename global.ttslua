@@ -5,9 +5,9 @@ function onload()
     GM_NOTES_NAME_FOR_FAILURE = "F"
     GAME_STATES = {
         "Briefing", "Assignments", "Work", "Debrief", "Isolation",
-        "Assimilation"
+        "Assimilation", 
     }
-    CURRENT_GAME_STATE = 0
+    CURRENT_GAME_STATE = 1
     BLINDNESS = false
     MIN_PLAYERS = 6
     MAX_PLAYERS = 9
@@ -50,8 +50,8 @@ reverse_game_state = function()
     return get_game_state()
 end
 --[[ predicates ]]
-function is_missioncard_p(any)
-    -- consumes whatever object description and returns 'true' if it's a missioncard,
+function is_taskcard_p(any)
+    -- consumes whatever object description and returns 'true' if it's a taskcard,
     -- false otherwise.
 
     local name_or_nil = any.getName()
