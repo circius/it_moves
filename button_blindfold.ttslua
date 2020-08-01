@@ -3,12 +3,12 @@ SEEING = color(255, 0, 0, 100)
 BLINDED = color(0, 255, 0, 100)
 
 function onLoad(save_state)
-    self.setName("Button - Resolution")
+    self.setName("Button - Blindfold")
     my_status_block = getObjectFromGUID(guid_status_block)
     self.createButton(
         {
             click_function = "pressed",
-            label = "resolution",
+            label = "blindfold",
             function_owner = self,
             position = {0, 1, 1},
             rotation = {0, 180, 0},
