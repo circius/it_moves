@@ -1,4 +1,4 @@
-missions={
+tasks={
 {
 name = [[Repair equipment :: 5]],
 difficulty = 5,
