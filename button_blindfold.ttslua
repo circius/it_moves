@@ -1,6 +1,7 @@
 guid_status_block = "e071dc"
 SEEING = color(255, 0, 0, 100)
 BLINDED = color(0, 255, 0, 100)
+BLINDNESS = false
 
 function onLoad(save_state)
     self.setName("Button - Blindfold")
