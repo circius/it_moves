@@ -1,6 +1,6 @@
 -- http://steamcommunity.com/sharedfiles/filedetails/?id=924691456
 function onload()
-    GM_NOTES_NAME_FOR_THING_CARD = "THE THING"
+    GM_NOTES_NAME_FOR_THING_CARD = "A"
     GM_NOTES_NAME_FOR_SUCCESS = "S"
     GM_NOTES_NAME_FOR_FAILURE = "F"
     GAME_STATES = {
