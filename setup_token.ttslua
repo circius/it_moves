@@ -7,8 +7,8 @@ function onLoad()
     fifteen_tasks_until_rescue_zone_position = fifteen_tasks_until_rescue_zone.getPosition()
 
     assimilation_infinite_bag_GUID = "013d1b"
-    success_infinite_bag_GUID = "058e12"
-    failure_infinite_bag_GUID = "291b33"
+    success_infinite_bag_GUID = "8938e8"
+    failure_infinite_bag_GUID = "3d5c94"
 
     deck_area_scripting_zone_GUID = "d6a3af"
     deck_area_scripting_zone = getObjectFromGUID(deck_area_scripting_zone_GUID)
