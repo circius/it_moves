@@ -48,9 +48,8 @@ gm_phase_descriptions = {
     number_of_dynamic_terms = 0,
   },
 Debrief={
-    title="4: Debrief",
+    title="4: Debrief. For each task:",
     summary=[[
-    for each task,
     1: gather all the cards played on it into a deck.
     2: put the deck onto the card-counter index card.
     3: decide if the status of the task is "No Progress", "Partially Complete" or "Complete".
@@ -60,9 +59,8 @@ Debrief={
     number_of_dynamic_terms = 0,
   },
   Isolation={
-    title="5: Isolation",
+    title="5: Isolation. Instruct the players that:",
     summary=[[
-    instruct the players that:
     1: if any player wants to isolate another player, they can call for a vote.
     2: if a second layer supports the first, then players will vote on the matter.
      - if there is a vote, each player places 0-1 cards near the completion tracker.
@@ -74,9 +72,8 @@ Debrief={
   Assimilation={
     title="6: Assimilation",
     summary=[[
-    1: blindfold all the players (reslution button)
-    2: then say, "If you assimilated someone in the current round, take your
-      blindfold off and indicate them with your mouse." ALWAYS DO THIS.
+    1: blindfold all the players (resolution button)
+    2: then say, "If you assimilated someone in the current round, take your blindfold off and indicate them with your mouse." ALWAYS DO THIS.
     3: if the Thing did play a joker, and does specify someone, that person is assimilated.
     4: next turn, that person will receive a joker.
     ]]
