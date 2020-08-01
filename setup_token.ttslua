@@ -91,8 +91,8 @@ function spawn_initial_deck_for_n_players(n)
     -- consumes a number of players N and produces an object-reference to the deck
     -- which, as a side-effect, it will spawn at the position of the deck_area.
 
-    local total_cards = 52 -- this could be made to depend on n
-    local ratio_of_successes = 1/2
+    local total_cards = Global.getVar('TOTAL_CARDS_IN_DECK') -- this could be made to depend on n
+    local ratio_of_successes = Global.getVar('RATIO_OF_SUCCESS_TO_FAILURE')
     local number_of_successes = math.floor(total_cards * ratio_of_successes)
     local number_of_failures = total_cards - number_of_successes
     local successes = spawn_n_cards_from_bag(number_of_successes, success_infinite_bag)

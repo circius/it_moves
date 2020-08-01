@@ -12,6 +12,8 @@ function onload()
     MIN_PLAYERS = 6
     MAX_PLAYERS = 9
     ACTUAL_PLAYERS = nil
+    TOTAL_CARDS_IN_DECK = 52
+    RATIO_OF_SUCCESS_TO_FAILURE = 2/3
     --[[ print('Onload!') --]]
 end
 
