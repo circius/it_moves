@@ -51,11 +51,17 @@ reverse_game_state = function()
 end
 --[[ predicates ]]
 function is_taskcard_p(any)
-    -- consumes whatever object description and returns 'true' if it's a taskcard,
+    -- consumes whatever object and returns 'true' if it's a taskcard,
     -- false otherwise.
 
     local name_or_nil = any.getName()
     return string.find(name_or_nil, "::") ~= nil
+end
+function is_taskcard_desc_p(any)
+   -- consumes whatever table and returns "true" if it represents the *description* of
+   -- a taskcard
+   local name_or_nil = any.name
+   return string.find(name_or_nil, "::") ~= nil
 end
 --[[ functions to assist working with "types"]]
 function get_quasi_type(obj)

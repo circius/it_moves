@@ -8,11 +8,25 @@ function onLoad()
 end
 
 function onUpdate()
-    completed_task_counter.setValue(#self.getObjects())
+   num_mission_cards = count_mission_cards(self) -- expensive!
+   completed_task_counter.setValue(#self.getObjects())
 end
 
 function filterObjectEnter(obj)
     -- consumes an object trying to get into the bag and returns
     -- true if the object's a taskcard, false otherwise.
     return Global.call("is_taskcard_p", obj)
+end
+
+function count_mission_cards(self)
+   -- consumes self (a bag) and counts the number of mission cards I hold
+   -- expensive, ish.
+   object_descs = self.getObjects()
+   count = 0
+   for _, val in ipairs(object_descs) do
+      if Global.call("is_taskcard_desc_p", obj) then
+         count = count + 1
+      end
+   end
+   return count
 end
