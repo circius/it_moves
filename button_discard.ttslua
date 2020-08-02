@@ -1,0 +1,150 @@
+discard_zone_GUID = "7093af"
+action_pool_GUID = "d6a3af"
+
+function onload(save_state)
+    discard_zone = getObjectFromGUID(discard_zone_GUID)
+    action_pool = getObjectFromGUID(action_pool_GUID)
+    action_pool_pos = action_pool.getPosition()
+    self.createButton(
+        {
+            click_function = "pressed",
+            label = "discard",
+            function_owner = self,
+            position = {0, 0.3, 1},
+            rotation = {0, 180, 0},
+            width = 1500,
+            height = 600,
+            font_size = 500
+        }
+    )
+end
+
+function pressed()
+    -- consumes nothing, discards jokers in the discard pile,
+    -- shuffles the pile, and moves it to the action card pool.
+    discard_zone_objects = discard_zone.getObjects()
+    discarded = do_discards_from_discard_zone()
+    if discarded ~= false then 
+        shuffle_discards()
+        move_discards_to_action_pool()
+    end
+end
+
+function move_discards_to_action_pool()
+    -- consumes nothing and moves the card or deck in the discard pile to the
+    -- action pool, if there is a card or deck.
+    objects_in_discard_zone = discard_zone.getObjects()
+    if #objects_in_discard_zone > 1 then
+        printToColor("I can only move one item at a time to the action pile...", "Black")
+        return false 
+    elseif #objects_in_discard_zone < 1 then
+        printToColor("Can't move nothing to the action pile...", "Black")
+        return false 
+    end
+    object_to_shuffle = objects_in_discard_zone[1]
+    if not should_be_sent_to_action_pool_P(object_to_shuffle) then
+        printToColor("That doesn't belong in the action pool, I'm leaving it here.", "Black")
+        return false
+    end
+    return objects_in_discard_zone[1].setPositionSmooth(action_pool_pos)
+end
+
+function should_be_sent_to_action_pool_P(obj)
+    -- consumes an object and returns true if it should be sent to 
+    -- the action pool, false otherwise. 
+    return can_do_discard_P(obj)
+end
+
+function can_be_shuffled_P(obj)
+    -- consumes a n object and produces true if the object can be
+    -- shuffled, false otherwise
+    local quasitype = Global.call('get_quasi_type', obj)
+    if quasitype == "Deck" then return true end
+    return false
+end
+
+function shuffle_discards()
+    -- consumes nothing and shuffles the deck in the discard zone, 
+    -- if there is a deck in the discard zone.
+    objects_in_discard_zone = discard_zone.getObjects()
+    if #objects_in_discard_zone > 1 then
+        printToColor("I can only shuffle a single item! Please feed me a deck", "Black")
+        return false 
+    elseif #objects_in_discard_zone < 1 then
+        printToColor("I need something to shuffle! Give me a deck!", "Black")
+        return false 
+    end
+    object_to_shuffle = objects_in_discard_zone[1]
+    if not can_be_shuffled_P(object_to_shuffle) then
+        printToColor("That can't be shuffled! give me a deck...", "Black")
+        return false
+    end
+    return objects_in_discard_zone[1].shuffle()
+end
+
+function can_do_discard_P(obj)
+    discardables = {"CardCustom", "Deck"}
+    object_quasitype = Global.call("get_quasi_type", obj)
+    for _, val in ipairs(discardables) do
+        if val == object_quasitype then
+            return true
+        end
+    end
+    return false 
+end
+
+function do_discards_from_discard_zone()
+    -- consumes nothing, gets a list of all the objects in the
+    -- discard zone, and destroys all the assimilation cards  it sees.
+    -- assumes that there is at least one, and only one object, a deck 
+    -- or a card, in the zone.
+    discard_zone_objects = discard_zone.getObjects()
+    if #discard_zone_objects < 1 then
+        printToColor("Give me something to discard! A deck or a card by preference.", "Black")
+        return false
+    elseif #discard_zone_objects > 1 then 
+        printToColor("There must only be one object, a card or a deck, in the discard pile. Aborting...", "Black")
+        return false 
+    elseif not can_do_discard_P(discard_zone_objects[1]) then
+        printToColor("I can't discard that, give me a deck or a card.", "Black")
+        return false 
+    end
+    card_or_deck_in_discard_zone = discard_zone_objects[1]
+    return object_do_discards(card_or_deck_in_discard_zone)
+end
+
+
+function object_do_discards(obj)
+    -- consumes a card or a deck and destroys all the jokers it touches
+    local item_class = Global.call("get_quasi_type", obj)
+    if item_class == "CardCustom" then
+        return card_do_discards(obj)
+    elseif item_class == "Deck" then
+        return deck_do_discards(obj)
+    else
+        return false
+    end
+end
+
+
+function card_do_discards(card)
+    -- examines a card and destroys it if it's a joker.
+    if Global.call("is_a_joker", card) then
+        destroyObject(card)
+    end
+    return true
+end
+
+function deck_do_discards(deck)
+    -- examines a deck and destroys all its jokers.
+    for _, card_desc in pairs(deck.getObjects()) do
+        if Global.call("card_desc_is_a_joker", card_desc) then
+            take_params = {
+                guid = card_desc.guid,
+                callback_function = card_do_discards
+            }
+            local joker_card = deck.takeObject(take_params)
+        end
+    end
+    return true
+end
