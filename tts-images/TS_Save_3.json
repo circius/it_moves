@@ -1,7 +1,7 @@
 {
   "SaveName": "The thing big table",
   "GameMode": "scripting sandbox",
-  "Date": "8/2/2020 2:23:10 PM",
+  "Date": "8/2/2020 2:40:15 PM",
   "Gravity": 0.5,
   "PlayArea": 0.5,
   "GameType": "",
@@ -75,9 +75,9 @@
           "rotX": 0.0,
           "rotY": 90.0,
           "rotZ": 0.0,
-          "scaleX": 15.2234039,
+          "scaleX": 15.2240362,
           "scaleY": 11.8970528,
-          "scaleZ": 6.421469
+          "scaleZ": 6.42180872
         }
       },
       {
@@ -89,9 +89,9 @@
           "rotX": 0.0,
           "rotY": 90.0,
           "rotZ": 0.0,
-          "scaleX": 15.2233982,
+          "scaleX": 15.2240343,
           "scaleY": 11.8970528,
-          "scaleZ": 6.421469
+          "scaleZ": 6.42180872
         }
       },
       {
@@ -103,9 +103,9 @@
           "rotX": 0.0,
           "rotY": 268.036743,
           "rotZ": 0.0,
-          "scaleX": 19.6325016,
+          "scaleX": 19.6323471,
           "scaleY": 7.0,
-          "scaleZ": 7.971838
+          "scaleZ": 7.971804
         }
       },
       {
@@ -117,9 +117,9 @@
           "rotX": 0.0,
           "rotY": 269.702759,
           "rotZ": 0.0,
-          "scaleX": 17.1987686,
+          "scaleX": 17.1996651,
           "scaleY": 7.0,
-          "scaleZ": 9.430951
+          "scaleZ": 9.43131351
         }
       },
       {
@@ -131,7 +131,7 @@
           "rotX": 0.0,
           "rotY": 182.737534,
           "rotZ": 0.0,
-          "scaleX": 24.4343052,
+          "scaleX": 24.4345837,
           "scaleY": 7.0,
           "scaleZ": 10.2576084
         }
@@ -145,9 +145,9 @@
           "rotX": 0.0,
           "rotY": 178.572525,
           "rotZ": 0.0,
-          "scaleX": 19.7622261,
+          "scaleX": 19.76343,
           "scaleY": 7.0,
-          "scaleZ": 9.143565
+          "scaleZ": 9.144125
         }
       },
       {
@@ -159,9 +159,9 @@
           "rotX": 0.0,
           "rotY": 178.572525,
           "rotZ": 0.0,
-          "scaleX": 22.1845684,
+          "scaleX": 22.1858521,
           "scaleY": 7.0,
-          "scaleZ": 10.0916367
+          "scaleZ": 10.0923424
         }
       },
       {
@@ -171,9 +171,9 @@
           "posY": 4.461217,
           "posZ": -33.3139839,
           "rotX": 0.0,
-          "rotY": 1.31018817,
+          "rotY": 1.31018829,
           "rotZ": 0.0,
-          "scaleX": 22.5479851,
+          "scaleX": 22.548111,
           "scaleY": 7.0,
           "scaleZ": 8.85415649
         }
@@ -189,7 +189,7 @@
           "rotZ": 0.0,
           "scaleX": 19.4602566,
           "scaleY": 7.0,
-          "scaleZ": 8.606538
+          "scaleZ": 8.60639
         }
       }
     ]
@@ -390,7 +390,7 @@
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 255.001648,
+        "r": 255.0018,
         "g": 0.0,
         "b": 0.0
       },
@@ -417,15 +417,15 @@
         "posX": 14.8069572,
         "posY": 1.65673554,
         "posZ": -28.5191269,
-        "rotX": -2.76568721E-06,
-        "rotY": 0.028559519,
+        "rotX": -2.76568812E-06,
+        "rotY": 0.028559532,
         "rotZ": 6.855381E-07,
         "scaleX": 0.8750001,
         "scaleY": 0.8750001,
         "scaleZ": 0.8750001
       },
       "Nickname": "Current hands",
-      "Description": "Purple :: handsize = 0 :: hand =  \nBlue :: handsize = 0 :: hand =  \n",
+      "Description": "Purple :: handsize = 0 :: hand =  \nGreen :: handsize = 0 :: hand =  \n",
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 1.0,
@@ -455,7 +455,7 @@
         "posX": 14.7803183,
         "posY": 1.65498459,
         "posZ": -23.4667015,
-        "rotX": -1.520809E-06,
+        "rotX": -1.52080941E-06,
         "rotY": 0.016326569,
         "rotZ": 1.58964951E-06,
         "scaleX": 0.850000143,
@@ -596,9 +596,9 @@
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.249996781,
-        "g": 0.249996781,
-        "b": 0.249996781
+        "r": 0.249996722,
+        "g": 0.249996722,
+        "b": 0.249996722
       },
       "Locked": true,
       "Grid": true,
@@ -623,7 +623,7 @@
         "posX": 24.8595772,
         "posY": 2.095486,
         "posZ": -35.5288429,
-        "rotX": 2.27099772E-05,
+        "rotX": 2.27099845E-05,
         "rotY": 359.5192,
         "rotZ": -2.93744761E-05,
         "scaleX": 1.0,
@@ -634,7 +634,7 @@
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 255.002625,
+        "r": 255.002777,
         "g": 0.0,
         "b": 0.0
       },
@@ -661,8 +661,8 @@
         "posX": 22.0938511,
         "posY": 1.65673482,
         "posZ": -23.4252472,
-        "rotX": -9.120871E-06,
-        "rotY": 0.0287241,
+        "rotX": -9.120875E-06,
+        "rotY": 0.0287241135,
         "rotZ": 3.0699E-06,
         "scaleX": 0.8750001,
         "scaleY": 0.8750001,
@@ -736,10 +736,10 @@
       "Name": "go_game_piece_white",
       "Transform": {
         "posX": -49.2234955,
-        "posY": 1.95064652,
+        "posY": 1.9506464,
         "posZ": -32.44137,
         "rotX": 270.0,
-        "rotY": 225.053665,
+        "rotY": 225.05365,
         "rotZ": 0.0,
         "scaleX": 2.29999948,
         "scaleY": 2.29999948,
@@ -773,11 +773,11 @@
     {
       "Name": "go_game_piece_white",
       "Transform": {
-        "posX": 48.7830162,
-        "posY": 1.946641,
-        "posZ": 32.3899727,
+        "posX": 48.7827721,
+        "posY": 1.94664049,
+        "posZ": 32.3897324,
         "rotX": 270.0,
-        "rotY": 44.90158,
+        "rotY": 44.9015427,
         "rotZ": 0.0,
         "scaleX": 2.29999948,
         "scaleY": 2.29999948,
@@ -933,7 +933,7 @@
         "posZ": -28.4708214,
         "rotX": 1.409347E-05,
         "rotY": 0.02781467,
-        "rotZ": -1.67358176E-05,
+        "rotZ": -1.67358248E-05,
         "scaleX": 0.8750001,
         "scaleY": 0.8750001,
         "scaleZ": 0.8750001
@@ -2039,7 +2039,7 @@
         "posX": -21.8097343,
         "posY": 1.46,
         "posZ": -24.35168,
-        "rotX": 2.817946E-08,
+        "rotX": 6.290287E-08,
         "rotY": 270.000366,
         "rotZ": 180.0,
         "scaleX": 1.0,
@@ -2077,7 +2077,7 @@
         "posX": -42.2864532,
         "posY": 1.46,
         "posZ": -12.3276577,
-        "rotX": -3.07897068E-07,
+        "rotX": -2.92403115E-07,
         "rotY": 44.5392151,
         "rotZ": 180.0,
         "scaleX": 1.0,
@@ -2089,8 +2089,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.9559999,
-        "g": 0.391994685,
-        "b": 0.112994678
+        "g": 0.3919946,
+        "b": 0.112994619
       },
       "Locked": false,
       "Grid": true,
@@ -2153,7 +2153,7 @@
         "posX": -40.9711,
         "posY": 1.46,
         "posZ": 9.5357,
-        "rotX": 2.70769647E-07,
+        "rotX": 2.580197E-07,
         "rotY": 44.9923,
         "rotZ": 180.0,
         "scaleX": 1.0,
@@ -2191,7 +2191,7 @@
         "posX": -22.7772484,
         "posY": 1.46,
         "posZ": 22.4905434,
-        "rotX": 1.601105E-07,
+        "rotX": 1.854588E-07,
         "rotY": 119.99733,
         "rotZ": 180.0,
         "scaleX": 1.0,
@@ -2202,9 +2202,9 @@
       "Description": "Player token",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.191995949,
+        "r": 0.191995889,
         "g": 0.701,
-        "b": 0.16799593
+        "b": 0.16799587
       },
       "Locked": false,
       "Grid": true,
@@ -2229,7 +2229,7 @@
         "posX": -2.794532,
         "posY": 1.46,
         "posZ": 24.5613384,
-        "rotX": 5.20836458E-08,
+        "rotX": 3.57230959E-07,
         "rotY": 44.9856377,
         "rotZ": 180.0,
         "scaleX": 1.0,
@@ -2240,7 +2240,7 @@
       "Description": "Player token",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.128995925,
+        "r": 0.128995866,
         "g": 0.694,
         "b": 0.606999934
       },
@@ -2267,9 +2267,9 @@
         "posX": 23.5324078,
         "posY": 1.46,
         "posZ": 23.2853451,
-        "rotX": -4.73028848E-07,
+        "rotX": -4.7293733E-07,
         "rotY": 44.9931755,
-        "rotZ": -4.686751E-08,
+        "rotZ": -5.16614946E-08,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -2278,7 +2278,7 @@
       "Description": "Player token",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.117995746,
+        "r": 0.117995672,
         "g": 0.53,
         "b": 1.0
       },
@@ -2317,7 +2317,7 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.627,
-        "g": 0.124995731,
+        "g": 0.124995671,
         "b": 0.941
       },
       "Locked": false,
@@ -2343,9 +2343,9 @@
         "posX": 40.7345,
         "posY": 1.46,
         "posZ": -1.615834,
-        "rotX": 2.10663688E-06,
+        "rotX": 2.60243564E-06,
         "rotY": 344.990173,
-        "rotZ": -4.02445835E-07,
+        "rotZ": -1.91181854E-07,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -2355,7 +2355,7 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.96,
-        "g": 0.438995749,
+        "g": 0.4389957,
         "b": 0.807
       },
       "Locked": false,
@@ -2381,9 +2381,9 @@
         "posX": -4.8054266,
         "posY": 1.46,
         "posZ": -23.998167,
-        "rotX": -2.60247532E-07,
+        "rotX": -2.33599224E-07,
         "rotY": 120.031723,
-        "rotZ": 7.83934837E-08,
+        "rotZ": -2.489782E-08,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -2392,9 +2392,9 @@
       "Description": "Player token",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.442995727,
-        "g": 0.230995715,
-        "b": 0.08999654
+        "r": 0.442995667,
+        "g": 0.230995655,
+        "b": 0.08999648
       },
       "Locked": false,
       "Grid": true,
@@ -2421,7 +2421,7 @@
         "posZ": -28.3712254,
         "rotX": 1.29950322E-05,
         "rotY": -0.0013384436,
-        "rotZ": -2.55283368E-07,
+        "rotZ": -2.53615838E-07,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -2460,9 +2460,9 @@
         "posX": 49.6942329,
         "posY": 3.81121874,
         "posZ": -22.75746,
-        "rotX": -1.845138E-07,
-        "rotY": -0.00332031772,
-        "rotZ": 2.14094257E-07,
+        "rotX": -1.959692E-07,
+        "rotY": -0.00332027161,
+        "rotZ": 2.238537E-07,
         "scaleX": 5.70000267,
         "scaleY": 5.70000267,
         "scaleZ": 5.70000267
@@ -2618,12 +2618,12 @@
     {
       "Name": "BlockTriangle",
       "Transform": {
-        "posX": 18.8284626,
+        "posX": 19.6204586,
         "posY": 1.17424476,
-        "posZ": -0.180470377,
-        "rotX": 2.10888375E-05,
+        "posZ": 0.7515279,
+        "rotX": -5.58955037E-07,
         "rotY": 180.031219,
-        "rotZ": 7.4933314E-06,
+        "rotZ": -4.896063E-06,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -2659,9 +2659,9 @@
         "posX": 22.214077,
         "posY": 1.77923489,
         "posZ": -28.5232658,
-        "rotX": 1.40592574E-05,
+        "rotX": 1.40445954E-05,
         "rotY": 359.979553,
-        "rotZ": -1.6772974E-05,
+        "rotZ": -1.677017E-05,
         "scaleX": 0.8750001,
         "scaleY": 0.8750001,
         "scaleZ": 0.8750001
@@ -2932,7 +2932,7 @@
         "posX": 26.42879,
         "posY": 1.00324225,
         "posZ": -28.2959385,
-        "rotX": -1.33217363E-05,
+        "rotX": -1.332174E-05,
         "rotY": 180.032028,
         "rotZ": -8.632735E-07,
         "scaleX": 0.625000358,
@@ -3068,45 +3068,6 @@
       "GUID": "d6a3af"
     },
     {
-      "Name": "ScriptingTrigger",
-      "Transform": {
-        "posX": 35.66144,
-        "posY": 3.51113486,
-        "posZ": -4.64307547,
-        "rotX": 0.0,
-        "rotY": 358.333984,
-        "rotZ": 0.0,
-        "scaleX": 2.00045562,
-        "scaleY": 5.1,
-        "scaleZ": 2.179441
-      },
-      "Nickname": "",
-      "Description": "",
-      "GMNotes": "",
-      "ColorDiffuse": {
-        "r": 1.0,
-        "g": 1.0,
-        "b": 1.0,
-        "a": 0.509803951
-      },
-      "Locked": true,
-      "Grid": true,
-      "Snap": true,
-      "IgnoreFoW": false,
-      "MeasureMovement": false,
-      "DragSelectable": true,
-      "Autoraise": true,
-      "Sticky": true,
-      "Tooltip": true,
-      "GridProjection": false,
-      "HideWhenFaceDown": false,
-      "Hands": false,
-      "LuaScript": "",
-      "LuaScriptState": "",
-      "XmlUI": "",
-      "GUID": "2bd444"
-    },
-    {
       "Name": "FogOfWarTrigger",
       "Transform": {
         "posX": 26.4802818,
@@ -3148,45 +3109,6 @@
       "LuaScriptState": "",
       "XmlUI": "",
       "GUID": "ff0cc8"
-    },
-    {
-      "Name": "ScriptingTrigger",
-      "Transform": {
-        "posX": 18.9071083,
-        "posY": 3.51113486,
-        "posZ": -2.28082228,
-        "rotX": 0.0,
-        "rotY": 2.642973,
-        "rotZ": 0.0,
-        "scaleX": 1.9667598,
-        "scaleY": 5.1,
-        "scaleZ": 2.11627817
-      },
-      "Nickname": "",
-      "Description": "",
-      "GMNotes": "",
-      "ColorDiffuse": {
-        "r": 1.0,
-        "g": 1.0,
-        "b": 1.0,
-        "a": 0.509803951
-      },
-      "Locked": true,
-      "Grid": true,
-      "Snap": true,
-      "IgnoreFoW": false,
-      "MeasureMovement": false,
-      "DragSelectable": true,
-      "Autoraise": true,
-      "Sticky": true,
-      "Tooltip": true,
-      "GridProjection": false,
-      "HideWhenFaceDown": false,
-      "Hands": false,
-      "LuaScript": "",
-      "LuaScriptState": "",
-      "XmlUI": "",
-      "GUID": "3216b0"
     },
     {
       "Name": "FogOfWarTrigger",
@@ -3578,12 +3500,12 @@
     {
       "Name": "go_game_piece_white",
       "Transform": {
-        "posX": -3.20894861,
-        "posY": 1.14421523,
-        "posZ": -27.1563911,
-        "rotX": -2.83384253E-07,
-        "rotY": 359.781342,
-        "rotZ": 1.7979944E-06,
+        "posX": 15.3219776,
+        "posY": 1.77848423,
+        "posZ": -30.9436,
+        "rotX": 1.40305938E-05,
+        "rotY": 359.990051,
+        "rotZ": 2.890719E-07,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -3620,7 +3542,7 @@
         "posY": 1.80970693,
         "posZ": -20.3598557,
         "rotX": 270.0,
-        "rotY": 0.0703315,
+        "rotY": 0.07033147,
         "rotZ": 0.0,
         "scaleX": 0.500001132,
         "scaleY": 0.500001132,
@@ -3650,44 +3572,6 @@
       "LuaScriptState": "",
       "XmlUI": "",
       "GUID": "2e1774"
-    },
-    {
-      "Name": "go_game_piece_white",
-      "Transform": {
-        "posX": 9.942549,
-        "posY": 1.14299834,
-        "posZ": -11.3392467,
-        "rotX": 2.801328E-07,
-        "rotY": 1.67519161E-07,
-        "rotZ": 3.274936E-07,
-        "scaleX": 1.0,
-        "scaleY": 1.0,
-        "scaleZ": 1.0
-      },
-      "Nickname": "discard button",
-      "Description": "",
-      "GMNotes": "",
-      "ColorDiffuse": {
-        "r": 0.6617647,
-        "g": 0.6617647,
-        "b": 0.6617647
-      },
-      "Locked": false,
-      "Grid": true,
-      "Snap": true,
-      "IgnoreFoW": false,
-      "MeasureMovement": false,
-      "DragSelectable": true,
-      "Autoraise": true,
-      "Sticky": true,
-      "Tooltip": true,
-      "GridProjection": false,
-      "HideWhenFaceDown": false,
-      "Hands": false,
-      "LuaScript": "",
-      "LuaScriptState": "",
-      "XmlUI": "",
-      "GUID": "e84765"
     },
     {
       "Name": "ScriptingTrigger",
@@ -3735,7 +3619,7 @@
         "posY": 1.67358422,
         "posZ": -37.0707932,
         "rotX": 330.85907,
-        "rotY": 0.256937861,
+        "rotY": 0.25693804,
         "rotZ": 359.8999,
         "scaleX": 1.0,
         "scaleY": 1.0,
@@ -3772,7 +3656,7 @@
         "posX": 33.7645569,
         "posY": 1.8571192,
         "posZ": -32.73283,
-        "rotX": 4.90394768E-06,
+        "rotX": 2.14032571E-06,
         "rotY": 179.999725,
         "rotZ": 180.0,
         "scaleX": 1.0,
@@ -6426,7 +6310,7 @@
         "posX": 30.5513363,
         "posY": 1.85711908,
         "posZ": -32.6592522,
-        "rotX": 4.35491165E-06,
+        "rotX": 2.234999E-06,
         "rotY": 179.999054,
         "rotZ": 180.0,
         "scaleX": 1.0,
@@ -9080,7 +8964,7 @@
         "posX": 15.4599056,
         "posY": 1.7126981,
         "posZ": -33.85061,
-        "rotX": 2.048927E-06,
+        "rotX": 1.68309543E-06,
         "rotY": 180.0007,
         "rotZ": 180.0,
         "scaleX": 1.0,
@@ -10171,15 +10055,15 @@
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": 33.24122,
+        "posX": 35.21198,
         "posY": 3.51113486,
-        "posZ": -4.64645,
+        "posZ": -3.42034268,
         "rotX": 0.0,
-        "rotY": 359.977264,
+        "rotY": 0.310463727,
         "rotZ": 0.0,
-        "scaleX": 1.97470164,
+        "scaleX": 1.87970829,
         "scaleY": 5.1,
-        "scaleZ": 1.9533515
+        "scaleZ": 1.88744593
       },
       "Nickname": "",
       "Description": "",
@@ -10205,20 +10089,20 @@
       "LuaScript": "",
       "LuaScriptState": "",
       "XmlUI": "",
-      "GUID": "6c1e91"
+      "GUID": "402c26"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": 30.8776627,
+        "posX": 32.9476776,
         "posY": 3.51113486,
-        "posZ": -4.656236,
+        "posZ": -3.45018959,
         "rotX": 0.0,
-        "rotY": 359.977264,
+        "rotY": 0.310463727,
         "rotZ": 0.0,
-        "scaleX": 2.06057239,
+        "scaleX": 1.88290453,
         "scaleY": 5.1,
-        "scaleZ": 2.010841
+        "scaleZ": 1.84088242
       },
       "Nickname": "",
       "Description": "",
@@ -10244,20 +10128,20 @@
       "LuaScript": "",
       "LuaScriptState": "",
       "XmlUI": "",
-      "GUID": "5213a2"
+      "GUID": "b67f31"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": 28.4975777,
+        "posX": 30.6755333,
         "posY": 3.51113486,
-        "posZ": -4.657167,
+        "posZ": -3.40668869,
         "rotX": 0.0,
-        "rotY": 359.977264,
+        "rotY": 0.310463727,
         "rotZ": 0.0,
-        "scaleX": 2.11410213,
+        "scaleX": 1.95538723,
         "scaleY": 5.1,
-        "scaleZ": 2.01084018
+        "scaleZ": 1.86560881
       },
       "Nickname": "",
       "Description": "",
@@ -10283,20 +10167,20 @@
       "LuaScript": "",
       "LuaScriptState": "",
       "XmlUI": "",
-      "GUID": "0e500a"
+      "GUID": "c6fa84"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": 26.0927544,
+        "posX": 28.4666939,
         "posY": 3.51113486,
-        "posZ": -4.677444,
+        "posZ": -3.45407271,
         "rotX": 0.0,
-        "rotY": 359.977264,
+        "rotY": 0.310463727,
         "rotZ": 0.0,
-        "scaleX": 1.98724866,
+        "scaleX": 1.923793,
         "scaleY": 5.1,
-        "scaleZ": 2.00972366
+        "scaleZ": 1.89720356
       },
       "Nickname": "",
       "Description": "",
@@ -10322,20 +10206,20 @@
       "LuaScript": "",
       "LuaScriptState": "",
       "XmlUI": "",
-      "GUID": "39b29f"
+      "GUID": "d16b87"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": 23.68132,
+        "posX": 26.20903,
         "posY": 3.51113486,
-        "posZ": -4.616112,
+        "posZ": -3.45270777,
         "rotX": 0.0,
-        "rotY": 358.9777,
+        "rotY": 0.310463727,
         "rotZ": 0.0,
-        "scaleX": 2.0777607,
+        "scaleX": 1.89305043,
         "scaleY": 5.1,
-        "scaleZ": 2.18921638
+        "scaleZ": 1.87547588
       },
       "Nickname": "",
       "Description": "",
@@ -10361,20 +10245,20 @@
       "LuaScript": "",
       "LuaScriptState": "",
       "XmlUI": "",
-      "GUID": "54e743"
+      "GUID": "59115c"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": 21.2829437,
+        "posX": 23.918375,
         "posY": 3.51113486,
-        "posZ": -4.69273758,
+        "posZ": -3.4402976,
         "rotX": 0.0,
-        "rotY": 358.9777,
+        "rotY": 0.310463727,
         "rotZ": 0.0,
-        "scaleX": 2.03199172,
+        "scaleX": 1.9304446,
         "scaleY": 5.1,
-        "scaleZ": 2.121576
+        "scaleZ": 1.87547278
       },
       "Nickname": "",
       "Description": "",
@@ -10400,20 +10284,20 @@
       "LuaScript": "",
       "LuaScriptState": "",
       "XmlUI": "",
-      "GUID": "5d5f02"
+      "GUID": "ca483b"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": 18.8831272,
+        "posX": 21.7344818,
         "posY": 3.51113486,
-        "posZ": -4.68670559,
+        "posZ": -3.44866848,
         "rotX": 0.0,
-        "rotY": 358.9777,
+        "rotY": 0.310463727,
         "rotZ": 0.0,
-        "scaleX": 2.00665545,
+        "scaleX": 1.87827885,
         "scaleY": 5.1,
-        "scaleZ": 2.1139245
+        "scaleZ": 1.872502
       },
       "Nickname": "",
       "Description": "",
@@ -10439,20 +10323,20 @@
       "LuaScript": "",
       "LuaScriptState": "",
       "XmlUI": "",
-      "GUID": "9c0713"
+      "GUID": "97a9df"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": 21.2580032,
+        "posX": 19.5159035,
         "posY": 3.51113486,
-        "posZ": -2.21949649,
+        "posZ": -3.4582932,
         "rotX": 0.0,
-        "rotY": 178.216721,
+        "rotY": 0.310463727,
         "rotZ": 0.0,
-        "scaleX": 1.98976672,
+        "scaleX": 1.91999519,
         "scaleY": 5.1,
-        "scaleZ": 2.12398815
+        "scaleZ": 1.82921565
       },
       "Nickname": "",
       "Description": "",
@@ -10478,20 +10362,20 @@
       "LuaScript": "",
       "LuaScriptState": "",
       "XmlUI": "",
-      "GUID": "e37103"
+      "GUID": "968076"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": 23.6588821,
+        "posX": 19.5152931,
         "posY": 3.51113486,
-        "posZ": -2.22213578,
+        "posZ": -1.15975547,
         "rotX": 0.0,
-        "rotY": 178.883133,
+        "rotY": 179.049667,
         "rotZ": 0.0,
-        "scaleX": 2.03367448,
+        "scaleX": 1.84142721,
         "scaleY": 5.1,
-        "scaleZ": 2.138069
+        "scaleZ": 1.850072
       },
       "Nickname": "",
       "Description": "",
@@ -10517,20 +10401,20 @@
       "LuaScript": "",
       "LuaScriptState": "",
       "XmlUI": "",
-      "GUID": "f1d089"
+      "GUID": "27c16e"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": 26.1067657,
+        "posX": 21.7385178,
         "posY": 3.51113486,
-        "posZ": -2.20522475,
+        "posZ": -1.13482714,
         "rotX": 0.0,
-        "rotY": 178.883133,
+        "rotY": 180.549072,
         "rotZ": 0.0,
-        "scaleX": 2.04949641,
+        "scaleX": 1.92364252,
         "scaleY": 5.1,
-        "scaleZ": 2.11490822
+        "scaleZ": 1.857257
       },
       "Nickname": "",
       "Description": "",
@@ -10556,20 +10440,20 @@
       "LuaScript": "",
       "LuaScriptState": "",
       "XmlUI": "",
-      "GUID": "773296"
+      "GUID": "20f07b"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": 28.4712219,
+        "posX": 24.0002441,
         "posY": 3.51113486,
-        "posZ": -2.20441484,
+        "posZ": -1.14976776,
         "rotX": 0.0,
-        "rotY": 178.883133,
+        "rotY": 179.549484,
         "rotZ": 0.0,
-        "scaleX": 2.08490038,
+        "scaleX": 1.86843872,
         "scaleY": 5.1,
-        "scaleZ": 2.062912
+        "scaleZ": 1.85725582
       },
       "Nickname": "",
       "Description": "",
@@ -10595,20 +10479,20 @@
       "LuaScript": "",
       "LuaScriptState": "",
       "XmlUI": "",
-      "GUID": "f70778"
+      "GUID": "0ca313"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": 30.86488,
+        "posX": 26.2724113,
         "posY": 3.51113486,
-        "posZ": -2.21815,
+        "posZ": -1.17208433,
         "rotX": 0.0,
-        "rotY": 178.883133,
+        "rotY": 179.549484,
         "rotZ": 0.0,
-        "scaleX": 2.021062,
+        "scaleX": 1.844484,
         "scaleY": 5.1,
-        "scaleZ": 2.097395
+        "scaleZ": 1.86448646
       },
       "Nickname": "",
       "Description": "",
@@ -10634,20 +10518,20 @@
       "LuaScript": "",
       "LuaScriptState": "",
       "XmlUI": "",
-      "GUID": "d1ad17"
+      "GUID": "1dd55b"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": 33.28578,
+        "posX": 28.5004311,
         "posY": 3.51113486,
-        "posZ": -2.20245337,
+        "posZ": -1.17655516,
         "rotX": 0.0,
-        "rotY": 178.883133,
+        "rotY": 179.549484,
         "rotZ": 0.0,
-        "scaleX": 2.06802821,
+        "scaleX": 1.87087619,
         "scaleY": 5.1,
-        "scaleZ": 2.07349634
+        "scaleZ": 1.90845954
       },
       "Nickname": "",
       "Description": "",
@@ -10673,20 +10557,20 @@
       "LuaScript": "",
       "LuaScriptState": "",
       "XmlUI": "",
-      "GUID": "ecd958"
+      "GUID": "26df5e"
     },
     {
       "Name": "ScriptingTrigger",
       "Transform": {
-        "posX": 35.6850357,
+        "posX": 30.72094,
         "posY": 3.51113486,
-        "posZ": -2.23889947,
+        "posZ": -1.15725434,
         "rotX": 0.0,
-        "rotY": 178.883133,
+        "rotY": 179.549484,
         "rotZ": 0.0,
-        "scaleX": 2.03177643,
+        "scaleX": 1.8864032,
         "scaleY": 5.1,
-        "scaleZ": 2.064379
+        "scaleZ": 1.8681128
       },
       "Nickname": "",
       "Description": "",
@@ -10712,7 +10596,85 @@
       "LuaScript": "",
       "LuaScriptState": "",
       "XmlUI": "",
-      "GUID": "a7e07b"
+      "GUID": "9bbfd0"
+    },
+    {
+      "Name": "ScriptingTrigger",
+      "Transform": {
+        "posX": 32.9913254,
+        "posY": 3.51113486,
+        "posZ": -1.16143489,
+        "rotX": 0.0,
+        "rotY": 179.549484,
+        "rotZ": 0.0,
+        "scaleX": 1.843634,
+        "scaleY": 5.1,
+        "scaleZ": 1.9121747
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 0.509803951
+      },
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "GUID": "da7332"
+    },
+    {
+      "Name": "ScriptingTrigger",
+      "Transform": {
+        "posX": 35.24994,
+        "posY": 3.51113486,
+        "posZ": -1.14367819,
+        "rotX": 0.0,
+        "rotY": 179.549484,
+        "rotZ": 0.0,
+        "scaleX": 1.88025248,
+        "scaleY": 5.1,
+        "scaleZ": 1.91217935
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 0.509803951
+      },
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "GUID": "4ededf"
     }
   ],
   "LuaScript": "-- Bundled by luabundle {\"version\":\"1.6.0\"}\nlocal __bundle_require, __bundle_loaded, __bundle_register, __bundle_modules = (function(superRequire)\n\tlocal loadingPlaceholder = {[{}] = true}\n\n\tlocal register\n\tlocal modules = {}\n\n\tlocal require\n\tlocal loaded = {}\n\n\tregister = function(name, body)\n\t\tif not modules[name] then\n\t\t\tmodules[name] = body\n\t\tend\n\tend\n\n\trequire = function(name)\n\t\tlocal loadedModule = loaded[name]\n\n\t\tif loadedModule then\n\t\t\tif loadedModule == loadingPlaceholder then\n\t\t\t\treturn nil\n\t\t\tend\n\t\telse\n\t\t\tif not modules[name] then\n\t\t\t\tif not superRequire then\n\t\t\t\t\tlocal identifier = type(name) == 'string' and '\\\"' .. name .. '\\\"' or tostring(name)\n\t\t\t\t\terror('Tried to require ' .. identifier .. ', but no such module has been registered')\n\t\t\t\telse\n\t\t\t\t\treturn superRequire(name)\n\t\t\t\tend\n\t\t\tend\n\n\t\t\tloaded[name] = loadingPlaceholder\n\t\t\tloadedModule = modules[name](require, loaded, register, modules)\n\t\t\tloaded[name] = loadedModule\n\t\tend\n\n\t\treturn loadedModule\n\tend\n\n\treturn require, loaded, register, modules\nend)(nil)\n__bundle_register(\"__root\", function(require, _LOADED, __bundle_register, __bundle_modules)\nrequire(\"it_moves/global\")\nend)\n__bundle_register(\"it_moves/global\", function(require, _LOADED, __bundle_register, __bundle_modules)\n-- http://steamcommunity.com/sharedfiles/filedetails/?id=924691456\r\nfunction onload()\r\n    GM_NOTES_NAME_FOR_THING_CARD = \"A\"\r\n    GM_NOTES_NAME_FOR_SUCCESS = \"S\"\r\n    GM_NOTES_NAME_FOR_FAILURE = \"F\"\r\n    GAME_STATES = {\r\n        \"Briefing\", \"Assignments\", \"Work\", \"Debrief\", \"Assimilation\",\r\n        \"Isolation\"\r\n    }\r\n    CURRENT_GAME_STATE = 1\r\n    BLINDNESS = false\r\n    MIN_PLAYERS = 6\r\n    MAX_PLAYERS = 9\r\n    ACTUAL_PLAYERS = nil\r\n    TOTAL_CARDS_IN_DECK = 52 -- unreliable above ~60. depends on decks 8938e8, 3d5c94 ingame\r\n    RATIO_OF_SUCCESS_TO_FAILURE = 6/10\r\n    MISSIONS_PER_PLAYERS = {\r\n        [6] = 12,\r\n        [7] = 13,\r\n        [8] = 14,\r\n        [9] = 16\r\n    }\r\n    MISSIONS_TO_COMPLETE = nil\r\nend\r\n\r\n--[[ getters ]]\r\nget_game_state = function()\r\n    -- consumes nothing and produces the name of the current game state.\r\n    return GAME_STATES[CURRENT_GAME_STATE + 1]\r\nend\r\n\r\nformat_game_state = function()\r\n    -- utility function which produces a string describing the current game\r\n    -- state in the format \"PHASE NUMBER - PHASE NAME\"\r\n    -- example: \"1 - Briefing\"\r\n    fstring = \"%i: %s\"\r\n    current_state = get_game_state()\r\n    current_state_number = CURRENT_GAME_STATE + 1\r\n    return string.format(fstring, current_state_number, current_state)\r\nend\r\n\r\n--[[ setters ]]\r\nmissions_to_complete = function(nOrNil)\r\n    -- consumes a NumberOrNil and produces nil, if the NumberOrNil is\r\n    -- nil, or a number of missions the players must complete, based on\r\n    -- their number, n.\r\n    if nOrNil == nil then\r\n        return nil\r\n    elseif (nOrNil < MIN_PLAYERS) or (nOrNil > MAX_PLAYERS) then\r\n        printToAll(\"invalid call to missions_to_complete: n out of bounds\")\r\n        return nil\r\n    else\r\n        local number_of_missions = MISSIONS_PER_PLAYERS[nOrNil]\r\n        return number_of_missions\r\n    end\r\n    return \"nothing\"\r\nend\r\n\r\n\r\nadvance_game_state = function()\r\n    --- consumes nothing and advances the current game state.\r\n    --- returns a formatted description of the new game state.\r\n    CURRENT_GAME_STATE = (CURRENT_GAME_STATE + 1) % #GAME_STATES\r\n    return format_game_state()\r\nend\r\n\r\nreverse_game_state = function()\r\n    --- consumes nothing and reverses the current game state\r\n    candidate = CURRENT_GAME_STATE - 1\r\n    if candidate < 0 then\r\n        CURRENT_GAME_STATE = #GAME_STATES - 1\r\n    else\r\n        CURRENT_GAME_STATE = candidate\r\n    end\r\n    return get_game_state()\r\nend\r\n--[[ predicates ]]\r\nfunction is_taskcard_p(any)\r\n    -- consumes whatever object and returns 'true' if it's a taskcard,\r\n    -- false otherwise.\r\n\r\n    local name_or_nil = any.getName()\r\n    return string.find(name_or_nil, \"::\") ~= nil\r\nend\r\nfunction is_taskcard_desc_p(any)\r\n   -- consumes whatever table and returns \"true\" if it represents the *description* of\r\n   -- a taskcard\r\n   local name_or_nil = any.name\r\n   return string.find(name_or_nil, \"::\") ~= nil\r\nend\r\n--[[ functions to assist working with \"types\"]]\r\nfunction get_quasi_type(obj)\r\n    -- consumes an object and gets a TTS quasi-type\r\n    return obj_parse_to_string(tostring(obj))[1]\r\nend\r\n\r\nfunction obj_parse_to_string(obj)\r\n    -- consumes an object and produces a table representing the parsed\r\n    -- components of its tostring output\r\n    str = tostring(obj)\r\n    elements = string.gmatch(str, \"[%a_]+\")\r\n    result_table = {}\r\n    i = 1\r\n    for element in elements do\r\n        result_table[i] = element\r\n        i = i + 1\r\n    end\r\n    return result_table\r\nend\r\n--[[ card-counting functions ]]\r\nfunction count_successes(deckOrCard)\r\n    -- consumes an object and produces and produces\r\n    -- the number of cards in the suits of hearts and\r\n    -- diamonds it contains.\r\n    item_class = get_quasi_type(deckOrCard)\r\n    if item_class == \"Card\" then\r\n        return card_count_successes(deckOrCard)\r\n    elseif item_class == \"Deck\" then\r\n        return deck_count_successes(deckOrCard)\r\n    else\r\n        return -1\r\n    end\r\nend\r\n\r\nfunction count_jokers(deckOrCard)\r\n    -- consumes an object and produces the number of\r\n    -- jokers it contains. Returns -1 if the items could\r\n    -- not be, or contain, a Joker.\r\n    item_class = get_quasi_type(deckOrCard)\r\n    if item_class == \"Card\" then\r\n        return card_count_jokers(deckOrCard)\r\n    elseif item_class == \"Deck\" then\r\n        return deck_count_jokers(deckOrCard)\r\n    else\r\n        return -1\r\n    end\r\nend\r\n\r\nfunction card_count_jokers(card)\r\n    -- consumes a card and produces 1 if it's a joker, 0\r\n    -- otherwise\r\n    if is_a_joker(card) then\r\n        return 1\r\n    else\r\n        return 0\r\n    end\r\nend\r\nfunction is_a_joker(obj)\r\n    -- consumes an object and produces 'true' if the card's a joker,\r\n    -- false otherwise\r\n    return obj.getGMNotes() == GM_NOTES_NAME_FOR_THING_CARD\r\nend\r\n\r\nfunction card_desc_is_a_joker(card_desc)\r\n    -- consumes a card-description (result of deck.getObjects)\r\n    -- and produces 'true' if the description is of a joker,\r\n    -- 'false' otherwise\r\n    return card_desc.gm_notes == GM_NOTES_NAME_FOR_THING_CARD\r\nend\r\n\r\nfunction deck_count_jokers(deck)\r\n    -- consumes a deck and produces the number of jokers it contains\r\n    cards = deck.getObjects()\r\n    local count = 0\r\n    for _, card_desc in pairs(cards) do\r\n        if card_desc_is_a_joker(card_desc) then count = count + 1 end\r\n    end\r\n    return count\r\nend\r\n\r\nfunction card_is_success(card)\r\n    -- consumes a card and produces 'true' if it's\r\n    -- a success, 'false' otherwise\r\n    return card.getGMNotes() == GM_NOTES_NAME_FOR_SUCCESS\r\nend\r\n\r\nfunction card_count_successes(card)\r\n    -- consumes a card and produces 1 if that card is a success,\r\n    -- 0 otherwise\r\n    if card_is_success(card) then\r\n        return 1\r\n    else\r\n        return 0\r\n    end\r\nend\r\n\r\nfunction card_desc_is_success(card_desc)\r\n    -- consumes a card_description and produces\r\n    -- true if it represents a success card, false otherwise.\r\n    return card_desc.gm_notes == GM_NOTES_NAME_FOR_SUCCESS\r\nend\r\n\r\nfunction deck_count_successes(deck)\r\n    -- consumes a deck and produces the number of successes in it.\r\n    cards = deck.getObjects()\r\n    local count = 0\r\n    for _, card_desc in pairs(cards) do\r\n        if card_desc_is_success(card_desc) then count = count + 1 end\r\n    end\r\n    return count\r\nend\r\n--[[ functions helping to manage collision-based objects ]]\r\nfunction should_ignore_collision_p(collision_info)\r\n    if collision_info.collision_object == nil or\r\n        collision_info.collision_object == self or\r\n        collision_info.collision_object.getGUID() == nil or\r\n        collision_info.collision_object.tag == \"Surface\" or\r\n        collision_info.collision_object.tag == \"Board\" or objectLoaded then\r\n        return true\r\n    else\r\n        return false\r\n    end\r\nend\r\n--[[ The OnLoad function. This is called after everything in the game save finishes loading.\r\n    Most of your script code goes here. --]]\r\n--[[ Lua code. See documentation: http://berserk-games.com/knowledgebase/scripting/ --]]\r\n--[[ The Update function. This is called once per frame. --]]\r\nfunction update() --[[ print('Update loop!') --]]end\r\n\nend)\nreturn __bundle_require(\"__root\")",
@@ -10721,513 +10683,457 @@
   "SnapPoints": [
     {
       "Position": {
-        "x": 18.7322922,
+        "x": -25.5235233,
         "y": 0.9611349,
-        "z": -2.2244482
+        "z": -12.7974434
       }
     },
     {
       "Position": {
-        "x": 21.22663,
+        "x": -29.92115,
         "y": 0.9611349,
-        "z": -2.307437
+        "z": -12.30187
       }
     },
     {
       "Position": {
-        "x": 23.7268982,
+        "x": -31.567461,
         "y": 0.9611349,
-        "z": -2.29704571
+        "z": -13.4708185
       }
     },
     {
       "Position": {
-        "x": 25.9788418,
+        "x": -31.7450352,
         "y": 0.9611349,
-        "z": -2.189268
+        "z": -11.0806446
       }
     },
     {
       "Position": {
-        "x": 28.378336,
+        "x": -33.7337227,
         "y": 0.9611349,
-        "z": -2.31784534
+        "z": -12.7176533
       }
     },
     {
       "Position": {
-        "x": 30.9387665,
+        "x": -31.771925,
         "y": 0.9611349,
-        "z": -2.2613306
+        "z": 4.67756462
       }
     },
     {
       "Position": {
-        "x": 33.16429,
+        "x": -29.7722549,
         "y": 0.9611349,
-        "z": -2.15263176
+        "z": 3.53925085
       }
     },
     {
       "Position": {
-        "x": 35.4392624,
+        "x": -31.51785,
         "y": 0.9611349,
-        "z": -2.23279
+        "z": 2.32078767
       }
     },
     {
       "Position": {
-        "x": 18.7025433,
+        "x": -33.6629639,
         "y": 0.9611349,
-        "z": -4.624315
+        "z": 3.05270767
       }
     },
     {
       "Position": {
-        "x": 21.336174,
+        "x": -25.77148,
         "y": 0.9611349,
-        "z": -4.618693
+        "z": 3.12205219
       }
     },
     {
       "Position": {
-        "x": 23.67992,
+        "x": -28.7578487,
         "y": 0.9611349,
-        "z": -4.56483459
+        "z": 9.36099
       }
     },
     {
       "Position": {
-        "x": 26.18205,
+        "x": -28.7177467,
         "y": 0.9611349,
-        "z": -4.645194
+        "z": -6.106018
       }
     },
     {
       "Position": {
-        "x": 28.48325,
+        "x": -18.30897,
         "y": 0.9611349,
-        "z": -4.63467455
+        "z": -11.0571651
       }
     },
     {
       "Position": {
-        "x": 30.7446766,
+        "x": -16.4426651,
         "y": 0.9611349,
-        "z": -4.623494
+        "z": -12.2321072
       }
     },
     {
       "Position": {
-        "x": 33.2115631,
+        "x": -18.2595482,
         "y": 0.9611349,
-        "z": -4.659379
+        "z": -13.43741
       }
     },
     {
       "Position": {
-        "x": 35.6587753,
+        "x": -20.2552528,
         "y": 0.9611349,
-        "z": -4.60669
+        "z": -12.6913509
       }
     },
     {
       "Position": {
-        "x": 18.8284626,
+        "x": -12.2772,
         "y": 0.9611349,
-        "z": -0.18047142
+        "z": -12.6277952
       }
     },
     {
       "Position": {
-        "x": 12.0427551,
+        "x": -15.3436937,
         "y": 0.9611349,
-        "z": -9.716582
+        "z": -6.056517
       }
     },
     {
       "Position": {
-        "x": 11.8263435,
+        "x": -5.05670357,
         "y": 0.9611349,
-        "z": 5.754607
+        "z": -11.1115208
       }
     },
     {
       "Position": {
-        "x": -0.429639339,
+        "x": -3.09605527,
         "y": 0.9611349,
-        "z": 6.410171
+        "z": -12.2943707
       }
     },
     {
       "Position": {
-        "x": -0.408930779,
+        "x": -4.87363958,
         "y": 0.9611349,
-        "z": -10.0250912
+        "z": -13.5085983
       }
     },
     {
       "Position": {
-        "x": -13.1467924,
+        "x": -6.994746,
         "y": 0.9611349,
-        "z": 6.481319
+        "z": -12.6643724
       }
     },
     {
       "Position": {
-        "x": -12.7526283,
+        "x": -2.483145,
         "y": 0.9611349,
-        "z": -9.129161
+        "z": -6.23971939
       }
     },
     {
       "Position": {
-        "x": -25.1766,
+        "x": 1.09107459,
         "y": 0.9611349,
-        "z": -9.37286
+        "z": -12.545948
       }
     },
     {
       "Position": {
-        "x": -25.4854584,
+        "x": 8.4021225,
         "y": 0.9611349,
-        "z": 6.92583752
+        "z": -11.1523027
       }
     },
     {
       "Position": {
-        "x": 7.33544731,
+        "x": 10.304368,
         "y": 0.9611349,
-        "z": -12.1689749
+        "z": -12.274333
       }
     },
     {
       "Position": {
-        "x": 5.71660328,
+        "x": 8.464148,
         "y": 0.9611349,
-        "z": -12.2616186
+        "z": -13.4102983
       }
     },
     {
       "Position": {
-        "x": 5.656515,
+        "x": 6.3561573,
         "y": 0.9611349,
-        "z": -10.3806419
+        "z": -12.6059284
       }
     },
     {
       "Position": {
-        "x": 7.2535615,
+        "x": 14.4373312,
         "y": 0.9611349,
-        "z": -10.3526936
+        "z": -12.5101433
       }
     },
     {
       "Position": {
-        "x": 5.623848,
+        "x": 11.1737223,
         "y": 0.9611349,
-        "z": -8.496626
+        "z": -6.2672224
       }
     },
     {
       "Position": {
-        "x": 7.248551,
+        "x": -18.3499413,
         "y": 0.9611349,
-        "z": -8.48588848
+        "z": 4.591751
       }
     },
     {
       "Position": {
-        "x": 5.23069572,
+        "x": -16.4908047,
         "y": 0.9611349,
-        "z": 3.3669672
+        "z": 3.492496
       }
     },
     {
       "Position": {
-        "x": 7.08776331,
+        "x": -18.1682758,
         "y": 0.9611349,
-        "z": 3.434781
+        "z": 2.33144426
       }
     },
     {
       "Position": {
-        "x": 5.22423553,
+        "x": -20.307354,
         "y": 0.9611349,
-        "z": 5.771289
+        "z": 3.07257175
       }
     },
     {
       "Position": {
-        "x": 7.107866,
+        "x": -12.20524,
         "y": 0.9611349,
-        "z": 5.564933
+        "z": 3.13360476
       }
     },
     {
       "Position": {
-        "x": 5.1904,
+        "x": -15.4697571,
         "y": 0.9611349,
-        "z": 7.933794
+        "z": 9.414057
       }
     },
     {
       "Position": {
-        "x": 6.998615,
+        "x": -5.0526886,
         "y": 0.9611349,
-        "z": 7.697262
+        "z": 4.688199
       }
     },
     {
       "Position": {
-        "x": -5.357039,
+        "x": -3.08088183,
         "y": 0.9611349,
-        "z": 3.771222
+        "z": 3.46511245
       }
     },
     {
       "Position": {
-        "x": -6.79193449,
+        "x": -4.96598673,
         "y": 0.9611349,
-        "z": 3.85727549
+        "z": 2.4195168
       }
     },
     {
       "Position": {
-        "x": -6.67685175,
+        "x": -6.92773962,
         "y": 0.9611349,
-        "z": 5.82587957
+        "z": 3.15579844
       }
     },
     {
       "Position": {
-        "x": -5.562111,
+        "x": -2.19019175,
         "y": 0.9611349,
-        "z": 5.75418043
+        "z": 9.401182
       }
     },
     {
       "Position": {
-        "x": -5.48110628,
+        "x": 0.9533335,
         "y": 0.9611349,
-        "z": 7.54869843
+        "z": 3.23628616
       }
     },
     {
       "Position": {
-        "x": -6.86200142,
+        "x": 8.470694,
         "y": 0.9611349,
-        "z": 7.47035837
+        "z": 2.350497
       }
     },
     {
       "Position": {
-        "x": -5.059675,
+        "x": 6.37307358,
         "y": 0.9611349,
-        "z": -12.28217
+        "z": 3.01330686
       }
     },
     {
       "Position": {
-        "x": -6.718791,
+        "x": 8.432718,
         "y": 0.9611349,
-        "z": -12.2258129
+        "z": 4.549132
       }
     },
     {
       "Position": {
-        "x": -6.66385365,
+        "x": 10.2721272,
         "y": 0.9611349,
-        "z": -10.2666187
+        "z": 3.51100636
       }
     },
     {
       "Position": {
-        "x": -4.952717,
+        "x": 14.2726345,
         "y": 0.9611349,
-        "z": -10.3219442
+        "z": 3.13773155
       }
     },
     {
       "Position": {
-        "x": -5.18231773,
+        "x": 11.42464,
         "y": 0.9611349,
-        "z": -8.584346
+        "z": 9.184636
       }
     },
     {
       "Position": {
-        "x": -6.818831,
+        "x": 19.6204586,
         "y": 0.9611349,
-        "z": -8.666467
+        "z": 0.7515278
       }
     },
     {
       "Position": {
-        "x": -17.4229488,
+        "x": 19.65894,
         "y": 0.9611349,
-        "z": -12.6398239
+        "z": -1.25774038
       }
     },
     {
       "Position": {
-        "x": -19.1551228,
+        "x": 21.9365253,
         "y": 0.9611349,
-        "z": -12.617424
+        "z": -1.16604233
       }
     },
     {
       "Position": {
-        "x": -19.2688026,
+        "x": 24.04467,
         "y": 0.9611349,
-        "z": -10.3703136
+        "z": -1.17746949
       }
     },
     {
       "Position": {
-        "x": -17.6032715,
+        "x": 26.2203979,
         "y": 0.9611349,
-        "z": -10.6086988
+        "z": -1.18670535
       }
     },
     {
       "Position": {
-        "x": -17.5336151,
+        "x": 28.5982723,
         "y": 0.9611349,
-        "z": -8.564753
+        "z": -1.16540909
       }
     },
     {
       "Position": {
-        "x": -19.2203979,
+        "x": 30.9160213,
         "y": 0.9611349,
-        "z": -8.319752
+        "z": -1.21872
       }
     },
     {
       "Position": {
-        "x": -29.8348045,
+        "x": 33.0552673,
         "y": 0.9611349,
-        "z": -12.3954277
+        "z": -1.2041539
       }
     },
     {
       "Position": {
-        "x": -31.5537624,
+        "x": 35.2918434,
         "y": 0.9611349,
-        "z": -12.4246311
+        "z": -1.21080351
       }
     },
     {
       "Position": {
-        "x": -31.5164337,
+        "x": 35.4234848,
         "y": 0.9611349,
-        "z": -10.2617893
+        "z": -3.45302725
       }
     },
     {
       "Position": {
-        "x": -29.9220085,
+        "x": 33.1171455,
         "y": 0.9611349,
-        "z": -10.2801819
+        "z": -3.47660923
       }
     },
     {
       "Position": {
-        "x": -29.8865318,
+        "x": 30.8526554,
         "y": 0.9611349,
-        "z": -8.270906
+        "z": -3.47660136
       }
     },
     {
       "Position": {
-        "x": -31.43583,
+        "x": 28.4879131,
         "y": 0.9611349,
-        "z": -8.203273
+        "z": -3.43465686
       }
     },
     {
       "Position": {
-        "x": -31.4672222,
+        "x": 26.3278923,
         "y": 0.9611349,
-        "z": 3.52334213
+        "z": -3.47594333
       }
     },
     {
       "Position": {
-        "x": -29.7550888,
+        "x": 24.09797,
         "y": 0.9611349,
-        "z": 3.3597393
+        "z": -3.429443
       }
     },
     {
       "Position": {
-        "x": -31.4724884,
+        "x": 21.9354,
         "y": 0.9611349,
-        "z": 5.49867058
+        "z": -3.44816542
       }
     },
     {
       "Position": {
-        "x": -29.7200089,
+        "x": 19.68285,
         "y": 0.9611349,
-        "z": 5.35220146
-      }
-    },
-    {
-      "Position": {
-        "x": -31.6071854,
-        "y": 0.9611349,
-        "z": 7.529524
-      }
-    },
-    {
-      "Position": {
-        "x": -29.6039543,
-        "y": 0.9611349,
-        "z": 7.27578163
-      }
-    },
-    {
-      "Position": {
-        "x": -19.147,
-        "y": 0.9611349,
-        "z": 3.39296532
-      }
-    },
-    {
-      "Position": {
-        "x": -19.2310486,
-        "y": 0.9611349,
-        "z": 6.13221073
-      }
-    },
-    {
-      "Position": {
-        "x": -17.4392776,
-        "y": 0.9611349,
-        "z": 3.3627615
-      }
-    },
-    {
-      "Position": {
-        "x": -17.6627216,
-        "y": 0.9611349,
-        "z": 5.87664127
-      }
-    },
-    {
-      "Position": {
-        "x": -19.3141479,
-        "y": 0.9611349,
-        "z": 8.433986
-      }
-    },
-    {
-      "Position": {
-        "x": -17.6328125,
-        "y": 0.9611349,
-        "z": 8.228209
+        "z": -3.356341
       }
     }
   ],

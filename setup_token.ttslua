@@ -6,6 +6,25 @@ function onLoad()
     fifteen_tasks_until_rescue_zone = getObjectFromGUID(fifteen_tasks_until_rescue_zone_GUID)
     fifteen_tasks_until_rescue_zone_position = fifteen_tasks_until_rescue_zone.getPosition()
 
+    missions_remaining_GUIDS = {
+        [1] = "20f07b",
+        [2] = "0ca313",
+        [3] = "1dd55b",
+        [4] = "26df5e",
+        [5] = "da7332",
+        [6] = "da7332",
+        [7] = "4ededf",
+        [8] = "968076",
+        [9] = "97a9df",
+        [10] = "ca483b",
+        [11] = "59115c",
+        [12] = "d16b87",
+        [13] = "c6fa84",
+        [14] = "b67f31",
+        [15] = "402c26"
+    }
+    missions_remaining_zones = get_objects_from_GUIDs(missions_remaining_GUIDS)
+
     assimilation_infinite_bag_GUID = "c648cf"
     success_infinite_bag_GUID = "cc80cd"
     failure_infinite_bag_GUID = "d2e74f"
@@ -17,7 +36,7 @@ function onLoad()
     assimilation_infinite_bag = getObjectFromGUID(assimilation_infinite_bag_GUID)
     success_infinite_bag = getObjectFromGUID(success_infinite_bag_GUID)
     failure_infinite_bag = getObjectFromGUID(failure_infinite_bag_GUID)
-
+    
     min_players, max_players = Global.getVar("MIN_PLAYERS"), Global.getVar("MAX_PLAYERS")
 
     self.createInput({
