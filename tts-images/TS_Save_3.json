@@ -1,7 +1,7 @@
 {
   "SaveName": "The thing big table",
   "GameMode": "scripting sandbox",
-  "Date": "8/2/2020 1:20:22 PM",
+  "Date": "8/2/2020 2:20:07 PM",
   "Gravity": 0.5,
   "PlayArea": 0.5,
   "GameType": "",
@@ -75,9 +75,9 @@
           "rotX": 0.0,
           "rotY": 90.0,
           "rotZ": 0.0,
-          "scaleX": 15.2224331,
+          "scaleX": 15.2231045,
           "scaleY": 11.8970528,
-          "scaleZ": 6.420948
+          "scaleZ": 6.42131
         }
       },
       {
@@ -89,9 +89,9 @@
           "rotX": 0.0,
           "rotY": 90.0,
           "rotZ": 0.0,
-          "scaleX": 15.2224321,
+          "scaleX": 15.2231035,
           "scaleY": 11.8970528,
-          "scaleZ": 6.420948
+          "scaleZ": 6.42131
         }
       },
       {
@@ -103,9 +103,9 @@
           "rotX": 0.0,
           "rotY": 268.036743,
           "rotZ": 0.0,
-          "scaleX": 19.6330967,
+          "scaleX": 19.63268,
           "scaleY": 7.0,
-          "scaleZ": 7.97188663
+          "scaleZ": 7.971853
         }
       },
       {
@@ -117,9 +117,9 @@
           "rotX": 0.0,
           "rotY": 269.702759,
           "rotZ": 0.0,
-          "scaleX": 17.1973953,
+          "scaleX": 17.198349,
           "scaleY": 7.0,
-          "scaleZ": 9.430394
+          "scaleZ": 9.430781
         }
       },
       {
@@ -131,7 +131,7 @@
           "rotX": 0.0,
           "rotY": 182.737534,
           "rotZ": 0.0,
-          "scaleX": 24.43412,
+          "scaleX": 24.4342461,
           "scaleY": 7.0,
           "scaleZ": 10.2576084
         }
@@ -145,9 +145,9 @@
           "rotX": 0.0,
           "rotY": 178.572525,
           "rotZ": 0.0,
-          "scaleX": 19.7605,
+          "scaleX": 19.76168,
           "scaleY": 7.0,
-          "scaleZ": 9.142722
+          "scaleZ": 9.143314
         }
       },
       {
@@ -159,9 +159,9 @@
           "rotX": 0.0,
           "rotY": 178.572525,
           "rotZ": 0.0,
-          "scaleX": 22.182436,
+          "scaleX": 22.1840153,
           "scaleY": 7.0,
-          "scaleZ": 10.0906277
+          "scaleZ": 10.0913219
         }
       },
       {
@@ -171,9 +171,9 @@
           "posY": 4.461217,
           "posZ": -33.3139839,
           "rotX": 0.0,
-          "rotY": 1.31018782,
+          "rotY": 1.31018794,
           "rotZ": 0.0,
-          "scaleX": 22.5476646,
+          "scaleX": 22.5478821,
           "scaleY": 7.0,
           "scaleZ": 8.85415649
         }
@@ -189,7 +189,7 @@
           "rotZ": 0.0,
           "scaleX": 19.4602566,
           "scaleY": 7.0,
-          "scaleZ": 8.6068
+          "scaleZ": 8.606618
         }
       }
     ]
@@ -390,7 +390,7 @@
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 255.0015,
+        "r": 255.001572,
         "g": 0.0,
         "b": 0.0
       },
@@ -414,18 +414,18 @@
     {
       "Name": "Notecard",
       "Transform": {
-        "posX": 21.9472446,
-        "posY": 1.66548336,
-        "posZ": -23.104269,
-        "rotX": -8.938418E-06,
-        "rotY": 0.0285604056,
-        "rotZ": 3.138551E-06,
-        "scaleX": 1.0,
-        "scaleY": 1.0,
-        "scaleZ": 1.0
+        "posX": 14.8069572,
+        "posY": 1.65673554,
+        "posZ": -28.5191269,
+        "rotX": -2.76568676E-06,
+        "rotY": 0.0285595134,
+        "rotZ": 6.855381E-07,
+        "scaleX": 0.8750001,
+        "scaleY": 0.8750001,
+        "scaleZ": 0.8750001
       },
       "Nickname": "Current hands",
-      "Description": "Green :: handsize = 0 :: hand =  \nPurple :: handsize = 0 :: hand =  \n",
+      "Description": "Purple :: handsize = 0 :: hand =  \nBlue :: handsize = 0 :: hand =  \n",
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 1.0,
@@ -444,7 +444,7 @@
       "GridProjection": false,
       "HideWhenFaceDown": false,
       "Hands": false,
-      "LuaScript": "-- Bundled by luabundle {\"version\":\"1.6.0\"}\nlocal __bundle_require, __bundle_loaded, __bundle_register, __bundle_modules = (function(superRequire)\n\tlocal loadingPlaceholder = {[{}] = true}\n\n\tlocal register\n\tlocal modules = {}\n\n\tlocal require\n\tlocal loaded = {}\n\n\tregister = function(name, body)\n\t\tif not modules[name] then\n\t\t\tmodules[name] = body\n\t\tend\n\tend\n\n\trequire = function(name)\n\t\tlocal loadedModule = loaded[name]\n\n\t\tif loadedModule then\n\t\t\tif loadedModule == loadingPlaceholder then\n\t\t\t\treturn nil\n\t\t\tend\n\t\telse\n\t\t\tif not modules[name] then\n\t\t\t\tif not superRequire then\n\t\t\t\t\tlocal identifier = type(name) == 'string' and '\\\"' .. name .. '\\\"' or tostring(name)\n\t\t\t\t\terror('Tried to require ' .. identifier .. ', but no such module has been registered')\n\t\t\t\telse\n\t\t\t\t\treturn superRequire(name)\n\t\t\t\tend\n\t\t\tend\n\n\t\t\tloaded[name] = loadingPlaceholder\n\t\t\tloadedModule = modules[name](require, loaded, register, modules)\n\t\t\tloaded[name] = loadedModule\n\t\tend\n\n\t\treturn loadedModule\n\tend\n\n\treturn require, loaded, register, modules\nend)(nil)\n__bundle_register(\"__root\", function(require, _LOADED, __bundle_register, __bundle_modules)\nrequire(\"it_moves/current_hands\")\nend)\n__bundle_register(\"it_moves/current_hands\", function(require, _LOADED, __bundle_register, __bundle_modules)\nfunction onUpdate()\r\n    updateDescription()\r\nend\r\n\r\nfunction updateDescription()\r\n    -- consumes nothing, and updates my description to reflect the\r\n    -- hands of seated players.\r\n    local seated_player_colors = getSeatedPlayers()\r\n    local hands_string = format_player_colors(seated_player_colors)\r\n    return self.setDescription(hands_string)\r\nend\r\n\r\nfunction format_player_colors(player_colors)\r\n    -- consumes a list of player-colors (strings), and produces a string describing them.\r\n    local str = \"\"\r\n    if #player_colors == 0 then\r\n        return str .. \"none\"\r\n    else \r\n        for _, player_color in ipairs(player_colors) do\r\n            if player_color ~= \"Black\" then\r\n                player = Player[player_color]\r\n                str = str .. format_player(player)\r\n            end\r\n        end\r\n    return str\r\n    end\r\nend\r\n\r\nfunction format_player(player)\r\n    -- consumes a player and produces a string describing its state\r\n    local fstring = \"%s :: handsize = %i :: hand = %s \\n\"\r\n    colour = player.color\r\n    handcount = player.getHandCount()\r\n    if handcount > 0 then\r\n        hand_contents = player.getHandObjects(1)\r\n        hand_contents_str = format_hand(hand_contents)\r\n    else\r\n        hand_contents_str = \"None\"\r\n    end\r\n    return string.format(fstring, colour, #hand_contents, hand_contents_str)\r\nend\r\n\r\nfunction format_hand(hand_objects)\r\n    -- consumes a table of objects and produces a string of\r\n    -- the GMNote-stored names of the objects\r\n    local str = \"\"\r\n    local fstring = \"%s/\"\r\n    for _, object in ipairs(hand_objects) do\r\n        local object_name = object.getGMNotes()\r\n        str = str .. string.format(fstring, object_name)\r\n    end\r\n    return str\r\nend\r\n\nend)\nreturn __bundle_require(\"__root\")",
+      "LuaScript": "-- Bundled by luabundle {\"version\":\"1.6.0\"}\nlocal __bundle_require, __bundle_loaded, __bundle_register, __bundle_modules = (function(superRequire)\n\tlocal loadingPlaceholder = {[{}] = true}\n\n\tlocal register\n\tlocal modules = {}\n\n\tlocal require\n\tlocal loaded = {}\n\n\tregister = function(name, body)\n\t\tif not modules[name] then\n\t\t\tmodules[name] = body\n\t\tend\n\tend\n\n\trequire = function(name)\n\t\tlocal loadedModule = loaded[name]\n\n\t\tif loadedModule then\n\t\t\tif loadedModule == loadingPlaceholder then\n\t\t\t\treturn nil\n\t\t\tend\n\t\telse\n\t\t\tif not modules[name] then\n\t\t\t\tif not superRequire then\n\t\t\t\t\tlocal identifier = type(name) == 'string' and '\\\"' .. name .. '\\\"' or tostring(name)\n\t\t\t\t\terror('Tried to require ' .. identifier .. ', but no such module has been registered')\n\t\t\t\telse\n\t\t\t\t\treturn superRequire(name)\n\t\t\t\tend\n\t\t\tend\n\n\t\t\tloaded[name] = loadingPlaceholder\n\t\t\tloadedModule = modules[name](require, loaded, register, modules)\n\t\t\tloaded[name] = loadedModule\n\t\tend\n\n\t\treturn loadedModule\n\tend\n\n\treturn require, loaded, register, modules\nend)(nil)\n__bundle_register(\"__root\", function(require, _LOADED, __bundle_register, __bundle_modules)\nrequire(\"it_moves/current_hands\")\nend)\n__bundle_register(\"it_moves/current_hands\", function(require, _LOADED, __bundle_register, __bundle_modules)\nfunction onUpdate()\r\n    updateDescription()\r\nend\r\n\r\nfunction updateDescription()\r\n    -- consumes nothing, and updates my description to reflect the\r\n   -- hands of seated players.\r\n   local seated_player_colors = getSeatedPlayers()\r\n   if #seated_player_colors < 1 then return end\r\n   local hands_string = format_player_colors(seated_player_colors)\r\n   return self.setDescription(hands_string)\r\nend\r\n\r\nfunction format_player_colors(player_colors)\r\n    -- consumes a list of player-colors (strings), and produces a string describing them.\r\n    local str = \"\"\r\n    if #player_colors == 0 then\r\n        return str .. \"none\"\r\n    else \r\n        for _, player_color in ipairs(player_colors) do\r\n            if player_color ~= \"Black\" then\r\n                player = Player[player_color]\r\n                str = str .. format_player(player)\r\n            end\r\n        end\r\n    return str\r\n    end\r\nend\r\n\r\nfunction format_player(player)\r\n    -- consumes a player and produces a string describing its state\r\n    local fstring = \"%s :: handsize = %i :: hand = %s \\n\"\r\n    colour = player.color\r\n    handcount = player.getHandCount()\r\n    if handcount > 0 then\r\n        hand_contents = player.getHandObjects(1)\r\n        hand_contents_str = format_hand(hand_contents)\r\n    else\r\n        hand_contents_str = \"None\"\r\n    end\r\n    return string.format(fstring, colour, #hand_contents, hand_contents_str)\r\nend\r\n\r\nfunction format_hand(hand_objects)\r\n    -- consumes a table of objects and produces a string of\r\n    -- the GMNote-stored names of the objects\r\n    local str = \"\"\r\n    local fstring = \"%s/\"\r\n    for _, object in ipairs(hand_objects) do\r\n        local object_name = object.getGMNotes()\r\n        str = str .. string.format(fstring, object_name)\r\n    end\r\n    return str\r\nend\r\n\nend)\nreturn __bundle_require(\"__root\")",
       "LuaScriptState": "",
       "XmlUI": "",
       "GUID": "2e721f"
@@ -452,15 +452,15 @@
     {
       "Name": "Notecard",
       "Transform": {
-        "posX": 14.2995644,
-        "posY": 1.66547275,
-        "posZ": -23.1467571,
-        "rotX": -0.000103127044,
-        "rotY": 0.0358648151,
-        "rotZ": -0.000220759059,
-        "scaleX": 1.0,
-        "scaleY": 1.0,
-        "scaleZ": 1.0
+        "posX": 14.7803183,
+        "posY": 1.65498459,
+        "posZ": -23.4667015,
+        "rotX": -1.52080872E-06,
+        "rotY": 0.016326569,
+        "rotZ": 1.58964951E-06,
+        "scaleX": 0.850000143,
+        "scaleY": 0.850000143,
+        "scaleZ": 0.850000143
       },
       "Nickname": "Thing history",
       "Description": "Black\n",
@@ -485,7 +485,23 @@
       "LuaScript": "-- Bundled by luabundle {\"version\":\"1.6.0\"}\nlocal __bundle_require, __bundle_loaded, __bundle_register, __bundle_modules = (function(superRequire)\n\tlocal loadingPlaceholder = {[{}] = true}\n\n\tlocal register\n\tlocal modules = {}\n\n\tlocal require\n\tlocal loaded = {}\n\n\tregister = function(name, body)\n\t\tif not modules[name] then\n\t\t\tmodules[name] = body\n\t\tend\n\tend\n\n\trequire = function(name)\n\t\tlocal loadedModule = loaded[name]\n\n\t\tif loadedModule then\n\t\t\tif loadedModule == loadingPlaceholder then\n\t\t\t\treturn nil\n\t\t\tend\n\t\telse\n\t\t\tif not modules[name] then\n\t\t\t\tif not superRequire then\n\t\t\t\t\tlocal identifier = type(name) == 'string' and '\\\"' .. name .. '\\\"' or tostring(name)\n\t\t\t\t\terror('Tried to require ' .. identifier .. ', but no such module has been registered')\n\t\t\t\telse\n\t\t\t\t\treturn superRequire(name)\n\t\t\t\tend\n\t\t\tend\n\n\t\t\tloaded[name] = loadingPlaceholder\n\t\t\tloadedModule = modules[name](require, loaded, register, modules)\n\t\t\tloaded[name] = loadedModule\n\t\tend\n\n\t\treturn loadedModule\n\tend\n\n\treturn require, loaded, register, modules\nend)(nil)\n__bundle_register(\"__root\", function(require, _LOADED, __bundle_register, __bundle_modules)\nrequire(\"it_moves/it_history\")\n\nend)\n__bundle_register(\"it_moves/it_history\", function(require, _LOADED, __bundle_register, __bundle_modules)\nindicatorGUID = \"15a702\"\r\n\r\nfunction onLoad()\r\n    indicator_block = getObjectFromGUID(indicatorGUID)\r\n    THING_HISTORY = {\"Black\"}\r\n    self.setName(\"Thing history\")\r\nend\r\n\r\nfunction onUpdate()\r\n    players = Player.getPlayers()\r\n    player_with_joker = get_player_with_joker(players)\r\n    last_recorded_thing = get_last_element_of_indexed_table(THING_HISTORY)\r\n    if not player_has_been_thing_before(player_with_joker) then\r\n        printToAll(string.format(\"%s ~= %s!\", player_with_joker, last_recorded_thing))\r\n        table.insert(THING_HISTORY, player_with_joker)\r\n    end\r\n    indicator_block.setColorTint(get_last_element_of_indexed_table(THING_HISTORY))\r\n    self.setDescription(format_thing_history(THING_HISTORY))\r\nend\r\n\r\n-- auxiliary functions\r\n\r\nfunction format_thing_history(table)\r\n    -- consumes the thing-history table and produces\r\n    -- a formatted string representing it.\r\n    str = \"\"\r\n    for _, el in ipairs(table) do\r\n        str = str .. el .. \"\\n\"\r\n    end\r\n    return str\r\nend\r\n\r\nfunction player_has_joker(player)\r\n    -- consumes a player and produces true if that\r\n    -- player has the Joker, false otherwise.\r\n    -- assumes that each player has only 1 Hand-zone\r\n    if player.getHandCount() < 1 then\r\n        return false\r\n    elseif player.getHandCount() > 1 then\r\n        printToAll(\"hands are misconfigured: \".. tostring(Player) .. \" has 2\")\r\n        return false\r\n    else\r\n        objects = player.getHandObjects(1)\r\n        return table_contains_joker(objects)\r\n    end\r\nend\r\n\r\nfunction table_contains_joker(table)\r\n    -- consumes a table and produces true if that table\r\n    -- contains the joker as a member, false otherwise.\r\n    if #table < 1 then\r\n      return false\r\n    end\r\n    for _, object in ipairs(table) do\r\n        if Global.call(\"is_a_joker\", object) then\r\n            return true\r\n        end\r\n    end\r\n    return false\r\nend\r\n\r\nfunction get_player_with_joker(players)\r\n  -- consumes a table of players and produces the first player that\r\n  -- holds a joker.\r\n    for _, player in ipairs(players) do\r\n        if player_has_joker(player) then\r\n            return player.color\r\n        end\r\n    end\r\n    return \"Black\"\r\nend\r\n\r\nfunction get_last_element_of_indexed_table(table)\r\n  -- consumes a table and produces the table's last element\r\n    return table[#table]\r\nend\r\n\r\nfunction get_last_recorded_thing()\r\n  -- consumes nothing and produces a string representing the color of the\r\n  -- last recorded thing.\r\n    return get_last_element_of_indexed_table(THING_HISTORY)\r\nend\r\n\r\n\r\nfunction player_has_been_thing_before(color)\r\n    -- consumes a Player and produces true if the player's been a Thing before,\r\n    -- false otherwise.\r\n    for _, playerColor in ipairs(THING_HISTORY) do\r\n        if playerColor == color then\r\n            return true\r\n        end\r\n    end\r\n    return false\r\nend\r\n--\r\n\nend)\nreturn __bundle_require(\"__root\")",
       "LuaScriptState": "",
       "XmlUI": "",
-      "GUID": "75e30c"
+      "GUID": "75e30c",
+      "AttachedSnapPoints": [
+        {
+          "Position": {
+            "x": 0.4080327,
+            "y": 3.50000048,
+            "z": 0.1819102
+          }
+        },
+        {
+          "Position": {
+            "x": 0.406370431,
+            "y": 3.50000262,
+            "z": -0.20797582
+          }
+        }
+      ]
     },
     {
       "Name": "go_game_piece_white",
@@ -566,12 +582,12 @@
     {
       "Name": "BlockSquare",
       "Transform": {
-        "posX": 16.8757763,
-        "posY": 2.23513913,
-        "posZ": -24.3959522,
-        "rotX": -0.00187249575,
-        "rotY": 0.0195347872,
-        "rotZ": 0.00703669153,
+        "posX": 17.1645355,
+        "posY": 2.21448445,
+        "posZ": -24.19754,
+        "rotX": -2.502344E-06,
+        "rotY": 8.662405E-05,
+        "rotZ": 180.0,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -580,9 +596,9 @@
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.249996841,
-        "g": 0.249996841,
-        "b": 0.249996841
+        "r": 0.249996811,
+        "g": 0.249996811,
+        "b": 0.249996811
       },
       "Locked": true,
       "Grid": true,
@@ -607,7 +623,7 @@
         "posX": 24.8595772,
         "posY": 2.095486,
         "posZ": -35.5288429,
-        "rotX": 2.270997E-05,
+        "rotX": 2.27099736E-05,
         "rotY": 359.5192,
         "rotZ": -2.93744761E-05,
         "scaleX": 1.0,
@@ -618,7 +634,7 @@
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 255.002472,
+        "r": 255.002548,
         "g": 0.0,
         "b": 0.0
       },
@@ -642,15 +658,15 @@
     {
       "Name": "Notecard",
       "Transform": {
-        "posX": 14.5313816,
-        "posY": 1.665484,
-        "posZ": -28.36532,
-        "rotX": -6.51799564E-06,
-        "rotY": 359.985138,
-        "rotZ": -3.28006149E-06,
-        "scaleX": 1.0,
-        "scaleY": 1.0,
-        "scaleZ": 1.0
+        "posX": 22.0938511,
+        "posY": 1.65673482,
+        "posZ": -23.4252472,
+        "rotX": -9.120869E-06,
+        "rotY": 0.0287240949,
+        "rotZ": 3.06990046E-06,
+        "scaleX": 0.8750001,
+        "scaleY": 0.8750001,
+        "scaleZ": 0.8750001
       },
       "Nickname": "Card Counter",
       "Description": "That object can't be counted for successes",
@@ -676,44 +692,6 @@
       "LuaScriptState": "",
       "XmlUI": "",
       "GUID": "c2bc26"
-    },
-    {
-      "Name": "Tileset_Table",
-      "Transform": {
-        "posX": 33.36156,
-        "posY": 2.888813,
-        "posZ": -23.1399765,
-        "rotX": 4.4287066E-05,
-        "rotY": 89.9917,
-        "rotZ": 2.1341355E-05,
-        "scaleX": 1.79999924,
-        "scaleY": 1.79999924,
-        "scaleZ": 1.79999924
-      },
-      "Nickname": "Discard Table",
-      "Description": "",
-      "GMNotes": "",
-      "ColorDiffuse": {
-        "r": 0.7647059,
-        "g": 0.733683348,
-        "b": 0.652249157
-      },
-      "Locked": false,
-      "Grid": true,
-      "Snap": true,
-      "IgnoreFoW": false,
-      "MeasureMovement": false,
-      "DragSelectable": true,
-      "Autoraise": true,
-      "Sticky": true,
-      "Tooltip": true,
-      "GridProjection": false,
-      "HideWhenFaceDown": false,
-      "Hands": false,
-      "LuaScript": "-- Bundled by luabundle {\"version\":\"1.6.0\"}\nlocal __bundle_require, __bundle_loaded, __bundle_register, __bundle_modules = (function(superRequire)\n\tlocal loadingPlaceholder = {[{}] = true}\n\n\tlocal register\n\tlocal modules = {}\n\n\tlocal require\n\tlocal loaded = {}\n\n\tregister = function(name, body)\n\t\tif not modules[name] then\n\t\t\tmodules[name] = body\n\t\tend\n\tend\n\n\trequire = function(name)\n\t\tlocal loadedModule = loaded[name]\n\n\t\tif loadedModule then\n\t\t\tif loadedModule == loadingPlaceholder then\n\t\t\t\treturn nil\n\t\t\tend\n\t\telse\n\t\t\tif not modules[name] then\n\t\t\t\tif not superRequire then\n\t\t\t\t\tlocal identifier = type(name) == 'string' and '\\\"' .. name .. '\\\"' or tostring(name)\n\t\t\t\t\terror('Tried to require ' .. identifier .. ', but no such module has been registered')\n\t\t\t\telse\n\t\t\t\t\treturn superRequire(name)\n\t\t\t\tend\n\t\t\tend\n\n\t\t\tloaded[name] = loadingPlaceholder\n\t\t\tloadedModule = modules[name](require, loaded, register, modules)\n\t\t\tloaded[name] = loadedModule\n\t\tend\n\n\t\treturn loadedModule\n\tend\n\n\treturn require, loaded, register, modules\nend)(nil)\n__bundle_register(\"__root\", function(require, _LOADED, __bundle_register, __bundle_modules)\nrequire(\"it_moves/discard_table\")\nend)\n__bundle_register(\"it_moves/discard_table\", function(require, _LOADED, __bundle_register, __bundle_modules)\nfunction onCollisionEnter(collision_info)\r\n    -- stolen from the button-visualizer.\r\n    -- consumes a collision-event and produces the guid of the colliding object.\r\n    -- collision_info table:\r\n    --   collision_object    Object\r\n    --   contact_points      Table     {Vector, ...}\r\n    --   relative_velocity   Vector\r\n    if collision_info.collision_object.tag == \"Surface\" then\r\n      return\r\n    end\r\n    -- if Global.call(\"should_ignore_collision_p\", collision_info) then\r\n    --     return\r\n    -- end\r\n    return handle_collision_enter(collision_info)\r\nend\r\n\r\nfunction handle_collision_enter(collision_info)\r\n  -- -- handler\r\n  -- if Global.call(\"shouldIgnoreCollisionP\", collision_info) then\r\n  --     return\r\n  -- end\r\n  local obj_GUID = collision_info.collision_object.getGUID()\r\n  local obj = getObjectFromGUID(obj_GUID)\r\n  return do_discards(obj)\r\nend\r\n\r\nfunction do_discards(obj)\r\n    -- consumes a card or a deck and destroys all the jokers it touches\r\n    local item_class = Global.call(\"get_quasi_type\", obj)\r\n    if item_class == \"CardCustom\" then\r\n        return card_do_discards(obj)\r\n    elseif item_class == \"Deck\" then\r\n        return deck_do_discards(obj)\r\n    else\r\n        return false\r\n    end\r\nend\r\n\r\nfunction card_do_discards(card)\r\n    -- examines a card and destroys it if it's a joker.\r\n    if Global.call(\"is_a_joker\", card) then\r\n        destroyObject(card)\r\n    end\r\n    return true\r\nend\r\n\r\nfunction deck_do_discards(deck)\r\n    -- examines a deck and destroys all its jokers.\r\n    for _, card_desc in pairs(deck.getObjects()) do\r\n        if Global.call(\"card_desc_is_a_joker\", card_desc) then\r\n            take_params = {\r\n                guid = card_desc.guid,\r\n                callback_function = card_do_discards\r\n            }\r\n            local joker_card = deck.takeObject(take_params)\r\n        end\r\n    end\r\n    return true\r\nend\r\n\nend)\nreturn __bundle_require(\"__root\")",
-      "LuaScriptState": "",
-      "XmlUI": "",
-      "GUID": "7b8173"
     },
     {
       "Name": "BlockTriangle",
@@ -758,7 +736,7 @@
       "Name": "go_game_piece_white",
       "Transform": {
         "posX": -49.2234955,
-        "posY": 1.95064676,
+        "posY": 1.95064652,
         "posZ": -32.44137,
         "rotX": 270.0,
         "rotY": 225.053665,
@@ -796,10 +774,10 @@
       "Name": "go_game_piece_white",
       "Transform": {
         "posX": 48.7830162,
-        "posY": 1.946641,
+        "posY": 1.94664085,
         "posZ": 32.3899727,
         "rotX": 270.0,
-        "rotY": 44.9015923,
+        "rotY": 44.9016037,
         "rotZ": 0.0,
         "scaleX": 2.29999948,
         "scaleY": 2.29999948,
@@ -909,12 +887,12 @@
     {
       "Name": "Counter",
       "Transform": {
-        "posX": 27.835722,
-        "posY": 1.57073474,
-        "posZ": -24.043,
-        "rotX": 1.27401718E-05,
-        "rotY": -0.00199424429,
-        "rotZ": 4.565924E-07,
+        "posX": 27.8606625,
+        "posY": 1.57073581,
+        "posZ": -28.5978546,
+        "rotX": 1.50398982E-05,
+        "rotY": -0.00190822082,
+        "rotZ": -7.153289E-07,
         "scaleX": 0.825000167,
         "scaleY": 0.825000167,
         "scaleZ": 0.825000167
@@ -950,15 +928,15 @@
     {
       "Name": "Notecard",
       "Transform": {
-        "posX": 22.04421,
-        "posY": 1.66548467,
-        "posZ": -28.0016613,
-        "rotX": -0.000664920837,
-        "rotY": 0.0278685819,
-        "rotZ": -4.65557678E-05,
-        "scaleX": 1.0,
-        "scaleY": 1.0,
-        "scaleZ": 1.0
+        "posX": 22.10065,
+        "posY": 1.656735,
+        "posZ": -28.4708214,
+        "rotX": 1.409347E-05,
+        "rotY": 0.02781467,
+        "rotZ": -1.67358139E-05,
+        "scaleX": 0.8750001,
+        "scaleY": 0.8750001,
+        "scaleZ": 0.8750001
       },
       "Nickname": "2: Assignments",
       "Description": "1: players discuss, in general terms, what task the intend to commit to.\n2: at some point, intervene to stop the discussion.\n3: instruct the players to place their tokens on the tasks they will work on.\n    ",
@@ -2061,7 +2039,7 @@
         "posX": -21.8097343,
         "posY": 1.46,
         "posZ": -24.35168,
-        "rotX": 5.755023E-10,
+        "rotX": -7.737246E-09,
         "rotY": 270.000366,
         "rotZ": 180.0,
         "scaleX": 1.0,
@@ -2099,7 +2077,7 @@
         "posX": -42.2864532,
         "posY": 1.46,
         "posZ": -12.3276577,
-        "rotX": -1.62079616E-07,
+        "rotX": -2.55737632E-07,
         "rotY": 44.5392151,
         "rotZ": 180.0,
         "scaleX": 1.0,
@@ -2111,8 +2089,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.9559999,
-        "g": 0.391994745,
-        "b": 0.112994738
+        "g": 0.3919947,
+        "b": 0.112994708
       },
       "Locked": false,
       "Grid": true,
@@ -2134,12 +2112,12 @@
     {
       "Name": "go_game_piece_white",
       "Transform": {
-        "posX": 41.1543121,
-        "posY": 1.778484,
-        "posZ": -27.2943954,
-        "rotX": 1.30500657E-05,
-        "rotY": -7.148458E-05,
-        "rotZ": 2.031248E-06,
+        "posX": 40.7977371,
+        "posY": 1.778483,
+        "posZ": -22.520359,
+        "rotX": 1.43990947E-05,
+        "rotY": -7.04386039E-05,
+        "rotZ": 1.79090762E-06,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -2175,7 +2153,7 @@
         "posX": -40.9711,
         "posY": 1.46,
         "posZ": 9.5357,
-        "rotX": 2.54807446E-07,
+        "rotX": 2.8672045E-07,
         "rotY": 44.9923,
         "rotZ": 180.0,
         "scaleX": 1.0,
@@ -2213,7 +2191,7 @@
         "posX": -22.7772484,
         "posY": 1.46,
         "posZ": 22.4905434,
-        "rotX": -4.129429E-09,
+        "rotX": 6.800255E-08,
         "rotY": 119.99733,
         "rotZ": 180.0,
         "scaleX": 1.0,
@@ -2224,9 +2202,9 @@
       "Description": "Player token",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.191996008,
+        "r": 0.191995978,
         "g": 0.701,
-        "b": 0.167995989
+        "b": 0.16799596
       },
       "Locked": false,
       "Grid": true,
@@ -2251,7 +2229,7 @@
         "posX": -2.794532,
         "posY": 1.46,
         "posZ": 24.5613384,
-        "rotX": 3.432552E-07,
+        "rotX": 3.33041E-07,
         "rotY": 44.9856377,
         "rotZ": 180.0,
         "scaleX": 1.0,
@@ -2262,7 +2240,7 @@
       "Description": "Player token",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.128995985,
+        "r": 0.128995955,
         "g": 0.694,
         "b": 0.606999934
       },
@@ -2289,9 +2267,9 @@
         "posX": 23.5324078,
         "posY": 1.46,
         "posZ": 23.2853451,
-        "rotX": -4.73120224E-07,
+        "rotX": -4.61712517E-07,
         "rotY": 44.9931755,
-        "rotZ": -4.207351E-08,
+        "rotZ": -7.757314E-08,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -2300,7 +2278,7 @@
       "Description": "Player token",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.117995806,
+        "r": 0.117995776,
         "g": 0.53,
         "b": 1.0
       },
@@ -2325,7 +2303,7 @@
       "Name": "BlockSquare",
       "Transform": {
         "posX": 45.0237465,
-        "posY": 1.46121848,
+        "posY": 1.46121752,
         "posZ": 15.9851027,
         "rotX": -3.41509462E-06,
         "rotY": 75.17927,
@@ -2339,7 +2317,7 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.627,
-        "g": 0.124995805,
+        "g": 0.124995776,
         "b": 0.941
       },
       "Locked": false,
@@ -2365,9 +2343,9 @@
         "posX": 40.7345,
         "posY": 1.46,
         "posZ": -1.615834,
-        "rotX": 2.34413869E-06,
+        "rotX": 2.38192615E-06,
         "rotY": 344.990173,
-        "rotZ": -7.578119E-07,
+        "rotZ": -7.4090633E-07,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -2377,7 +2355,7 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.96,
-        "g": 0.4389958,
+        "g": 0.438995779,
         "b": 0.807
       },
       "Locked": false,
@@ -2403,9 +2381,9 @@
         "posX": -4.8054266,
         "posY": 1.46,
         "posZ": -23.998167,
-        "rotX": -1.90024508E-07,
+        "rotX": -1.96780888E-07,
         "rotY": 120.031723,
-        "rotZ": -3.12411466E-08,
+        "rotZ": 1.251652E-07,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -2414,9 +2392,9 @@
       "Description": "Player token",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.4429958,
-        "g": 0.230995774,
-        "b": 0.0899965838
+        "r": 0.442995757,
+        "g": 0.230995744,
+        "b": 0.08999657
       },
       "Locked": false,
       "Grid": true,
@@ -2438,12 +2416,12 @@
     {
       "Name": "Bag",
       "Transform": {
-        "posX": 27.7489357,
-        "posY": 1.4104495,
-        "posZ": -20.5847054,
-        "rotX": 4.536332E-05,
-        "rotY": -0.00137925777,
-        "rotZ": -6.03365652E-06,
+        "posX": 31.5995846,
+        "posY": 1.41045177,
+        "posZ": -28.3712254,
+        "rotX": 1.29950322E-05,
+        "rotY": -0.001338437,
+        "rotZ": -2.50280777E-07,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -2456,7 +2434,7 @@
         "g": 0.366520882,
         "b": 0.0
       },
-      "Locked": false,
+      "Locked": true,
       "Grid": true,
       "Snap": true,
       "IgnoreFoW": false,
@@ -2480,11 +2458,11 @@
       "Name": "BlockSquare",
       "Transform": {
         "posX": 49.6942329,
-        "posY": 3.811219,
+        "posY": 3.81121874,
         "posZ": -22.75746,
-        "rotX": -1.1508746E-07,
-        "rotY": -0.00332036032,
-        "rotZ": 8.29211757E-08,
+        "rotX": -1.6723E-07,
+        "rotY": -0.00332033983,
+        "rotZ": 1.77149033E-07,
         "scaleX": 5.70000267,
         "scaleY": 5.70000267,
         "scaleZ": 5.70000267
@@ -2517,12 +2495,12 @@
     {
       "Name": "Counter",
       "Transform": {
-        "posX": 28.3940582,
-        "posY": 1.57223713,
-        "posZ": -35.05477,
-        "rotX": 1.05077252E-05,
-        "rotY": -0.000183340613,
-        "rotZ": -1.94682843E-06,
+        "posX": 40.05078,
+        "posY": 1.57223606,
+        "posZ": -29.0107346,
+        "rotX": 9.299062E-06,
+        "rotY": -0.0001831587,
+        "rotZ": 9.296631E-08,
         "scaleX": 0.7750002,
         "scaleY": 0.7750002,
         "scaleZ": 0.7750002
@@ -2641,11 +2619,11 @@
       "Name": "BlockTriangle",
       "Transform": {
         "posX": 18.8284626,
-        "posY": 1.17424369,
-        "posZ": -0.180471256,
-        "rotX": 1.67281542E-05,
-        "rotY": 180.02,
-        "rotZ": 2.705407E-06,
+        "posY": 1.17424524,
+        "posZ": -0.180470377,
+        "rotX": 1.24740964E-05,
+        "rotY": 180.031219,
+        "rotZ": 4.53034263E-05,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -2678,15 +2656,15 @@
     {
       "Name": "Notecard",
       "Transform": {
-        "posX": 21.9180241,
-        "posY": 1.80548334,
-        "posZ": -28.1286221,
-        "rotX": -0.0006649515,
-        "rotY": 359.979523,
-        "rotZ": -4.601732E-05,
-        "scaleX": 1.0,
-        "scaleY": 1.0,
-        "scaleZ": 1.0
+        "posX": 22.214077,
+        "posY": 1.77923489,
+        "posZ": -28.5232658,
+        "rotX": 1.4254606E-05,
+        "rotY": 359.979553,
+        "rotZ": -1.676117E-05,
+        "scaleX": 0.8750001,
+        "scaleY": 0.8750001,
+        "scaleZ": 0.8750001
       },
       "Nickname": "-1: Pre-setup",
       "Description": "There are too few players to start the game! Only 2 are seated at the table, and we need a minimum of 6.\n    ",
@@ -2716,12 +2694,12 @@
     {
       "Name": "BlockSquare",
       "Transform": {
-        "posX": 16.8928852,
-        "posY": 2.23541832,
-        "posZ": -23.2197247,
-        "rotX": 0.00116229779,
-        "rotY": 180.009781,
-        "rotZ": 0.00248645456,
+        "posX": 17.1896572,
+        "posY": 2.21448469,
+        "posZ": -22.8337383,
+        "rotX": -1.35040329E-06,
+        "rotY": -1.28751676E-09,
+        "rotZ": 180.0,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -2793,12 +2771,12 @@
     {
       "Name": "Infinite_Bag",
       "Transform": {
-        "posX": 39.9787254,
-        "posY": 1.57848692,
-        "posZ": -33.9918976,
-        "rotX": 1.21359035E-05,
-        "rotY": 0.0001277049,
-        "rotZ": 5.53748464E-07,
+        "posX": 27.6629333,
+        "posY": 1.57848454,
+        "posZ": -22.534977,
+        "rotX": 1.73939E-05,
+        "rotY": 0.000144245714,
+        "rotZ": 1.91877252E-08,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -2811,7 +2789,7 @@
         "g": 0.372555166,
         "b": 1.0
       },
-      "Locked": false,
+      "Locked": true,
       "Grid": true,
       "Snap": true,
       "IgnoreFoW": false,
@@ -2954,7 +2932,7 @@
         "posX": 26.42879,
         "posY": 1.00324225,
         "posZ": -28.2959385,
-        "rotX": -1.33217327E-05,
+        "rotX": -1.33217345E-05,
         "rotY": 180.032028,
         "rotZ": -8.632735E-07,
         "scaleX": 0.625000358,
@@ -3015,34 +2993,6 @@
         },
         {
           "Position": {
-            "x": -7.01037931,
-            "y": 0.5922432,
-            "z": 5.6883955
-          }
-        },
-        {
-          "Position": {
-            "x": -1.01848876,
-            "y": 0.592243135,
-            "z": 6.75773048
-          }
-        },
-        {
-          "Position": {
-            "x": -0.726509452,
-            "y": 0.592243552,
-            "z": -4.254175
-          }
-        },
-        {
-          "Position": {
-            "x": -7.246469,
-            "y": 0.5922435,
-            "z": -4.667946
-          }
-        },
-        {
-          "Position": {
             "x": 0.8116976,
             "y": 0.592243,
             "z": 7.220101
@@ -3053,6 +3003,27 @@
             "x": 0.8405208,
             "y": 0.5922431,
             "z": 5.810087
+          }
+        },
+        {
+          "Position": {
+            "x": -7.046176,
+            "y": 0.5922435,
+            "z": 0.707181931
+          }
+        },
+        {
+          "Position": {
+            "x": -7.430662,
+            "y": 0.5922437,
+            "z": -5.78360558
+          }
+        },
+        {
+          "Position": {
+            "x": -0.7407234,
+            "y": 0.5922425,
+            "z": 0.301115751
           }
         }
       ]
@@ -3607,12 +3578,12 @@
     {
       "Name": "go_game_piece_white",
       "Transform": {
-        "posX": 15.593955,
-        "posY": 1.77848434,
-        "posZ": -31.1535854,
-        "rotX": 1.69457817E-05,
-        "rotY": 359.981659,
-        "rotZ": 2.353136E-06,
+        "posX": -3.20894861,
+        "posY": 1.14421535,
+        "posZ": -27.1563911,
+        "rotX": 8.39798E-07,
+        "rotY": 359.781372,
+        "rotZ": 2.28827753E-06,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -3637,7 +3608,7 @@
       "GridProjection": false,
       "HideWhenFaceDown": false,
       "Hands": false,
-      "LuaScript": "-- Bundled by luabundle {\"version\":\"1.6.0\"}\nlocal __bundle_require, __bundle_loaded, __bundle_register, __bundle_modules = (function(superRequire)\n\tlocal loadingPlaceholder = {[{}] = true}\n\n\tlocal register\n\tlocal modules = {}\n\n\tlocal require\n\tlocal loaded = {}\n\n\tregister = function(name, body)\n\t\tif not modules[name] then\n\t\t\tmodules[name] = body\n\t\tend\n\tend\n\n\trequire = function(name)\n\t\tlocal loadedModule = loaded[name]\n\n\t\tif loadedModule then\n\t\t\tif loadedModule == loadingPlaceholder then\n\t\t\t\treturn nil\n\t\t\tend\n\t\telse\n\t\t\tif not modules[name] then\n\t\t\t\tif not superRequire then\n\t\t\t\t\tlocal identifier = type(name) == 'string' and '\\\"' .. name .. '\\\"' or tostring(name)\n\t\t\t\t\terror('Tried to require ' .. identifier .. ', but no such module has been registered')\n\t\t\t\telse\n\t\t\t\t\treturn superRequire(name)\n\t\t\t\tend\n\t\t\tend\n\n\t\t\tloaded[name] = loadingPlaceholder\n\t\t\tloadedModule = modules[name](require, loaded, register, modules)\n\t\t\tloaded[name] = loadedModule\n\t\tend\n\n\t\treturn loadedModule\n\tend\n\n\treturn require, loaded, register, modules\nend)(nil)\n__bundle_register(\"__root\", function(require, _LOADED, __bundle_register, __bundle_modules)\nrequire(\"it_moves/setup_token\")\r\n\nend)\n__bundle_register(\"it_moves/setup_token\", function(require, _LOADED, __bundle_register, __bundle_modules)\nfunction onLoad()\r\n    tasks_remaining_indicator_GUID = \"a8880c\"\r\n    tasks_remaining_indicator = getObjectFromGUID(tasks_remaining_indicator_GUID)\r\n\r\n    fifteen_tasks_until_rescue_zone_GUID = \"2bd444\"\r\n    fifteen_tasks_until_rescue_zone = getObjectFromGUID(fifteen_tasks_until_rescue_zone_GUID)\r\n    fifteen_tasks_until_rescue_zone_position = fifteen_tasks_until_rescue_zone.getPosition()\r\n\r\n    assimilation_infinite_bag_GUID = \"013d1b\"\r\n    success_infinite_bag_GUID = \"8938e8\"\r\n    failure_infinite_bag_GUID = \"3d5c94\"\r\n\r\n    deck_area_scripting_zone_GUID = \"d6a3af\"\r\n    deck_area_scripting_zone = getObjectFromGUID(deck_area_scripting_zone_GUID)\r\n    deck_area_position = deck_area_scripting_zone.getPosition()\r\n\r\n    assimilation_infinite_bag = getObjectFromGUID(assimilation_infinite_bag_GUID)\r\n    success_infinite_bag = getObjectFromGUID(success_infinite_bag_GUID)\r\n    failure_infinite_bag = getObjectFromGUID(failure_infinite_bag_GUID)\r\n\r\n    min_players, max_players = Global.getVar(\"MIN_PLAYERS\"), Global.getVar(\"MAX_PLAYERS\")\r\n\r\n    self.createInput({\r\n        input_function = \"handle_input\",\r\n        function_owner = self,\r\n        label = \"# of players\",\r\n        position = Vector(0,1,3),\r\n        rotation = {0,180,0},\r\n        font_size = 400,\r\n        width = 2100,\r\n        height = 500,\r\n        alignment=3,\r\n        tooltip = \"I can handle inputs between 6 and 9.\",\r\n        validation = 2,\r\n    })\r\n\r\n    self.createButton(\r\n        {\r\n            click_function = \"pressed\",\r\n            label = \"do setup\",\r\n            function_owner = self,\r\n            position = {0, 1, 1},\r\n            rotation = {0, 180, 0},\r\n            width = 2000,\r\n            height = 600,\r\n            font_size = 500\r\n        }\r\n    )\r\nend\r\n\r\nfunction handle_input(obj, color, input, stillEditing)\r\n    return true\r\nend\r\n\r\nfunction pressed()\r\n    local input_field = self.getInputs()\r\n    local input_value = input_field[1].value\r\n    if input_value == nil then return end\r\n    local input_value_num = tonumber(input_value)\r\n    if validate_input(input_value_num) then\r\n        do_setup(7)\r\n    else\r\n        local fstring = \"Players should be between %i and %i, inclusive.\"\r\n        printToColor(string.format(fstring, min_players, max_players), \"Black\")\r\n    end\r\nend\r\n\r\nfunction do_setup(n)\r\n    -- consumes a number between 6 and 9, and sets up the board for n players.\r\n    -- As a side-effect, destroys self.\r\n    spawn_initial_deck_for_n_players(n)\r\n    destroyObject(success_infinite_bag)\r\n    destroyObject(failure_infinite_bag)\r\n\r\n    local mission_target = Global.call(\"missions_to_complete\", n)\r\n    Global.setVar(\"MISSIONS_TO_COMPLETE\", mission_target)\r\n    setup_task_indicator_for_n_players(n)\r\n\r\n    destroyObject(self)\r\n    return true\r\nend\r\n\r\n\r\nfunction setup_task_indicator_for_n_players(n)\r\n    -- consumes a number of players n and sets up the task indicator \r\n    -- in the appropriate place \r\n    -- note that for now we always give the players 15 tasks to complete.\r\n    tasks_remaining_indicator.setPositionSmooth(fifteen_tasks_until_rescue_zone_position)\r\n    return\r\nend\r\n\r\nfunction spawn_initial_deck_for_n_players(n)\r\n    -- consumes a number of players N and produces an object-reference to the deck\r\n    -- which, as a side-effect, it will spawn at the position of the deck_area.\r\n\r\n    local total_cards = Global.getVar('TOTAL_CARDS_IN_DECK') -- this could be made to depend on n\r\n    local ratio_of_successes = Global.getVar('RATIO_OF_SUCCESS_TO_FAILURE')\r\n    local number_of_successes = math.floor(total_cards * ratio_of_successes)\r\n    local number_of_failures = total_cards - number_of_successes\r\n    local successes = spawn_n_cards_from_bag(number_of_successes, success_infinite_bag)\r\n    local failures = spawn_n_cards_from_bag(number_of_failures, failure_infinite_bag)\r\n    return \r\nend\r\n\r\n\r\nfunction spawn_n_cards_from_bag(n, bag)\r\n    -- consumes an integer n and a bag of cards and spawns that n cards\r\n    -- from the bag into the deck area, giving it, first,  produces nothing.\r\n    for i = 1, n do\r\n        bag.takeObject({\r\n            position = deck_area_position + Vector(0,2,0)\r\n        })\r\n    end\r\n    return\r\nend\r\n\r\nfunction validate_input(n)\r\n    -- consumes an int and checks that it's a valid number of players.\r\n    return min_players <= n and n <= max_players\r\nend\r\n\nend)\nreturn __bundle_require(\"__root\")",
+      "LuaScript": "-- Bundled by luabundle {\"version\":\"1.6.0\"}\nlocal __bundle_require, __bundle_loaded, __bundle_register, __bundle_modules = (function(superRequire)\n\tlocal loadingPlaceholder = {[{}] = true}\n\n\tlocal register\n\tlocal modules = {}\n\n\tlocal require\n\tlocal loaded = {}\n\n\tregister = function(name, body)\n\t\tif not modules[name] then\n\t\t\tmodules[name] = body\n\t\tend\n\tend\n\n\trequire = function(name)\n\t\tlocal loadedModule = loaded[name]\n\n\t\tif loadedModule then\n\t\t\tif loadedModule == loadingPlaceholder then\n\t\t\t\treturn nil\n\t\t\tend\n\t\telse\n\t\t\tif not modules[name] then\n\t\t\t\tif not superRequire then\n\t\t\t\t\tlocal identifier = type(name) == 'string' and '\\\"' .. name .. '\\\"' or tostring(name)\n\t\t\t\t\terror('Tried to require ' .. identifier .. ', but no such module has been registered')\n\t\t\t\telse\n\t\t\t\t\treturn superRequire(name)\n\t\t\t\tend\n\t\t\tend\n\n\t\t\tloaded[name] = loadingPlaceholder\n\t\t\tloadedModule = modules[name](require, loaded, register, modules)\n\t\t\tloaded[name] = loadedModule\n\t\tend\n\n\t\treturn loadedModule\n\tend\n\n\treturn require, loaded, register, modules\nend)(nil)\n__bundle_register(\"__root\", function(require, _LOADED, __bundle_register, __bundle_modules)\nrequire(\"it_moves/setup_token\")\r\n\nend)\n__bundle_register(\"it_moves/setup_token\", function(require, _LOADED, __bundle_register, __bundle_modules)\nfunction onLoad()\r\n    tasks_remaining_indicator_GUID = \"a8880c\"\r\n    tasks_remaining_indicator = getObjectFromGUID(tasks_remaining_indicator_GUID)\r\n\r\n    fifteen_tasks_until_rescue_zone_GUID = \"2bd444\"\r\n    fifteen_tasks_until_rescue_zone = getObjectFromGUID(fifteen_tasks_until_rescue_zone_GUID)\r\n    fifteen_tasks_until_rescue_zone_position = fifteen_tasks_until_rescue_zone.getPosition()\r\n\r\n    assimilation_infinite_bag_GUID = \"c648cf\"\r\n    success_infinite_bag_GUID = \"cc80cd\"\r\n    failure_infinite_bag_GUID = \"d2e74f\"\r\n\r\n    deck_area_scripting_zone_GUID = \"d6a3af\"\r\n    deck_area_scripting_zone = getObjectFromGUID(deck_area_scripting_zone_GUID)\r\n    deck_area_position = deck_area_scripting_zone.getPosition()\r\n\r\n    assimilation_infinite_bag = getObjectFromGUID(assimilation_infinite_bag_GUID)\r\n    success_infinite_bag = getObjectFromGUID(success_infinite_bag_GUID)\r\n    failure_infinite_bag = getObjectFromGUID(failure_infinite_bag_GUID)\r\n\r\n    min_players, max_players = Global.getVar(\"MIN_PLAYERS\"), Global.getVar(\"MAX_PLAYERS\")\r\n\r\n    self.createInput({\r\n        input_function = \"handle_input\",\r\n        function_owner = self,\r\n        label = \"# of players\",\r\n        position = Vector(0,1,3),\r\n        rotation = {0,180,0},\r\n        font_size = 400,\r\n        width = 2100,\r\n        height = 500,\r\n        alignment=3,\r\n        tooltip = \"I can handle inputs between 6 and 9.\",\r\n        validation = 2,\r\n    })\r\n\r\n    self.createButton(\r\n        {\r\n            click_function = \"pressed\",\r\n            label = \"do setup\",\r\n            function_owner = self,\r\n            position = {0, 1, 1},\r\n            rotation = {0, 180, 0},\r\n            width = 2000,\r\n            height = 600,\r\n            font_size = 500\r\n        }\r\n    )\r\nend\r\n\r\nfunction handle_input(obj, color, input, stillEditing)\r\n    return true\r\nend\r\n\r\nfunction pressed()\r\n    local input_field = self.getInputs()\r\n    local input_value = input_field[1].value\r\n    if input_value == nil then return end\r\n    local input_value_num = tonumber(input_value)\r\n    if validate_input(input_value_num) then\r\n        do_setup(7)\r\n    else\r\n        local fstring = \"Players should be between %i and %i, inclusive.\"\r\n        printToColor(string.format(fstring, min_players, max_players), \"Black\")\r\n    end\r\nend\r\n\r\nfunction do_setup(n)\r\n    -- consumes a number between 6 and 9, and sets up the board for n players.\r\n    -- As a side-effect, destroys self.\r\n    spawn_initial_deck_for_n_players(n)\r\n    destroyObject(success_infinite_bag)\r\n    destroyObject(failure_infinite_bag)\r\n\r\n    local mission_target = Global.call(\"missions_to_complete\", n)\r\n    Global.setVar(\"MISSIONS_TO_COMPLETE\", mission_target)\r\n    setup_task_indicator_for_n_players(n)\r\n\r\n    destroyObject(self)\r\n    return true\r\nend\r\n\r\n\r\nfunction setup_task_indicator_for_n_players(n)\r\n    -- consumes a number of players n and sets up the task indicator \r\n    -- in the appropriate place \r\n    -- note that for now we always give the players 15 tasks to complete.\r\n    tasks_remaining_indicator.setPositionSmooth(fifteen_tasks_until_rescue_zone_position)\r\n    return\r\nend\r\n\r\nfunction spawn_initial_deck_for_n_players(n)\r\n    -- consumes a number of players N and produces an object-reference to the deck\r\n    -- which, as a side-effect, it will spawn at the position of the deck_area.\r\n\r\n    local total_cards = Global.getVar('TOTAL_CARDS_IN_DECK') -- this could be made to depend on n\r\n    local ratio_of_successes = Global.getVar('RATIO_OF_SUCCESS_TO_FAILURE')\r\n    local number_of_successes = math.floor(total_cards * ratio_of_successes)\r\n    local number_of_failures = total_cards - number_of_successes\r\n    local successes = spawn_n_cards_from_bag(number_of_successes, success_infinite_bag)\r\n    local failures = spawn_n_cards_from_bag(number_of_failures, failure_infinite_bag)\r\n    return \r\nend\r\n\r\n\r\nfunction spawn_n_cards_from_bag(n, bag)\r\n    -- consumes an integer n and a bag of cards and spawns that n cards\r\n    -- from the bag into the deck area, giving it, first,  produces nothing.\r\n    for i = 1, n do\r\n        bag.takeObject({\r\n            position = deck_area_position + Vector(0,2,0)\r\n        })\r\n    end\r\n    return\r\nend\r\n\r\nfunction validate_input(n)\r\n    -- consumes an int and checks that it's a valid number of players.\r\n    return min_players <= n and n <= max_players\r\nend\r\n\nend)\nreturn __bundle_require(\"__root\")",
       "LuaScriptState": "",
       "XmlUI": "",
       "GUID": "ab9aa0"
@@ -3645,12 +3616,12 @@
     {
       "Name": "go_game_piece_white",
       "Transform": {
-        "posX": 34.1714058,
-        "posY": 1.68698657,
-        "posZ": -35.7464752,
-        "rotX": 1.9156565E-05,
-        "rotY": -0.0007961936,
-        "rotZ": 2.53606026E-06,
+        "posX": 21.09634,
+        "posY": 1.80970693,
+        "posZ": -20.3598557,
+        "rotX": 270.0,
+        "rotY": 0.0703315139,
+        "rotZ": 0.0,
         "scaleX": 0.500001132,
         "scaleY": 0.500001132,
         "scaleZ": 0.500001132
@@ -3663,7 +3634,7 @@
         "g": 0.6617647,
         "b": 0.6617647
       },
-      "Locked": false,
+      "Locked": true,
       "Grid": true,
       "Snap": true,
       "IgnoreFoW": false,
@@ -3686,9 +3657,9 @@
         "posX": 9.942549,
         "posY": 1.14299834,
         "posZ": -11.3392467,
-        "rotX": 3.48659142E-07,
-        "rotY": 1.67792308E-07,
-        "rotZ": 6.094347E-08,
+        "rotX": 3.326732E-07,
+        "rotY": 1.67737866E-07,
+        "rotZ": 2.48590169E-07,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -3764,7 +3735,7 @@
         "posY": 1.67358422,
         "posZ": -37.0707932,
         "rotX": 330.85907,
-        "rotY": 0.256937683,
+        "rotY": 0.2569378,
         "rotZ": 359.8999,
         "scaleX": 1.0,
         "scaleY": 1.0,
@@ -3798,10 +3769,10 @@
     {
       "Name": "Deck",
       "Transform": {
-        "posX": 31.0792465,
-        "posY": 1.85711837,
-        "posZ": -28.6634426,
-        "rotX": 3.65742585E-06,
+        "posX": 33.7645569,
+        "posY": 1.85711932,
+        "posZ": -32.73283,
+        "rotX": 3.24988218E-06,
         "rotY": 179.999725,
         "rotZ": 180.0,
         "scaleX": 1.0,
@@ -6452,10 +6423,10 @@
     {
       "Name": "Deck",
       "Transform": {
-        "posX": 28.1955032,
-        "posY": 1.85711837,
-        "posZ": -28.7717056,
-        "rotX": 1.18770151E-06,
+        "posX": 30.5513363,
+        "posY": 1.8571192,
+        "posZ": -32.6592522,
+        "rotX": 2.810614E-06,
         "rotY": 179.999054,
         "rotZ": 180.0,
         "scaleX": 1.0,
@@ -9109,7 +9080,7 @@
         "posX": 15.4599056,
         "posY": 1.7126981,
         "posZ": -33.85061,
-        "rotX": 4.185597E-06,
+        "rotX": 4.219698E-07,
         "rotY": 180.0007,
         "rotZ": 180.0,
         "scaleX": 1.0,
