@@ -4,10 +4,11 @@ end
 
 function updateDescription()
     -- consumes nothing, and updates my description to reflect the
-    -- hands of seated players.
-    local seated_player_colors = getSeatedPlayers()
-    local hands_string = format_player_colors(seated_player_colors)
-    return self.setDescription(hands_string)
+   -- hands of seated players.
+   local seated_player_colors = getSeatedPlayers()
+   if #seated_player_colors < 1 then return end
+   local hands_string = format_player_colors(seated_player_colors)
+   return self.setDescription(hands_string)
 end
 
 function format_player_colors(player_colors)
