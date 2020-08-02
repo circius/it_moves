@@ -8,7 +8,7 @@
   "GameComplexity": "",
   "Tags": [],
   "Table": "Table_Custom",
-  "TableURL": "http://cloud-3.steamusercontent.com/ugc/1482199559503567424/8A9C6E807A6ED55BC9264BC7FF6493EA17755468/",
+  "TableURL": "https://616d69.org/static/game_table.png",
   "Sky": "Sky_Museum",
   "Note": "",
   "Rules": "",
@@ -2964,7 +2964,7 @@
       "HideWhenFaceDown": false,
       "Hands": false,
       "CustomImage": {
-        "ImageURL": "file:///C:\\Users\\blah\\Documents\\Tabletop Simulator\\it_moves\\assets\\gm_board.png",
+        "ImageURL": "https://616d69.org/static/gm_board.png",
         "ImageSecondaryURL": "",
         "ImageScalar": 1.0,
         "WidthScale": 1.93330109
