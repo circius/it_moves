@@ -1,0 +1,92 @@
+** TODO the thing stuff
+ 
+  [[file:~/projects/it_moves/gm_phase_descriptions.lua::title="1: Briefing",]]
+
+*** STARTED missions counter function - what number per player?
+Don’t know, ask sam.
+*** DONE mission or task?
+    CLOSED: [2020-08-01 Sat 18:40]
+it’s *task*, scour the codebase.
+
+793f380
+
+*** TODO tag mission cards and send them to appropriate mission spaces? :stretch:
+
+*** DONE start with assignments not briefing. (bumped global.current_game_state by 1)
+    CLOSED: [2020-08-01 Sat 18:41]
+
+*** DONE snap points for player tokens on mission areas
+    CLOSED: [2020-08-01 Sat 18:43]
+
+*** TODO should card order be more-or-less preserved? - or should they be shuffled? :conceptual:
+
+*** DONE change “joker” on card counter to “assimilation card”
+    CLOSED: [2020-08-01 Sat 18:52]
+consider general refactor, but not yet. less important than “missions”
+
+*** DONE switch from THE THING to “A” as assimilation-code in codebase
+    CLOSED: [2020-08-02 Sun 12:28]
+
+**** DONE switch gm_notes marking on cards
+     CLOSED: [2020-08-01 Sat 18:53]
+
+**** DONE switch in codebase (predicates etc._
+     CLOSED: [2020-08-01 Sat 18:55]
+     :LOGBOOK:
+     CLOCK: [2020-08-01 Sat 18:56]--[2020-08-01 Sat 19:21] =>  0:25
+     :END:
+362e306
+
+*** TODO more intuitive xml interface for changing status indicators :stretch:
+interesting, should do this.
+
+*** DONE mission bag accepts tokens when they’re on mission cards - ’sticky’? add predicate to counter to select for mission cards.
+    CLOSED: [2020-08-01 Sat 19:12]
+d10a576
+*** TODO isolation difficulty track                              :conceptual:
+
+*** DONE resolution” -> “blindfold”
+    CLOSED: [2020-08-01 Sat 19:15]
+
+*** DONE blindfold” button has bug - only works on seconds press.
+    CLOSED: [2020-08-01 Sat 19:18]
+5df8c92
+
+*** DONE get rid of “snap point” on card counter - makes deck placement fiddly.
+    CLOSED: [2020-08-01 Sat 19:19]
+
+*** DONE extend hidden zone to cover hands
+    CLOSED: [2020-08-01 Sat 19:22]
+
+*** DONE shift weighting for s/f to 60:40
+    CLOSED: [2020-08-01 Sat 19:34]
+9bd9f6b
+*** STARTED should be a “tasks remaining” counter based on tasks-to-complete formula - not “tasks complete”
+d493 - code.
+
+need to rename the counter in the image.
+*** DONE discard table -> discard zone
+    CLOSED: [2020-08-02 Sun 12:28]
+more or less works, doesn’t work with multiple jokers.
+**** DONE eliminate noise from discarding joker
+     CLOSED: [2020-08-02 Sun 12:28]
+add a button to discard when the deck runs out - then noise from joker is less information. 
+9ab5c5a
+*** CANCELLED have the humans won yet zone filter not perfect.
+    CLOSED: [2020-08-01 Sat 19:35]
+cannot reproduce this bug
+*** DONE switch “isolation” and “assimilation”. two blindfold phases.
+    CLOSED: [2020-08-01 Sat 19:41]
+5942efd
+*** DONE little “current phase” indicator
+    CLOSED: [2020-08-01 Sat 19:49]
+*** DONE strip out redundant printToAll in completed_tasks_bag
+    CLOSED: [2020-08-01 Sat 21:56]
+*** STARTED bugs when hosting / online?
+things float in the air when sam hosts it multiplayer…
+
+try switching assets and see if that helps. [[*update image references to refer to 616d69.org][this todo]].
+*** TODO sort out card counter bug when no players are seated.
+*** DONE update image references to refer to 616d69.org
+    CLOSED: [2020-08-02 Sun 13:23]
+25636d1
