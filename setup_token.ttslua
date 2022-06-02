@@ -2,7 +2,7 @@ function onLoad()
     tasks_remaining_indicator_GUID = "a8880c"
     tasks_remaining_indicator = getObjectFromGUID(tasks_remaining_indicator_GUID)
 
-    fifteen_tasks_until_rescue_zone_GUID = "2bd444"
+    fifteen_tasks_until_rescue_zone_GUID = "6c4811"
     fifteen_tasks_until_rescue_zone = getObjectFromGUID(fifteen_tasks_until_rescue_zone_GUID)
     fifteen_tasks_until_rescue_zone_position = fifteen_tasks_until_rescue_zone.getPosition()
 
