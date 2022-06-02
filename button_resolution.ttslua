@@ -1,0 +1,57 @@
+guid_status_block = "e071dc"
+SEEING = color(255, 0, 0, 100)
+BLINDED = color(0, 255, 0, 100)
+BLINDNESS = false
+
+function onLoad(save_state)
+    self.setName("Button - Blindfold")
+    my_status_block = getObjectFromGUID(guid_status_block)
+    self.createButton(
+        {
+            click_function = "pressed",
+            label = "blindfold",
+            function_owner = self,
+            position = {0, 1, 1},
+            rotation = {0, 180, 0},
+            width = 2200,
+            height = 600,
+            font_size = 500
+        }
+    )
+end
+
+function all_players_toggle_blindness(players)
+    if BLINDNESS == false then
+        BLINDNESS = true
+        players_set_blindness(players, BLINDNESS)
+    else
+        BLINDNESS = false
+        players_set_blindness(players, BLINDNESS)
+    end
+end
+
+function players_set_blindness(players, value)
+    -- consumes a list of players and blinds them, IF they are
+    -- not the GM ('black')
+    for _, player in ipairs(players) do
+        if player.color ~= "Black" then
+            player.blindfolded = value
+        end
+    end
+end
+
+function make_status_block_reflect_blindness()
+    -- consumes nothing; sets color of block to reflect the state
+    -- of the global variable BLINDNESS
+    if BLINDNESS == true then
+        my_status_block.setColorTint(BLINDED)
+    else
+        my_status_block.setColorTint(SEEING)
+    end
+end
+
+function pressed(clicked_object, player)
+    players = Player.getPlayers()
+    all_players_toggle_blindness(players)
+    make_status_block_reflect_blindness()
+end
