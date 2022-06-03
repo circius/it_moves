@@ -1,0 +1,47 @@
+#+TITLE: It Moves
+
+This is a prototype of a party-game created by a friend during the first COVID
+lockdown of March 2020. It was created in order to support remote playtesting,
+although the game itself is probably better played in person.
+
+[[file:images/it-lurks-board-perspective.png][The game board]]
+
+* Run requirements
+
+- A working installation of [[https://www.tabletopsimulator.com/][tabletop simulator]]
+
+* How to run the game
+
+The game was implemented as a [[https://www.tabletopsimulator.com/][tabletop simulator]] image. A curiosity of tabletop
+simulator is its dense integration of scripts with its “saved games,” which
+faintly resemble the [[https://pharo.org/][smalltalk]] virtual machines I had started playing with, out
+of curiosity, in early 2020. In effect, a “game” implemented for tabletop
+simulator is actually a complete record of an initial state of a huge pile of
+virtual assets, entities which (for a beginner like me) have to be manually
+distributed across a virtual tabletop. Each asset has an ID, and it’s possible
+to write scripts which refer to these IDs and create additional behaviours for
+them, building on the basis of the very rich and enjoyable built-in tabletop
+simulator [[file:/api.tabletopsimulator.com/][api]].
+
+What that means is there’s no direct way to run the code in this folder! First
+you need to install the virtual machine - that is, you need to buy Tabletop
+Simulator - then you need to copy the image, ~tts-images/TS_Save_5.json~ (and
+perhaps also its snapshot ~tts-images/TS_Save_5.png~) into the ~Saves~ folder of
+your ~tabletop simulator~ installation - then you’ll be able to load the save
+from the in-game “Load/Save” interface.
+
+* How to play the game
+
+[[file:images/it-lurks-game-master-tableau.png][the game-master's board]]
+
+The minimum number of players is 6: 5 players and one game-master (playing
+black).
+
+This was built as an in-house prototype, so although the game is playable, it’s
+not fully documented! Version 1 of the rulebook can be found in the ~docs~
+folder; it describes the game as played in-person.
+
+The game interface itself isn’t documented, but is quite discoverable. If any
+interest arises I’ll be happy to provide some guidance.
+
+[[https://www.tabletopsimulator.com/][Tabletop Simulator]]
