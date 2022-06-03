@@ -4,7 +4,7 @@ This is a prototype of a party-game created by a friend during the first COVID
 lockdown of March 2020. It was created in order to support remote playtesting,
 although the game itself is probably better played in person.
 
-[[file:images/it-lurks-board-perspective.png][The game board]]
+![[file:images/it-lurks-board-perspective.png][The game board]]
 
 * Run requirements
 
@@ -32,7 +32,7 @@ from the in-game “Load/Save” interface.
 
 * How to play the game
 
-[[file:images/it-lurks-game-master-tableau.png][the game-master's board]]
+![[file:images/it-lurks-game-master-tableau.png][the game-master's board]]
 
 The minimum number of players is 6: 5 players and one game-master (playing
 black).
