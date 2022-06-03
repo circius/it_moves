@@ -44,4 +44,12 @@ folder; it describes the game as played in-person.
 The game interface itself isn’t documented, but is quite discoverable. If any
 interest arises I’ll be happy to provide some guidance.
 
-[[https://www.tabletopsimulator.com/][Tabletop Simulator]]
+
+* How to build the code
+I’ve actually, after two years, forgotten! There are some references to
+[[https://github.com/Benjamin-Dobell/luabundler][LUAbundler]] in the code, but I think I must have been using something devoted to
+tabletop simulator; maybe the [[https://api.tabletopsimulator.com/atom/][official Atom plugin]] or the [[https://marketplace.visualstudio.com/items?itemName=rolandostar.tabletopsimulator-lua][unofficia VSCode
+plugin]], or some combination of them.
+
+Having forgotten is a good reminder to take better notes on how these things are
+done when they’re being done…

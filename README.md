@@ -1,9 +1,10 @@
 
 # Table of Contents
 
-1.  [Run requirements](#orgb620c55)
-2.  [How to run the game](#org8328736)
-3.  [How to play the game](#orgc4147cf)
+1.  [Run requirements](#orgcb06394)
+2.  [How to run the game](#org39f6d65)
+3.  [How to play the game](#org1af43c9)
+4.  [How to build the code](#orgfeee733)
 
 This is a prototype of a party-game created by a friend during the first COVID
 lockdown of March 2020. It was created in order to support remote playtesting,
@@ -12,14 +13,14 @@ although the game itself is probably better played in person.
 ![The game board](images/it-lurks-board-perspective.png)
 
 
-<a id="orgb620c55"></a>
+<a id="orgcb06394"></a>
 
 # Run requirements
 
 -   A working installation of [tabletop simulator](https://www.tabletopsimulator.com/)
 
 
-<a id="org8328736"></a>
+<a id="org39f6d65"></a>
 
 # How to run the game
 
@@ -42,7 +43,7 @@ your `tabletop simulator` installation - then you’ll be able to load the save
 from the in-game “Load/Save” interface.
 
 
-<a id="orgc4147cf"></a>
+<a id="org1af43c9"></a>
 
 # How to play the game
 
@@ -58,5 +59,16 @@ folder; it describes the game as played in-person.
 The game interface itself isn’t documented, but is quite discoverable. If any
 interest arises I’ll be happy to provide some guidance.
 
-[Tabletop Simulator](https://www.tabletopsimulator.com/)
+
+<a id="orgfeee733"></a>
+
+# How to build the code
+
+I’ve actually, after two years, forgotten! There are some references to
+[LUAbundler](https://github.com/Benjamin-Dobell/luabundler) in the code, but I think I must have been using something devoted to
+tabletop simulator; maybe the [official Atom plugin](https://api.tabletopsimulator.com/atom/) or the [unofficia VSCode
+plugin](https://marketplace.visualstudio.com/items?itemName=rolandostar.tabletopsimulator-lua), or some combination of them.
+
+Having forgotten is a good reminder to take better notes on how these things are
+done when they’re being done…
 
